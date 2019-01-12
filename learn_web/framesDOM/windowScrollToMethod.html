@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<title>Window scroll to</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domWindow.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">scrollTo()</h1></div>
+  <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The scrollTo() method scrolls a window to the specified width and height.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>width</td>
+          <td>Number</td>
+          <td>Required. Sets the width of the window, in pixels.</td>
+        </tr>
+        <tr>
+          <td>height</td>
+          <td>Number</td>
+          <td>Required. Sets the height of the window, in pixels.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="windowScrollToExamplesBar" class="left-padding">
+    <a href="#windowScrollToExamplesBar">
+      <button onclick="openAnotherWindow()" class="dom-buttons-prop">Open window</button>
+    </a>
+    <a href="#windowScrollToExamplesBar">
+      <button onclick="scrollAnotherWindowTo()" class="dom-buttons-prop">Scroll window</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <p id="windowScrollToP"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="black float-borders-none">
+      <span class="purple">let </span>myWindow;<br><br>
+
+      <span class="purple">function </span><span class="blue">openWindow</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          myWindow = <span class="maroon">window.</span><span class="blue">open</span>(<span class="olive">"", "myWindow", "width=400, height=150"</span>);
+        </p>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function </span><span class="blue">scrollWindowTo</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">myWindow.</span><span class="blue">scrollTo</span>(<span class="olive">"300, 300"</span>);<br>
+          <span class="maroon">myWindow.</span><span class="blue">focus</span>();<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

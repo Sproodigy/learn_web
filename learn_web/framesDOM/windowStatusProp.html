@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Window length</title>
+<title>Window status</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="../styles/common.css" />
 <link rel="stylesheet" href="../styles/dom_style.css" />
 <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
-
 <script src="../scripts/domWindow.js"></script>
 
 <body>
@@ -21,59 +20,35 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">length</h1></div>
+  <div><h1 class="domTitle">status</h1></div>
   <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The length property returns the number of &lt;iframe&gt; elements in the current window.
+      The status property sets the text in the status bar at the bottom of the browser, or returns the previously set text.
     </div>
     <div class="note-value">
-      This property is often used together with the window.frames property.
-    </div>
-    <div class="note-value">
-      This property is read-only.
+      The status property does not work in the default configuration of IE, Firefox, Chrome, Safari or Opera 15 and newer.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="windowLengthExamplesBar" class="left-padding">
-    <a href="#windowLengthExamplesBar">
-      <button onclick="showWindowsLength()" class="dom-buttons-prop">Show the number of windows</button>
-    </a>
-  </div>
-
-  <div class="exampleDOMDiv ">
-    <div>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <p id="windowLengthP"></p>
+  <div class="exampleDOMDiv">
+    <div style="text-align: center;">
+      <p id="windowStatusP"></p>
+      <script>
+        window.status = "Some text.";
+      </script>
     </div>
   </div>
 
   <div class="codeDOM">
     <div class="blue float-borders-none">
-      &lt;<span class="brown">div</span>&gt;<br>
-      <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">p</span>
-        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
-        <span class="black replace"></span>
-        &lt;<span class="brown">/p</span>&gt;
-      </p>
-      &lt;<span class="brown">/div</span>&gt;
-    </div>
-
-    <div class="black float-borders-none">
-      function <span class="blue">showHistory</span><span class="black">() {</span><br>
-        <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>len = <span class="maroon">window.length</span><br>
-          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span><span class="maroon">.innerHTML</span>
-          = <span class="olive">"Number of windows: "</span> + len;
-        </p>
-      <span class="black">}</span>
+      &lt;<span class="brown">script</span>&gt;<br>
+        <span class="maroon left-padding">window.status</span> = <span class="olive">"Some text."</span>;<br>
+      &lt;<span class="brown">/script</span>&gt;<br>
     </div>
   </div>
   <p style="clear: left;"></p>

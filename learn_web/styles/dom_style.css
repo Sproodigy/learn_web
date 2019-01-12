@@ -157,3 +157,7 @@ a:hover {
 .tableDOMAttr tbody tr:nth-child(odd) {
   background-color: rgba(13, 254, 0, 0.91);
 }
+
+dd {
+  padding-bottom: 5px;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Window length</title>
+<title>Window close method</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,59 +21,52 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">length</h1></div>
+  <div><h1 class="domTitle">close()</h1></div>
   <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The length property returns the number of &lt;iframe&gt; elements in the current window.
-    </div>
-    <div class="note-value">
-      This property is often used together with the window.frames property.
-    </div>
-    <div class="note-value">
-      This property is read-only.
+      The close() method closes the current window.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="windowLengthExamplesBar" class="left-padding">
-    <a href="#windowLengthExamplesBar">
-      <button onclick="showWindowsLength()" class="dom-buttons-prop">Show the number of windows</button>
+  <div id="windowClosedExamplesBar" class="left-padding">
+    <a href="#windowClosedExamplesBar">
+      <button onclick="openWindow()" class="dom-buttons-prop">Open window</button>
+    </a>
+    <a href="#windowClosedExamplesBar">
+      <button onclick="closeWindow()" class="dom-buttons-prop">Close window</button>
     </a>
   </div>
 
-  <div class="exampleDOMDiv ">
+  <div class="exampleDOMDiv">
     <div>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <p id="windowLengthP"></p>
+      <p id="windowClosedP"></p>
     </div>
   </div>
 
   <div class="codeDOM">
-    <div class="blue float-borders-none">
-      &lt;<span class="brown">div</span>&gt;<br>
-      <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">p</span>
-        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
-        <span class="black replace"></span>
-        &lt;<span class="brown">/p</span>&gt;
-      </p>
-      &lt;<span class="brown">/div</span>&gt;
-    </div>
 
     <div class="black float-borders-none">
-      function <span class="blue">showHistory</span><span class="black">() {</span><br>
+      <span class="purple">let </span>myWindow;<br><br>
+
+      <span class="purple">function </span><span class="blue">openWindow</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>len = <span class="maroon">window.length</span><br>
-          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span><span class="maroon">.innerHTML</span>
-          = <span class="olive">"Number of windows: "</span> + len;
+          myWindow = <span class="maroon">window.</span><span class="blue">open</span>(<span class="olive">"", "myWindow", "width=400, height=200"</span>);
         </p>
-      <span class="black">}</span>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function </span><span class="blue">closeWindow</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">if </span>(myWindow) {<br>
+            <span class="maroon left-padding">myWindow.</span><span class="blue">close</span>();<br>
+          <span class="black">}</span><br>
+        </p>
+      <span class="black">}</span><br><br>
+
     </div>
   </div>
   <p style="clear: left;"></p>

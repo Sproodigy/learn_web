@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Window length</title>
+<title>Window prompt</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,36 +21,67 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">length</h1></div>
+  <div><h1 class="domTitle">prompt()</h1></div>
   <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The length property returns the number of &lt;iframe&gt; elements in the current window.
+      The prompt() method displays a dialog box that prompts the visitor for input.
     </div>
     <div class="note-value">
-      This property is often used together with the window.frames property.
+      A prompt box is often used if you want the user to input a value before entering a page.
     </div>
     <div class="note-value">
-      This property is read-only.
+      The prompt() method returns the input value if the user clicks "OK".
+      If the user clicks "cancel" the method returns null.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed after entering an input value.
+      Do not overuse this method, as it prevents the user from accessing other parts of the page until the box is closed.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>text</td>
+          <td>String</td>
+          <td>Required. The text to display in the dialog box.</td>
+        </tr>
+        <tr>
+          <td>defaultText</td>
+          <td>String</td>
+          <td>Optional. The default input text.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="windowLengthExamplesBar" class="left-padding">
-    <a href="#windowLengthExamplesBar">
-      <button onclick="showWindowsLength()" class="dom-buttons-prop">Show the number of windows</button>
+  <div id="windowPromptExamplesBar" class="left-padding">
+    <a href="#windowPromptExamplesBar">
+      <button onclick="performPrompt()" class="dom-buttons-prop">Perform</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv ">
     <div>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <p id="windowLengthP"></p>
+      <p id="windowPromptP"></p>
     </div>
   </div>
 
@@ -61,17 +92,20 @@
         &lt;<span class="brown">p</span>
         <span class="purple">id=</span><span class="olive">"example"</span>&gt;
         <span class="black replace"></span>
-        &lt;<span class="brown">/p</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br>
       </p>
       &lt;<span class="brown">/div</span>&gt;
     </div>
 
     <div class="black float-borders-none">
-      function <span class="blue">showHistory</span><span class="black">() {</span><br>
+      function <span class="blue">performPrompt</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>len = <span class="maroon">window.length</span><br>
-          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span><span class="maroon">.innerHTML</span>
-          = <span class="olive">"Number of windows: "</span> + len;
+          <span class="purple">let </span>fruit =
+          <span class="blue">prompt</span>(<span class="olive">"Please enter your favorite fruit:", "Banana"</span>);<br><br>
+          <span class="purple">if </span>(fruit != <span class="orange">null</span>);<br>
+          <span class="maroon left-padding">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
+          = fruit + <span class="olive">" is a good choise!"</span>;<br>
+        }
         </p>
       <span class="black">}</span>
     </div>

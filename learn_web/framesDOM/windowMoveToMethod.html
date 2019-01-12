@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<title>Window move to</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domWindow.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">moveTo()</h1></div>
+  <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The moveTo() method moves a window's left and top edge to the specified coordinates.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Specifying moveTo(0, 0) in Opera, results in moving the window to the top left corner of the browser, not the screen.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>x</td>
+          <td>Number</td>
+          <td>Required. A positive or negative number that specifies the horizontal coordinate to be moved to.</td>
+        </tr>
+        <tr>
+          <td>y</td>
+          <td>Number</td>
+          <td>Required. A positive or negative number specifies the vertical coordinate to be moved to.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="windowMoveToExamplesBar" class="left-padding">
+    <a href="#windowMoveToExamplesBar">
+      <button onclick="openWindow()" class="dom-buttons-prop">Open window</button>
+    </a>
+    <a href="#windowMoveToExamplesBar">
+      <button onclick="moveWindowTo()" class="dom-buttons-prop">Move window</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <p id="windowMoveToP"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="black float-borders-none">
+      <span class="purple">let </span>myWindow;<br><br>
+
+      <span class="purple">function </span><span class="blue">openWindow</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          myWindow = <span class="maroon">window.</span><span class="blue">open</span>(<span class="olive">"", "myWindow", "width=400, height=150"</span>);
+        </p>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function </span><span class="blue">moveWindowTo</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">myWindow.</span><span class="blue">moveTo</span>(<span class="olive">"300, 300"</span>);<br>
+          <span class="maroon">myWindow.</span><span class="blue">focus</span>();<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

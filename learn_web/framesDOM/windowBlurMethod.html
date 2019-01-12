@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Window length</title>
+<title>Window blur</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,57 +21,45 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">length</h1></div>
+  <div><h1 class="domTitle">blur()</h1></div>
   <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The length property returns the number of &lt;iframe&gt; elements in the current window.
+      The blur() method removes focus from the current window.
     </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
     <div class="note-value">
-      This property is often used together with the window.frames property.
-    </div>
-    <div class="note-value">
-      This property is read-only.
+      This method makes a request to bring the current window to the background.
+      It may not work as you expect in all browsers, due to different user settings.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="windowLengthExamplesBar" class="left-padding">
-    <a href="#windowLengthExamplesBar">
-      <button onclick="showWindowsLength()" class="dom-buttons-prop">Show the number of windows</button>
+  <div id="windowBlurExamplesBar" class="left-padding">
+    <a href="#windowBlurExamplesBar">
+      <button onclick="setWindowBlur()" class="dom-buttons-prop">Set window blur</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv ">
-    <div>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <p id="windowLengthP"></p>
+    <div style="text-align: center;">
     </div>
   </div>
 
   <div class="codeDOM">
-    <div class="blue float-borders-none">
-      &lt;<span class="brown">div</span>&gt;<br>
-      <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">p</span>
-        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
-        <span class="black replace"></span>
-        &lt;<span class="brown">/p</span>&gt;
-      </p>
-      &lt;<span class="brown">/div</span>&gt;
-    </div>
-
     <div class="black float-borders-none">
-      function <span class="blue">showHistory</span><span class="black">() {</span><br>
+      function <span class="blue">setWindowBlur</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>len = <span class="maroon">window.length</span><br>
-          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span><span class="maroon">.innerHTML</span>
-          = <span class="olive">"Number of windows: "</span> + len;
+          <span class="purple">let </span>myWindow = <span class="maroon">window.</span><span class="blue">open</span>(<span class="olive">"", "", "width=200, height=100"</span>);<br>
+          <span class="maroon">myWindow.document.</span><span class="blue">write</span>(<span class="olive">"&lt;p&gt;A new window!&lt;/p&gt;"</span>);<br>
+          <span class="maroon">myWindow.</span><span class="blue">blur</span>();<br>
         </p>
       <span class="black">}</span>
     </div>

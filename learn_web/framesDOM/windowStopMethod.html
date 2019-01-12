@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<title>Window stop</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domWindow.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">stop()</h1></div>
+  <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The stop() method stops window loading.
+    </div>
+    <div class="note-value">
+      This method is the same as clicking on the browser's stop button.
+    </div>
+    <div class="note-value">
+      This method may be useful if the loading of an image or frame takes too long.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div class="codeDOM">
+    <div class="black borders-none">
+      <span class="blue">&lt;</span><span class="brown">script</span><span class="blue">&gt;</span>
+      <span class="maroon">window.</span><span class="blue">stop</span>();
+      <span class="blue">&lt;</span><span class="brown">/script</span><span class="blue">&gt;</span><br>
+      <span class="blue">
+        &lt;<span class="brown">iframe</span>
+        <span class="crimson">src=</span><span class="olive">"https://liquimoly.ru/"</span>&gt;&lt;<span class="brown">/iframe</span>&gt;<br>
+      </span>
+    </div>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <script>window.stop();</script>
+      <iframe src="https://liquimoly.ru/"></iframe>
+    </div>
+  </div>
+
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

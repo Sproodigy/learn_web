@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<title>Window open</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domWindow.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">open()</h1></div>
+  <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The open() method opens a new browser window.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>URL</td>
+          <td>Optional. Specifies the URL of the page to open. If no URL is specified, a new window with about:blank is opened.</td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>
+            Optional. Specifies the target attribute or the name of the window. The following values are supported:
+            <ul>
+              <li>_blank - URL is loaded into a new window. This is default.</li>
+              <li>_parent - URL is loaded into the parent frame.</li>
+              <li>_self - URL replaces the current page.</li>
+              <li>_top - URL replaces any framesets that may be loaded.</li>
+              <li>name - The name of the window (Note: the name does not specify the title of the new window).</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>specs</td>
+          <td>
+            Optional. A comma-separated list of items, no whitespaces. The following values are supported:
+            <dl>
+              <dt>channelmode=yes|no|1|0</dt>
+              <dd>Whether or not to display the window in theater mode. Default is no. IE only.</dd>
+              <dt>directories=yes|no|1|0</dt>
+              <dd><span class="deprecated">Obsolete.</span> Whether or not to add directory buttons. Default is yes. IE only.</dd>
+              <dt>fullscreen=yes|no|1|0</dt>
+              <dd>Whether or not to display the browser in full-screen mode. Default is no. A window in full-screen mode must also be in theater mode. IE only.</dd>
+              <dt>height=pixels</dt>
+              <dd>The height of the window. Min. value is 100.</dd>
+              <dt>left=pixels</dt>
+              <dd>The left position of the window. Negative values not allowed</dd>
+              <dt>location=yes|no|1|0</dt>
+              <dd>Whether or not to display the address field. Opera only.</dd>
+              <dt>menubar=yes|no|1|0</dt>
+              <dd>Whether or not to display the menu bar.</dd>
+              <dt>resizable=yes|no|1|0</dt>
+              <dd>Whether or not the window is resizable. IE only</dd>
+              <dt>scrollbars=yes|no|1|0</dt>
+              <dd>Whether or not to display scroll bars. IE, Firefox & Opera only.</dd>
+              <dt>status=yes|no|1|0</dt>
+              <dd>Whether or not to add a status bar.</dd>
+              <dt>titlebar=yes|no|1|0</dt>
+              <dd>Whether or not to display the title bar. Ignored unless the calling application is an HTML Application or a trusted dialog box.</dd>
+              <dt>toolbar=yes|no|1|0</dt>
+              <dd>Whether or not to display the browser toolbar. IE and Firefox only.</dd>
+              <dt>top=pixels</dt>
+              <dd>The top position of the window. Negative values not allowed.</dd>
+              <dt>width=pixels</dt>
+              <dd>The width of the window. Min. value is 100.</dd>
+            </dl>
+          </td>
+        </tr>
+        <tr>
+          <td>replace</td>
+          <td>
+            Optional. Specifies whether the URL creates a new entry or replaces the current entry in the history list.
+            The following values are supported:
+            <ul>
+              <li>true - URL replaces the current document in the history list.</li>
+              <li>false - URL creates a new entry in the history list.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="windowOpenExamplesBar" class="left-padding">
+    <a href="#windowOpenExamplesBar">
+      <button onclick="openWindowWithControl()" class="dom-buttons-prop">Open window</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <p id="windowOpenP"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="black float-borders-none">
+
+      <span class="purple">function </span><span class="blue">openWindowWithControl</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">window.</span><span class="blue">open</span>(<span class="olive">"https://www.w3schools.com", "_blank", "toolbar=yes,scrollbars=yes,resizable=no,top=500,left=500,width=400,height=400"</span>);<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

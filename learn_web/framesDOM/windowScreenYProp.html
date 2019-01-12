@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Window length</title>
+<title>Window screenY</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="../styles/common.css" />
 <link rel="stylesheet" href="../styles/dom_style.css" />
 <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
-
 <script src="../scripts/domWindow.js"></script>
 
 <body>
@@ -21,16 +20,13 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">length</h1></div>
+  <div><h1 class="domTitle">screenY</h1></div>
   <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The length property returns the number of &lt;iframe&gt; elements in the current window.
-    </div>
-    <div class="note-value">
-      This property is often used together with the window.frames property.
+      The screenX and screenY properties returns the x (horizontal) and y (vertical) coordinates of the window relative to the screen.
     </div>
     <div class="note-value">
       This property is read-only.
@@ -39,18 +35,16 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="windowLengthExamplesBar" class="left-padding">
-    <a href="#windowLengthExamplesBar">
-      <button onclick="showWindowsLength()" class="dom-buttons-prop">Show the number of windows</button>
+  <div id="windowScreenYExamplesBar" class="left-padding">
+    <a href="#windowScreenYExamplesBar">
+      <button onclick="showWindowScreenY()" class="dom-buttons-prop">Show window position</button>
     </a>
   </div>
 
-  <div class="exampleDOMDiv ">
-    <div>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <iframe src="../framesHTML/frames.html"></iframe>
-      <p id="windowLengthP"></p>
+  <div class="exampleDOMDiv">
+    <div style="text-align: center;">
+      <p id="windowScreenYP"></p>
+      <p id="windowScreenYP2"></p>
     </div>
   </div>
 
@@ -61,19 +55,20 @@
         &lt;<span class="brown">p</span>
         <span class="purple">id=</span><span class="olive">"example"</span>&gt;
         <span class="black replace"></span>
-        &lt;<span class="brown">/p</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br>
       </p>
       &lt;<span class="brown">/div</span>&gt;
     </div>
 
     <div class="black float-borders-none">
-      function <span class="blue">showHistory</span><span class="black">() {</span><br>
+      <span class="purple">function </span><span class="blue">showWindowScreenY</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>len = <span class="maroon">window.length</span><br>
-          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span><span class="maroon">.innerHTML</span>
-          = <span class="olive">"Number of windows: "</span> + len;
+            <span class="purple">let </span>myWindow =
+            <span class="maroon">window.</span><span class="blue">open</span>(<span class="olive">"", "myWindow", "width="200", height=300"</span>);<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span><span class="maroon">.outerHTML</span>
+          = <span class="olive">"The position of the window to the top: "</span> + <span class="crimson">myWindow.screenY</span>;<br>
         </p>
-      <span class="black">}</span>
+      <span class="black">}</span><br>
     </div>
   </div>
   <p style="clear: left;"></p>

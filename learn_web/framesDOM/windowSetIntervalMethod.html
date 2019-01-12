@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<title>Window set interval</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domWindow.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">setInterval()</h1></div>
+  <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
+    </div>
+    <div class="note-value">
+      The setInterval() method will continue calling the function until clearInterval() is called, or the window is closed.
+    </div>
+    <div class="note-value">
+      The ID value returned by setInterval() is used as the parameter for the clearInterval() method.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      1000 ms = 1 second.
+    </div>
+    <div class="note-value">
+      To execute a function only once, after a specified number of milliseconds, use the setTimeout() method.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>function</td>
+          <td>Required. The function that will be executed.</td>
+        </tr>
+        <tr>
+          <td>milliseconds</td>
+          <td>
+            Required. The intervals (in milliseconds) on how often to execute the code.
+            If the value is less than 10, the value 10 is used.
+          </td>
+        </tr>
+        <tr>
+          <td>param1, param2, ...</td>
+          <td>Optional. Additional parameters to pass to the function (Not supported in IE9 and earlier).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="windowSetIntervalDiv" class="exampleDOMDiv ">
+    <div style="text-align: center;">
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>
+      <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="blue">setInterval</span>(exampleFunc, <span class="orange">1000</span>);<br><br>
+
+      function <span class="blue">exampleFunc</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span>;<br>
+          <span class="maroon">x.style.backgroundColor</span> = <span class="maroon">x.style.backgroundColor</span>
+          == <span class="olive">"green" ? "chartreuse" : "green"</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

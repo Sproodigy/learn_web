@@ -93,3 +93,152 @@ function showWindowParent() {
   document.getElementById("windowParentP").innerHTML = "Show parent window: " + window.parent.location;
   document.getElementsByClassName("replace")[0].innerHTML = "Show parent window: " + window.parent.location;
 }
+
+function showWindowScreenLeft() {
+  let windowScreenLeftPos = window.open("", "myWin", "width=200, height=300");
+  document.getElementById("windowScreenLeftP").innerHTML = "Move the window and press the button.";
+  document.getElementById("windowScreenLeftP2").innerHTML = "The position of the window to the left: " + windowScreenLeftPos.screenLeft;
+  document.getElementsByClassName("replace")[0].innerHTML = "The position of the window to the left: " + windowScreenLeftPos.screenLeft;
+}
+
+function showWindowScreenTop() {
+  let windowScreenTopPos = window.open("", "myWin", "width=200, height=300");
+  document.getElementById("windowScreenTopP").innerHTML = "Move the window and press the button.";
+  document.getElementById("windowScreenTopP2").innerHTML = "The position of the window to the top: " + windowScreenTopPos.screenTop;
+  document.getElementsByClassName("replace")[0].innerHTML = "The position of the window to the top: " + windowScreenTopPos.screenTop;
+}
+
+function showWindowScreenX() {
+  let windowScreenXPos = window.open("", "myWin", "width=200, height=300");
+  document.getElementById("windowScreenXP").innerHTML = "Move the window and press the button.";
+  document.getElementById("windowScreenXP2").innerHTML = "The position of the window to the left: " + windowScreenXPos.screenX;
+  document.getElementsByClassName("replace")[0].innerHTML = "The position of the window to the left: " + windowScreenXPos.screenX;
+}
+
+function showWindowScreenY() {
+  let windowScreenYPos = window.open("", "myWin", "width=200, height=300");
+  document.getElementById("windowScreenYP").innerHTML = "Move the window and press the button.";
+  document.getElementById("windowScreenYP2").innerHTML = "The position of the window to the top: " + windowScreenYPos.screenY;
+  document.getElementsByClassName("replace")[0].innerHTML = "The position of the window to the top: " + windowScreenYPos.screenY;
+}
+
+function compareWindows(id) {
+  if (window.top != window.self)  {
+    document.getElementById(id).innerHTML = "This window is not the topmost window! Am I in a frame?";
+    document.getElementsByClassName("replace")[0].innerHTML = "This window is not the topmost window! Am I in a frame?";
+  } else {
+    document.getElementById(id).innerHTML = "This window is the topmost window!";
+    document.getElementsByClassName("replace")[0].innerHTML = "This window is the topmost window!";
+  }
+}
+
+function performAnAlert(data) {
+  alert(data);
+}
+
+function performAToB() {
+  let str = "SGVsbG8gV29ybGQh";
+  let dec = window.atob(str);
+  document.getElementById("windowAToBP").innerHTML = "Decoded string: " + dec;
+  document.getElementsByClassName("replace")[0].innerHTML = "Decoded string: " + dec;
+}
+
+function performBToA() {
+  let str = "Hello world!";
+  let enc = window.btoa(str);
+  document.getElementById("windowBToAP").innerHTML = "Encoded string: " + enc;
+  document.getElementsByClassName("replace")[0].innerHTML = "Encoded string: " + enc;
+}
+
+function setWindowBlur() {
+  let myWindow = window.open("", "", "width=200, height=100");
+  myWindow.document.write("<p>A new window!</p>");
+  myWindow.blur();
+}
+
+function setWindowFocus() {
+  let myWindow = window.open("", "", "width=200, height=100");
+  myWindow.document.write("<p>A new window!</p>");
+  myWindow.focus();
+}
+
+function performConfirm(msg) {
+  let a = confirm(msg);
+  document.getElementsByClassName("replace")[1].innerHTML = "'" + msg + "'";
+
+  if (a == true) {
+    document.getElementById("windowConfirmP").innerHTML = "Good!";
+    document.getElementsByClassName("replace")[0].innerHTML = "Good!";
+  } else {
+    document.getElementById("windowConfirmP").innerHTML = "Very bad!";
+    document.getElementsByClassName("replace")[0].innerHTML = "Very bad!";
+  }
+}
+
+function moveWindowBy() {
+  myWindow.moveBy(300, 300);
+  myWindow.focus();
+}
+
+function moveWindowTo() {
+  myWindow.moveTo(300, 300);
+  myWindow.focus();
+}
+
+function openWindowWithControl() {
+  window.open("https://www.w3schools.com", "_blank", "toolbar=yes,scrollbars=yes,resizable=no,top=500,left=500,width=400,height=400");
+}
+
+function printWindow() {
+  window.print();
+}
+
+function performPrompt() {
+  let fruit = prompt("Please enter your favorite fruit:", "Banana");
+  if (fruit != null) {
+    document.getElementById("windowPromptP").innerHTML = fruit + " is a good choise!";
+    document.getElementsByClassName("replace")[0].innerHTML = fruit + " is a good choise!";
+  }
+}
+
+function resizeWindowBy() {
+  myWindow.resizeBy(300, 300);
+  myWindow.focus();
+}
+
+function resizeWindowTo() {
+  myWindow.resizeTo(300, 300);
+  myWindow.focus();
+}
+
+let anotherWindow;
+
+function openAnotherWindow() {
+  anotherWindow = window.open("", "", "top=400, left=400, width=200, height=200");
+}
+
+function scrollAnotherWindowTo() {
+  anotherWindow.scrollTo(100, 0);
+}
+
+function scrollAnotherWindowBy() {
+  window.scrollBy(300, 0);
+}
+
+let myInterval = setInterval(windowSetIntervalColor, 1000);
+
+function windowSetIntervalColor() {
+  let x = document.getElementById('windowSetIntervalDiv');
+  x.style.backgroundColor = x.style.backgroundColor == "green" ? "chartreuse" : "green";
+}
+
+let myTimeout = setTimeout(windowSetTimeoutColor, 7000);
+
+function windowClearIntervalColor() {
+  clearInterval(myInterval);
+}
+
+function windowSetTimeoutColor() {
+  let x = document.getElementById('windowSetTimeoutDiv');
+  x.style.backgroundColor = "green";
+}
