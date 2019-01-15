@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document body</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">body</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The body property sets or returns the document's body.
+    </div>
+    <div class="note-value">
+      On return, this property returns the &lt;body&gt; element of the current document.
+    </div>
+    <div class="note-value">
+      On set, this property overwrites all child elements inside the existing &lt;body&gt; element, and replaces it with the new, specified content.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The difference between this property and the document.documentElement property,
+      is that the document.body element returns the &lt;body&gt; element, while the document.documentElement returns the &lt;html&gt; element.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Propertie Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Propertie</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>newContent</td>
+          <td>Specifies the new content for &lt;body&gt;.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentBodyExamplesBar" class="left-padding">
+    <a href="#documentBodyExamplesBar">
+      <button onclick="changeBodyStyle()" class="dom-buttons-prop">Change body style</button>
+    </a>
+    <a href="#documentBodyExamplesBar">
+      <button onclick="showBodyStyle()" class="dom-buttons-prop">Show body style</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <p id="documentBodyP"></p>
+  </div>
+
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div id="docBody1" class="black float-borders-none">
+      function <span class="blue">exampleFunction</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.body.style.backgroundColor</span> = <span class="olive">"rgb(220, 238, 105)"</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+
+    <div id="docBody2" class="black float-borders-none" style="display: none;">
+      function <span class="blue">exampleFunction</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
+          = <span class="maroon">document.body.style</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

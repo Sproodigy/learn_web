@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document applets</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">applets</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The applets collection returns a collection of all &lt;applet&gt; elements in the document.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The &lt;applet&gt; element is not supported in HTML5.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Properties</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Propertie</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>length</td>
+          <td>
+            Returns the number of &lt;applet&gt; elements in the collection.<br>
+            This property is read-only.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Methods</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Method</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[index]</td>
+          <td>
+            Returns the &lt;applet&gt; element from the collection with the specified index (starts at 0).<br>
+            Returns null if the index number is out of range.
+          </td>
+        </tr>
+        <tr>
+          <td>item(index)</td>
+          <td>
+            Returns the &lt;applet&gt; element from the collection with the specified index (starts at 0).<br>
+            Returns null if the index number is out of range.
+          </td>
+        </tr>
+        <tr>
+          <td>namedItem(id)</td>
+          <td>
+            Returns the &lt;applet&gt; element from the collection with the specified id.<br>
+            Returns null if the id does not exist.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentAppletsExamplesBar" class="left-padding">
+    <a href="#documentAppletsExamplesBar">
+      <button onclick="getApplets()" class="dom-buttons-prop">Show applets length</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <p id="documentAppletsP"></p>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+        &lt;<span class="brown">div</span>&gt;<br>
+        <p class="left-padding" style="margin: 0;">
+          &lt;<span class="brown">p</span>
+          <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+          <span class="black replace"></span>
+          &lt;<span class="brown">/p</span>&gt;<br>
+        </p>
+      &lt;<span class="brown">/div</span>&gt;<br>
+    </div>
+
+    <div class="black float-borders-none">
+      function <span class="blue">exampleFunction</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>x = <span class="maroon">document.applet.length</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
+          = x;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

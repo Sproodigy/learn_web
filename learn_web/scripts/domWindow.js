@@ -242,3 +242,27 @@ function windowSetTimeoutColor() {
   let x = document.getElementById('windowSetTimeoutDiv');
   x.style.backgroundColor = "green";
 }
+
+function windowClearTimeoutColor() {
+  clearInterval(myTimeout);
+}
+
+function windowGetComputedStyle(propValue){
+  let elem = document.getElementById("windowGetComputedStyleP");
+  let theCSSprop = window.getComputedStyle(elem, null).getPropertyValue(propValue);
+  document.getElementById("windowGetComputedStyleP").innerHTML = theCSSprop;
+  document.getElementsByClassName("replace")[0].innerHTML = theCSSprop;
+  document.getElementsByClassName("replace")[1].innerHTML = "\"" + propValue + "\"";
+}
+
+function myFunction(maxWidth) {
+  if (maxWidth.matches) { // If media query matches
+    document.body.style.backgroundColor = "yellow";
+  } else {
+    document.body.style.backgroundColor = "pink";
+  }
+}
+
+let maxWidth = window.matchMedia("(max-width: 1000px)");
+myFunction(maxWidth); // Call listener function at run time
+maxWidth.addListener(myFunction); // Attach listener function on state changes

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Window alert</title>
+<title>Window clear timeout</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,16 +21,16 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">alert()</h1></div>
+  <div><h1 class="domTitle">clearTimeout()</h1></div>
   <p><a href="../pagesDOM/domWindow.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The alert() method displays an alert box with a specified message and an OK button.
+      The clearTimeout() method clears a timer set with the setTimeout() method.
     </div>
     <div class="note-value">
-      An alert box is often used if you want to make sure information comes through to the user.
+      The ID value returned by setTimeout() is used as the parameter for the clearTimeout() method.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -38,8 +38,7 @@
   <div class="note noteDOM">
     Notes:<br />
     <div class="note-value">
-      The alert box takes the focus away from the current window, and forces the browser to read the message.
-      Do not overuse this method, as it prevents the user from accessing other parts of the page until the box is closed.
+      To be able to use the clearTimeout() method, you must use a variable when creating the timeout method.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -49,14 +48,13 @@
     <table class="tableDOMAttr tableDOM">
       <thead>
         <tr>
-          <th>Parameter</th><th>Type</th><th>Description</th>
+          <th>Parameter</th><th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>message</td>
-          <td>String</td>
-          <td>Optional. Specifies the text to display in the alert box, or an object converted into a string and displayed.</td>
+          <td>id_of_settimeout</td>
+          <td>Required. The ID value of the timer returned by the setTimeout() method.</td>
         </tr>
       </tbody>
     </table>
@@ -64,23 +62,39 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="windowLengthExamplesBar" class="left-padding">
-    <a href="#windowLengthExamplesBar">
-      <button onclick="performAnAlert('Hello\nHere I\'m!')" class="dom-buttons-prop">Perform</button>
+  <div id="windowTimeoutExamplesBar" class="left-padding">
+    <a href="#windowTimeoutExamplesBar">
+      <button onclick="windowClearTimeoutColor()" class="dom-buttons-prop">Clear timeout</button>
     </a>
   </div>
 
-  <div class="exampleDOMDiv">
-    <div>
-      <p id="windowLengthP"></p>
+  <div id="windowSetTimeoutDiv" class="exampleDOMDiv ">
+    <div style="text-align: center;">
+      <p>You have seven second.</p>
     </div>
   </div>
 
   <div class="codeDOM">
-    <div class="black borders-none">
-      function <span class="blue">performAnAlert</span>() {<br>
-        <span class="blue left-padding">alert</span>(<span class="olive">"Hello!<span class="darkblue">\n</span>Here I'm!"</span>)<br>
-      <span class="black">}</span>
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>
+      <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">let </span>myVar = <span class="blue">setTimeout</span>(exampleFunc, <span class="orange">7000</span>);<br><br>
+
+      <span class="purple">function </span><span class="blue">exampleFunc</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span>;<br>
+          <span class="maroon">x.style.backgroundColor</span> = <span class="olive">"green"</span>;<br>
+        </p>
+      }<br><br>
+
+      <span class="purple">function </span><span class="blue">exampleFunc2</span>() {<br>
+        <span class="blue left-padding">clearTimeout</span>(myVar);<br>
+      }
     </div>
   </div>
   <p style="clear: left;"></p>

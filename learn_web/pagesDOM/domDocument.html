@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+  <title>Document</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/dom.png" type="image/png" />
+  <link rel="stylesheet" href="../styles/button.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/common.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/dom_style.css" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+  <script src="../scripts/domDocument.js"></script>
+
+<body>
+
+  <div class="just-cont-flex-center" style="width: 70%; margin-left: auto; margin-right: auto;">
+    <a href="../pages/main_window_dom.html">
+      <button class="dom-buttons link-buttons" type="button" style="padding: 10px 20px; margin: 0;">DOM</button>
+    </a>
+    <a href="../pages/main_window_html.html">
+      <button class="home html-buttons link-buttons" type="button" style="margin: 0;">HTML</button>
+    </a>
+    <a href="../pages/main_window_css.html">
+      <button class="css-buttons link-buttons" type="button" style="padding: 10px 24px; margin: 0;">CSS</button>
+    </a>
+    <a href="../pages/main_window_js.html">
+      <button class="js-buttons link-buttons" type="button" style="padding: 10px 31px; margin: 0;">JS</button>
+    </a>
+  </div>
+
+  <div class="note descriptionDOM" style="margin-left: 5%;">
+    Description:<br />
+    <div class="note-value">
+      When an HTML document is loaded into a web browser, it becomes a document object.
+    </div>
+    <div class="note-value">
+      The document object is the root node of the HTML document.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" style="margin-left: 2.5%; margin-bottom: -2em;"/></div>
+
+  <div class="dom-buttons-prop-node just-cont-flex-center" style="width: 90%;">
+    <p><a href="../framesDOM/documentActiveElementProp.html"><button class="dom-buttons-prop">activeElement</button></a></p>
+    <p><a href="../framesDOM/documentAnchorsProp.html"><button class="dom-buttons-prop">anchors</button></a></p>
+    <p><a href="../framesDOM/documentAppletsProp.html"><button class="dom-buttons-prop">applets</button></a></p>
+    <p><a href="../framesDOM/documentBaseURI.html"><button class="dom-buttons-prop">baseURI</button></a></p>
+    <p><a href="../framesDOM/documentBodyProp.html"><button class="dom-buttons-prop">body</button></a></p>
+    <p><a href="../framesDOM/documentCookieProp.html"><button class="dom-buttons-prop">cookie</button></a></p>
+    <p><a href="../framesDOM/documentCharsetProp.html"><button class="dom-buttons-prop" disabled style="background: red;">charset</button></a></p>
+    <p><a href="../framesDOM/documentDefaultViewProp.html"><button class="dom-buttons-prop">defaultView</button></a></p>
+    <p><a href="../framesDOM/documentDesignModeProp.html"><button class="dom-buttons-prop">designMode</button></a></p>
+    <p><a href="../framesDOM/documentDoctypeProp.html"><button class="dom-buttons-prop">doctype</button></a></p>
+    <p><a href="../framesDOM/documentDocumentElementProp.html"><button class="dom-buttons-prop">documentElement</button></a></p>
+    <p><a href="../framesDOM/documentDocumentModeProp.html"><button class="dom-buttons-prop">documentMode</button></a></p>
+    <p><a href="../framesDOM/documentDocumentURIProp.html"><button class="dom-buttons-prop">documentURI</button></a></p>
+    <p><a href="../framesDOM/documentDomainProp.html"><button class="dom-buttons-prop">domain</button></a></p>
+    <p><a href="../framesDOM/documentDomConfigProp.html"><button class="dom-buttons-prop" disabled style="background: red;">domConfig</button></a></p>
+    <p><a href="../framesDOM/documentEmbeds.html"><button class="dom-buttons-prop">embeds</button></a></p>
+    <p><a href="../framesDOM/documentFormsProp.html"><button class="dom-buttons-prop">forms</button></a></p>
+    <p><a href="../framesDOM/documentFullscreenElementProp.html"><button class="dom-buttons-prop">fullscreenElement</button></a></p>
+    <p><a href="../framesDOM/documentHeadProp.html"><button class="dom-buttons-prop">head</button></a></p>
+    <p><a href="../framesDOM/documentImagesProp.html"><button class="dom-buttons-prop">images</button></a></p>
+    <p><a href="../framesDOM/documentPageYOffsetProp.html"><button class="dom-buttons-prop">pageYOffset</button></a></p>
+    <p><a href="../framesDOM/documentImplementationProp.html"><button class="dom-buttons-prop">implementation</button></a></p>
+    <p><a href="../framesDOM/documentInputEncodingProp.html"><button class="dom-buttons-prop">inputEncoding</button></a></p>
+    <p><a href="../framesDOM/documentLastModifiedProp.html"><button class="dom-buttons-prop">lastModified</button></a></p>
+    <p><a href="../framesDOM/documentLinksProp.html"><button class="dom-buttons-prop">links</button></a></p>
+    <p><a href="../framesDOM/documentReadyStateProp.html"><button class="dom-buttons-prop">readyState</button></a></p>
+    <p><a href="../framesDOM/documentReferrerProp.html"><button class="dom-buttons-prop">referrer</button></a></p>
+    <p><a href="../framesDOM/documentScriptsProp.html"><button class="dom-buttons-prop">scripts</button></a></p>
+    <p><a href="../framesDOM/documentTitleProp.html"><button class="dom-buttons-prop">title</button></a></p>
+    <p><a href="../framesDOM/documentURLProp.html"><button class="dom-buttons-prop">URL</button></a></p>
+
+    <p><a href="../framesDOM/documentAddEventListenerMethod.html"><button class="dom-buttons-prop">addEventListener()</button></a></p>
+    <p><a href="../framesDOM/documentAdoptNodeMethod.html"><button class="dom-buttons-prop">adoptNode()</button></a></p>
+    <p><a href="../framesDOM/documentCloseMethod.html"><button class="dom-buttons-prop">close()</button></a></p>
+    <p><a href="../framesDOM/documentCreateAttributeMethod.html"><button class="dom-buttons-prop">createAttribute()</button></a></p>
+    <p><a href="../framesDOM/documentCreateCommentMethod.html"><button class="dom-buttons-prop">createComment()</button></a></p>
+    <p><a href="../framesDOM/documentCreateDocumentFragmentMethod.html"><button class="dom-buttons-prop">createDocumentFragment()</button></a></p>
+    <p><a href="../framesDOM/documentCreateElementMethod.html"><button class="dom-buttons-prop">createElement()</button></a></p>
+    <p><a href="../framesDOM/documentCreateEventMethod.html"><button class="dom-buttons-prop">createEvent()</button></a></p>
+    <p><a href="../framesDOM/documentCreateTextNodeMethod.html"><button class="dom-buttons-prop">createTextNode()</button></a></p>
+    <p><a href="../framesDOM/documentExecCommandMethod.html"><button class="dom-buttons-prop">execCommand()</button></a></p>
+    <p><a href="../framesDOM/documentFullscreenEnabledMethod.html"><button class="dom-buttons-prop">fullscreenEnabled()</button></a></p>
+    <p><a href="../framesDOM/documentGetElementByIdMethod.html"><button class="dom-buttons-prop">getElementById()</button></a></p>
+    <p><a href="../framesDOM/documentGetElementsByClassNameMethod.html"><button class="dom-buttons-prop">getElementsByClassName()</button></a></p>
+    <p><a href="../framesDOM/documentGetElementsByNameMethod.html"><button class="dom-buttons-prop">getElementsByName()</button></a></p>
+    <p><a href="../framesDOM/documentGetElementsByTagNameMethod.html"><button class="dom-buttons-prop">getElementsByTagName()</button></a></p>
+    <p><a href="../framesDOM/documentHasFocusMethod.html"><button class="dom-buttons-prop">hasFocus()</button></a></p>
+    <p><a href="../framesDOM/documentImportNodeMethod.html"><button class="dom-buttons-prop">importNode()</button></a></p>
+    <p><a href="../framesDOM/documentNormalizeMethod.html"><button class="dom-buttons-prop">normalize()</button></a></p>
+    <p><a href="../framesDOM/documentNormalizeDocumentMethod.html"><button class="dom-buttons-prop">normalizeDocument()</button></a></p>
+    <p><a href="../framesDOM/documentOpenMethod.html"><button class="dom-buttons-prop">open()</button></a></p>
+    <p><a href="../framesDOM/documentQuerySelectorMethod.html"><button class="dom-buttons-prop">querySelector()</button></a></p>
+    <p><a href="../framesDOM/documentQuerySelectorAllMethod.html"><button class="dom-buttons-prop">querySelectorAll()</button></a></p>
+    <p><a href="../framesDOM/documentRemoveEventListenerMethod.html"><button class="dom-buttons-prop">removeEventListener()</button></a></p>
+    <p><a href="../framesDOM/documentRenameNodeMethod.html"><button class="dom-buttons-prop">renameNode()</button></a></p>
+    <p><a href="../framesDOM/documentWriteMethod.html"><button class="dom-buttons-prop">write()</button></a></p>
+    <p><a href="../framesDOM/documentWritelnMethod.html"><button class="dom-buttons-prop">writeln()</button></a></p>
+  </div>
+
+  <div>To fix "cookie".</div>
+  <div>To fix "scrollBy" and "scrollTo".</div>
+
+</body>
+</html>

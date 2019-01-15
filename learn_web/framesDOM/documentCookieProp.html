@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document cookie</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">cookie</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The cookie property sets or returns all name/value pairs of cookies in the current document.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The value of a cookie cannot contain commas, semicolons or whitespaces. However
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Property Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>newCookie</td>
+          <td>
+            A String that specifies a semicolon-separated list of name=value pairs,
+            or one name=value pair together with any of the following, optional, values:
+            <ul>
+              <li>
+                expires=date - Optional. Specifies the date in GMT format (See the Date.toUTCString method).
+                If not specified, the cookie is deleted when the browser is closed.
+              </li>
+              <li>
+                path=path - Optional. Tells the browser what path to the directory the cookie belongs to,
+                (e.g., '/', '/dir'). Note: The path must be absolute. If not specified, the cookie belongs to the current page.
+              </li>
+              <li>
+                domain=domainname - Optional. Specifies the domain of your site
+                (e.g., 'example.com', '.example.com' (includes all subdomains), 'subdomain.example.com').
+                If not specified, the domain of the current document will be used.
+              </li>
+              <li>secure - Optional. Tells the browser to use a secure protocol (https) for sending the cookie to the server.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentCookieExamplesBar" class="left-padding">
+    <a href="#documentCookieExamplesBar">
+      <button onclick="createCookie()" class="dom-buttons-prop">Create cookie</button>
+    </a>
+    <a href="#documentCookieExamplesBar">
+      <button onclick="showCookie()" class="dom-buttons-prop">Show cookie</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <p id="documentCookieP"></p>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div id="docCookie1" class="black float-borders-none">
+      function <span class="blue">exampleFunction</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.cookie</span> = <span class="olive">"username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/"</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+
+    <div id="docCookie2" class="black float-borders-none" style="display: none;">
+      function <span class="blue">exampleFunction</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
+          = <span class="maroon">document.cookie</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
