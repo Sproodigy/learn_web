@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Document body</title>
+<title>Document URI</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,19 +21,16 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">body</h1></div>
+  <div><h1 class="domTitle">documentURI</h1></div>
   <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The body property sets or returns the document's body.
+      The documentURI property sets or returns the location of a document.
     </div>
     <div class="note-value">
-      On return, this property returns the &lt;body&gt; element of the current document.
-    </div>
-    <div class="note-value">
-      On set, this property overwrites all child elements inside the existing &lt;body&gt; element, and replaces it with the new, specified content.
+      If the document was created by the DocumentImplementation object, or if it is undefined, the return value is null.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -41,42 +38,23 @@
   <div class="note noteDOM">
     Notes:<br />
     <div class="note-value">
-      The difference between this property and the document.documentElement property,
-      is that the document.body element returns the &lt;body&gt; element, while the document.documentElement returns the &lt;html&gt; element.
+      Unlike the document.URL property, the documentURI property can be used on any document types, whereas URL can only be used on HTML documents.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
-  <div><h2 class="tag domTitle">Propertie Values</h2></div>
-  <div>
-    <table class="tableDOMAttr tableDOM">
-      <thead>
-        <tr>
-          <th>Propertie</th><th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>newContent</td>
-          <td>Specifies the new content for &lt;body&gt;.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div><hr class="dom-hr-length-90perc" /></div>
-
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="documentBodyExamplesBar" class="left-padding">
-    <a href="#documentBodyExamplesBar">
-      <button onclick="changeBodyStyle()" class="dom-buttons-prop">Change body style</button>
+  <div id="documentDocURIExamplesBar" class="left-padding">
+    <a href="#documentDocURIExamplesBar">
+      <button onclick="getDocURI()" class="dom-buttons-prop">Get document URI</button>
     </a>
-    <a href="#documentBodyExamplesBar">
-      <button onclick="showBodyStyle()" class="dom-buttons-prop">Show body style</button>
+    <a href="#documentDocURIExamplesBar">
+      <button onclick="setDocURI('https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_document_documenturi')" class="dom-buttons-prop">Set document URI</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv">
-    <p id="documentBodyP"></p>
+    <p id="docDocURIP"></p>
   </div>
 
   <div class="codeDOM">
@@ -91,19 +69,20 @@
       &lt;<span class="brown">/div</span>&gt;
     </div>
 
-    <div id="docBody1" class="black float-borders-none">
+    <div id="docDocURI1" class="black float-borders-none">
       function <span class="blue">exampleFunction</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="maroon">document.body.style.backgroundColor</span> = <span class="olive">"rgb(220, 238, 105)"</span>;<br>
+          <span class="maroon">document.documentURI</span> = <span class="olive replace"></span>;<br>
         </p>
       <span class="black">}</span>
     </div>
 
-    <div id="docBody2" class="black float-borders-none" style="display: none;">
+    <div id="docDocURI2" class="black float-borders-none" style="display: none;">
       function <span class="blue">exampleFunction</span>() {<br>
         <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>x = <span class="maroon">document.documentURI</span>;<br>
           <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
-          = <span class="maroon">document.body.style</span>;<br>
+          = x;<br>
         </p>
       <span class="black">}</span>
     </div>

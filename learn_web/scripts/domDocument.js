@@ -89,3 +89,44 @@ function getDoctypeName() {
   document.getElementsByClassName("replace")[0].innerHTML = x;
   document.getElementsByClassName("replace")[1].innerHTML = 'document.doctype.name';
 }
+
+function getDocElem() {
+  var x = document.documentElement.nodeName;
+  document.getElementById("documentDocElemP").innerHTML = x;
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function getDocMode() {
+  var x = document.documentMode;
+  document.getElementById("documentDocModeP").innerHTML = x;
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function getDocURI() {
+  document.getElementById("docDocURI1").style.display = "none";
+  document.getElementById("docDocURI2").style.display = "block";
+  document.getElementById("docDocURIP").innerHTML = document.documentURI;
+  document.getElementsByClassName("replace")[0].innerHTML = document.documentURI;
+  document.getElementsByClassName("replace")[1].innerHTML = document.documentURI;
+}
+
+function setDocURI(state) {
+  document.getElementById("docDocURI1").style.display = "block";
+  document.getElementById("docDocURI2").style.display = "none";
+  document.documentURI = state;
+  document.getElementById("docDocURIP").innerHTML = '';
+  document.getElementsByClassName("replace")[0].innerHTML = '';
+  document.getElementsByClassName("replace")[1].innerHTML = '"' + state + '"';
+}
+
+function getDomain() {
+  var x = document.domain;
+  document.getElementById("doсDomainP").innerHTML = "Domain: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Domain: " + x;
+}
+
+function getEmbeds() {
+  var x = document.embeds.length;
+  document.getElementById("doсumentEmbedsP").innerHTML = x;
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
