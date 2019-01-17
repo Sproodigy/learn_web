@@ -127,6 +127,52 @@ function getDomain() {
 
 function getEmbeds() {
   var x = document.embeds.length;
-  document.getElementById("doсumentEmbedsP").innerHTML = x;
-  document.getElementsByClassName("replace")[0].innerHTML = x;
+  document.getElementById("doсumentEmbedsP").innerHTML = "Embeds: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Embeds: " + x;
+}
+
+function getForms() {
+  var x = document.forms.length;
+  document.getElementById("doсumentFormsP").innerHTML = "Forms: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Forms: " + x;
+}
+
+function getFullscreenElem() {
+  var x = document.fullscreenElement;
+  document.getElementById("doсumentFullscreenElemP").innerHTML = "Fullscreen element: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Fullscreen element: " + x;
+}
+
+function getHead() {
+  var x = document.head;
+  document.getElementById("doсumentHeadP").innerHTML = "Head: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Head: " + x;
+  document.getElementsByClassName("replace")[1].innerHTML = "getHead";
+  document.getElementsByClassName("replace")[2].innerHTML = "document.head";
+}
+
+function getHeadId() {
+  var x = document.head.id;
+  document.getElementById("doсumentHeadP").innerHTML = "Head id: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Head id: " + x;
+  document.getElementsByClassName("replace")[1].innerHTML = "getHeadId";
+  document.getElementsByClassName("replace")[2].innerHTML = "document.head.id";
+}
+
+function getImagesLength() {
+  var x = document.images.length;
+  document.getElementById("doсumentImagesP").innerHTML = "Images: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Images: " + x;
+  document.getElementById("docImages1").style.display = "block";
+  document.getElementById("docImages2").style.display = "none";
+}
+
+function getImageSrc() {
+  let num = prompt("Input image number:");
+
+  var src = document.images[num].src;
+  document.getElementById("doсumentImagesP").innerHTML = "Source: " + src;
+  document.getElementsByClassName("replace")[0].innerHTML = "Source: " + src;
+  document.getElementById("docImages1").style.display = "none";
+  document.getElementById("docImages2").style.display = "block";
 }
