@@ -176,3 +176,37 @@ function getImageSrc() {
   document.getElementById("docImages1").style.display = "none";
   document.getElementById("docImages2").style.display = "block";
 }
+
+function getImplementationObject() {
+  var x = document.implementation;
+  document.getElementById("doсumentImplementationP").innerHTML = "Implementation object: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Implementation object: " + x;
+  document.getElementById("docImplementation1").style.display = "block";
+  document.getElementById("docImplementation2").style.display = "none";
+}
+
+function getImplementationFeature() {
+  var src = document.implementation.hasFeature("HTML", "1.0");
+  document.getElementById("doсumentImplementationP").innerHTML = "Implementation feature: " + src;
+  document.getElementsByClassName("replace")[0].innerHTML = "Implementation feature: " + src;
+  document.getElementById("docImplementation1").style.display = "none";
+  document.getElementById("docImplementation2").style.display = "block";
+}
+
+function getInputEncoding() {
+  var x = document.inputEncoding;
+  document.getElementById("doсumentInputEncodingP").innerHTML = "Encoding: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Encoding: " + x;
+}
+
+function getLastModified() {
+  var x = document.lastModified;
+  document.getElementById("doсumentLastModifiedP").innerHTML = "Last modified: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Last modified: " + x;
+}
+
+function getLinksLength() {
+  var x = document.links.length;
+  document.getElementById("documentLinksP").innerHTML = "Links length: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Links length: " + x;
+}

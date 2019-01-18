@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Document images</title>
+<title>Document links</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,19 +21,25 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">images</h1></div>
+  <div><h1 class="domTitle">links</h1></div>
   <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The images collection returns a collection of all &lt;img&gt; elements in the document.
+      The links collection returns a collection of all links in the document.
+    </div>
+    <div class="note-value">
+      The links in the collection represents &lt;a&gt; elements and/or &lt;area&gt; elements with a href attribute.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div class="note noteDOM">
     Notes:<br />
+    <div class="note-value">
+      If the element is missing the href attribute, nothing is returned.
+    </div>
     <div class="note-value">
       The elements in the collection are sorted as they appear in the source code.
     </div>
@@ -52,7 +58,7 @@
         <tr>
           <td>length</td>
           <td>
-            Returns the number of &lt;img&gt; elements in the collection.<br>
+            Returns the number of &lt;a&gt; and/or &lt;area&gt; elements in the collection.<br>
             This property is read-only.
           </td>
         </tr>
@@ -73,21 +79,21 @@
         <tr>
           <td>[index]</td>
           <td>
-            Returns the &lt;img&gt; element from the collection with the specified index (starts at 0).<br>
+            Returns the &lt;a&gt; and/or &lt;area&gt; element from the collection with the specified index (starts at 0).<br>
             Returns null if the index number is out of range.
           </td>
         </tr>
         <tr>
           <td>item(index)</td>
           <td>
-            Returns the &lt;img&gt; element from the collection with the specified index (starts at 0).<br>
+            Returns the &lt;a&gt; and/or &lt;area&gt; element from the collection with the specified index (starts at 0).<br>
             Returns null if the index number is out of range.
           </td>
         </tr>
         <tr>
           <td>namedItem(id)</td>
           <td>
-            Returns the &lt;img&gt; element from the collection with the specified id.<br>
+            Returns the &lt;a&gt; and/or &lt;area&gt; element from the collection with the specified id.<br>
             Returns null if the id does not exist.
           </td>
         </tr>
@@ -97,53 +103,34 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="documentImagesExamplesBar" class="left-padding">
-    <a href="#documentImagesExamplesBar">
-      <button onclick="getImagesLength()" class="dom-buttons-prop">Get images length</button>
-    </a>
-    <a href="#documentImagesExamplesBar">
-      <button onclick="getImageSrc()" class="dom-buttons-prop">Get image source</button>
+  <div id="documentLinksExamplesBar" class="left-padding">
+    <a href="#documentLinksExamplesBar">
+      <button onclick="getLinksLength()" class="dom-buttons-prop">Get links length</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv">
-    <div style="text-align: center;">
-      <img src="../images/vasserman_big.jpg" alt="" width="250" height="200">
-      <img src="../images/vasserman_thinking.gif" alt="" width="200" height="200">
-      <img src="../images/scolopendra.jpg" alt="" width="200" height="200">
-      <p id="doсumentImagesP"></p>
-    </div>
+    <p id="documentLinksP"></p>
   </div>
 
   <div class="codeDOM">
     <div class="blue float-borders-none">
-      &lt;<span class="brown">div</span>&gt;<br>
-      <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">p</span>
-        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
-        <span class="black replace"></span>
-        &lt;<span class="brown">/p</span>&gt;<br>
-      </p>
-      &lt;<span class="brown">/div</span>&gt;
+        &lt;<span class="brown">div</span>&gt;<br>
+        <p class="left-padding" style="margin: 0;">
+          &lt;<span class="brown">p</span>
+          <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+          <span class="black replace"></span>
+          &lt;<span class="brown">/p</span>&gt;<br>
+        </p>
+      &lt;<span class="brown">/div</span>&gt;<br>
     </div>
 
-    <div id="docImages1" class="black float-borders-none" style="display: none;">
-      <span class="purple">function</span><span class="blue">getImagesLength</span>() {<br>
+    <div class="black float-borders-none">
+      function <span class="blue">getLinksLength</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>x = <span class="maroon">document.images.length</span>;<br>
+          <span class="purple">let </span>x = <span class="maroon">document.links.length</span>;<br>
           <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
           = x;<br>
-        </p>
-      <span class="black">}</span>
-    </div>
-
-    <div id="docImages2" class="black float-borders-none" style="display: none;">
-      <span class="purple">function</span><span class="blue">getImageSrc</span>() {<br>
-        <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>num = <span class="blue">prompt</span>(<span class="olive">"Input image number:"</span>);<br><br>
-          <span class="purple">let </span>src = <span class="maroon">document.images<span class="black">[num]</span>.src</span>;<br>
-          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
-          = src;<br>
         </p>
       <span class="black">}</span>
     </div>
