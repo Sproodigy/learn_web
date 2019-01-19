@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document addEventListener</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">addEventListener()</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The document.addEventListener() method attaches an event handler to the document.
+    </div>
+    <div class="note-value">
+      The nodes are sorted as they appear in the source code, and the index starts at 0.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Use the document.removeEventListener() method to remove an event handler
+      that has been attached with the addEventListener() method.
+    </div>
+    <div class="note-value">
+      Use the element.addEventListener() method to attach an event handler to a specified element.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>event</td>
+          <td>
+            Required. A String that specifies the name of the event.<br>
+            Note: Do not use the "on" prefix. For example, use "click" instead of "onclick".
+          </td>
+        </tr>
+        <tr>
+          <td>function</td>
+          <td>
+            Required. Specifies the function to run when the event occurs.<br>
+            When the event occurs, an event object is passed to the function as the first parameter.
+            The type of the event object depends on the specified event.
+            For example, the "click" event belongs to the MouseEvent object.
+          </td>
+        </tr>
+        <tr>
+          <td>useCapture</td>
+          <td>
+            Optional. A Boolean value that specifies whether the event should be executed in the capturing or in the bubbling phase.<br>
+            Possible values:
+            <ul>
+              <li>true - The event handler is executed in the capturing phase.</li>
+              <li>false- Default. The event handler is executed in the bubbling phase.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="nodemapItemExamplesBar" class="left-padding">
+    <a href="#nodemapItemExamplesBar">
+      <button onclick="performActions()" class="dom-buttons-prop">Perform actions</button>
+    </a>
+    <a href="#nodemapItemExamplesBar">
+      <button onclick="removeHandler()" class="dom-buttons-prop">Remove handler</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv ">
+    <div style="text-align: center;">
+      <p id="documentAddEventListenerP"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="darkblue">id</span><span class="black">=</span>"<span class="olive">example</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function</span> <span class="blue">performActions</span><span class="black">() {</span><br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">if</span>(<span class="maroon">document.addEventListener</span>) {<br>
+            <span class="maroon left-padding">document.</span><span class="blue">addEventListener</span>(<span class="olive">"click"</span>, performAlert);<br>
+            <span class="maroon left-padding">document.</span><span class="blue">addEventListener</span>(<span class="olive">"click"</span>, changeColor);<br>
+            <span class="maroon left-padding">document.</span><span class="blue">addEventListener</span>(<span class="olive">"mouseover"</span>, mouseOver);<br>
+            <span class="maroon left-padding">document.</span><span class="blue">addEventListener</span>(<span class="olive">"click"</span>, <span class="purple">function</span>() {<br>
+              <span class="maroon more-padding">document.body.style.backgroundColor</span> = <span class="olive">"rgba(20, 255, 0, 0.55)"</span>;<br>
+            <span class="left-padding">});</span><br>
+          <span class="black">} <span class="purple">else</span> {</span><br>
+            <span class="maroon left-padding">document.</span><span class="blue">attachEvent</span>(<span class="olive">"onclick"</span>, performAlert);<br>
+            <span class="maroon left-padding">document.</span><span class="blue">attachEvent</span>(<span class="olive">"onclick"</span>, changeColor);<br>
+            <span class="maroon left-padding">document.</span><span class="blue">attachEvent</span>(<span class="olive">"onmouseover"</span>, mouseOver);<br>
+            <span class="maroon left-padding">document.</span><span class="blue">attachEvent</span>(<span class="olive">"onclick"</span>, <span class="purple">function</span>() {<br>
+              <span class="maroon more-padding">document.body.style.backgroundColor</span> = <span class="olive">"rgba(20, 255, 0, 0.55)"</span>;<br>
+            <span class="left-padding">});</span><br>
+          <span class="black">}</span><br>
+        </p>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function</span> <span class="blue">performAlert</span><span class="black">() {</span><br>
+        <span class="blue left-padding">alert</span>(<span class="olive">"colorChanged."</span>);<br>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function</span> <span class="blue">mouseOver</span><span class="black">() {</span><br>
+        <span class="maroon left-padding">document.</span><span class="blue">getElementById</span>(<span class="olive">"documentAddEventListenerP"</span>)<span class="maroon">.innerHTML</span>
+        = <span class="orange">Math.</span><span class="blue">random</span>();<br>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function</span> <span class="blue">removeHandler</span><span class="black">() {</span><br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">if</span>(<span class="maroon">document.addEventListener</span>) {<br>
+            <span class="maroon left-padding">document.</span><span class="blue">removeEventListener</span>(<span class="olive">"mouseover"</span>, mouseOver);<br>
+            <span class="black">} <span class="purple">else</span> {</span><br>
+              <span class="maroon left-padding">document.</span><span class="blue">detachEvent</span>(<span class="olive">"onmouseover"</span>, mouseOver);<br>
+          <span class="black">}</span><br>
+        </p>
+      <span class="black">}</span>
+
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

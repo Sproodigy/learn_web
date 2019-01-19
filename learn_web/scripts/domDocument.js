@@ -210,3 +210,98 @@ function getLinksLength() {
   document.getElementById("documentLinksP").innerHTML = "Links length: " + x;
   document.getElementsByClassName("replace")[0].innerHTML = "Links length: " + x;
 }
+
+function getReadyState() {
+  var x = document.readyState;
+  document.getElementById("documentReadyStateP").innerHTML = "Ready state: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Ready state: " + x;
+}
+
+function getReferrer() {
+  var x = document.referrer;
+  document.getElementById("documentReferrerP").innerHTML = "Referrer: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Referrer: " + x;
+}
+
+function getScriptsLength() {
+  var x = document.scripts.length;
+  document.getElementById("documentScriptsP").innerHTML = "Scripts length: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Scripts length: " + x;
+}
+
+function getStrictErrorChecking() {
+  var x = document.strictErrorChecking;
+  document.getElementById("documentStrictErrorCheckingP").innerHTML = "Strict error checking: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Strict error checking: " + x;
+}
+
+function getTitle() {
+  var x = document.title;
+  document.getElementById("documentTitleP").innerHTML = "Title: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "Title: " + x;
+}
+
+function getURL() {
+  var x = document.URL;
+  document.getElementById("documentURLP").innerHTML = "URL: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = "URL: " + x;
+}
+
+function performActions() {
+  if (document.addEventListener) {
+    document.addEventListener("click", performAlert);
+    document.addEventListener("click", changeColor);
+    document.addEventListener("mouseover", mouseOver);
+    document.addEventListener("click", function(){
+      document.body.style.backgroundColor = "rgba(20, 255, 0, 0.55)";
+    });
+  } else if (document.attachEvent) {
+    document.attachEvent("onclick", performAlert);
+    document.attachEvent("onclick", changeColor);
+    document.attachEvent("onmouseover", mouseOver);
+    document.attachEvent("onclick", function(){
+      document.body.style.backgroundColor = "rgba(20, 255, 0, 0.55)";
+    });
+  }
+}
+
+function performAlert() {
+  alert("Color changed.");
+}
+
+function changeColor() {
+  document.body.color = "yellow";
+}
+
+function mouseOver() {
+  let rand = Math.random();
+  document.getElementById("documentAddEventListenerP").innerHTML = rand;
+  document.getElementsByClassName("replace")[0].innerHTML = rand;
+}
+
+function removeHandler() {
+  if (document.addEventListener) {
+    document.removeEventListener("mouseover", mouseOver);
+  } else {
+    document.detachEvent("onmouseover", mouseOver);
+  }
+}
+
+function replaceText() {
+  let text = document.getElementsByTagName("figcaption")[0];
+  let node = document.adoptNode(text);
+  document.getElementById("documentAdoptNodeP").appendChild(node);
+}
+
+function closeDocumentInWindow() {
+  let w = window.open("","", "width=200, height=200");
+  w.document.open();
+  w.document.write("<h1>Here I'm!</h1>");
+  w.document.close();
+}
+
+function openDocument() {
+  document.open("text/html", "replace");
+  document.write("<html><body><p>Here I'm!</p></body></html>");
+  document.close();
+}

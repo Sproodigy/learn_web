@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document open</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">open()</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The open() method opens an output stream to collect the output from any document.write() or document.writeln() methods.
+    </div>
+    <div class="note-value">
+      Once all the writes are performed, the document.close() method causes any output written to the output stream to be displayed.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      If a document already exists in the target, it will be cleared.
+    </div>
+    <div class="note-value">
+      Do not confuse this method with the window.open() method, which opens a new browser window.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MIMEtype</td>
+          <td>Optional. The type of document you are writing to. Default value is "text/html".</td>
+        </tr>
+        <tr>
+          <td>replace</td>
+          <td>Optional. If set, the history entry for the new document inherits the history entry from the document which opened this document.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentOpenExamplesBar" class="left-padding">
+    <a href="#documentOpenExamplesBar">
+      <button onclick="openDocument()" class="dom-buttons-prop">Perform</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <p id="documentOpenP"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="black float-borders-none">
+
+      <span class="purple">function </span><span class="blue">openDocument</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">w.document.</span><span class="blue">open</span>(<span class="olive">"text/html", "replace"</span>);<br>
+          <span class="maroon">w.document.</span><span class="blue">write</span>(<span class="olive">"&lt;html&gt;&lt;body&gt;&lt;p&gt;Here I'm!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"</span>)<br>
+          <span class="maroon">w.document.</span><span class="blue">close</span>()<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

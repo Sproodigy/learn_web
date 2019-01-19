@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document strict error checking</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">strictErrorChecking</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The strictErrorChecking property sets or returns whether a document has a strict error checking or not.
+    </div>
+    <div class="note-value">
+      Default value is true.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The elements in the collection are sorted as they appear in the source code.
+    </div>
+    <div class="note-value">
+      The StrictErrorChecking property is not supported by most modern browsers.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentStrictErrorCheckingExamplesBar" class="left-padding">
+    <a href="#documentStrictErrorCheckingExamplesBar">
+      <button onclick="getStrictErrorChecking()" class="dom-buttons-prop">Get strict error checking</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <p id="documentStrictErrorCheckingP"></p>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+        &lt;<span class="brown">div</span>&gt;<br>
+        <p class="left-padding" style="margin: 0;">
+          &lt;<span class="brown">p</span>
+          <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+          <span class="black replace"></span>
+          &lt;<span class="brown">/p</span>&gt;<br>
+        </p>
+      &lt;<span class="brown">/div</span>&gt;<br>
+    </div>
+
+    <div class="black float-borders-none">
+      function <span class="blue">getStrictErrorChecking</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>x = <span class="maroon">document.strictErrorChecking</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
+          = x;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
