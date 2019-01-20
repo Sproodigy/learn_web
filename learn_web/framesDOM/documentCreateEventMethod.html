@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document create event</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">createEvent()</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The createEvent() method creates an event object.
+    </div>
+    <div class="note-value">
+      The event can be of any legal event type, and must be initialized before use.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>type</td>
+          <td>
+            Required. A String that specifies the type of the event.<br><br>
+            Possible values:<br><br>AnimationEvent<br>ClipboardEvent<br>DragEvent<br>FocusEvent<br>
+            HashChangeEvent<br>InputEvent<br>KeyboardEvent<br>MouseEvent<br>PageTransitionEvent<br>
+            PopStateEvent<br>ProgressEvent<br>StorageEvent<br>TouchEvent<br>TransitionEvent<br>
+            UiEvent<br>WheelEvent
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentCreateEventExamplesBar" class="left-padding">
+    <a href="#documentCreateEventExamplesBar">
+      <button onclick="createNewEvent(event)" class="dom-buttons-prop">Simulate mouse over</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div style="text-align: center;">
+      <p onmouseover="this.innerHTML += '*';" id="documentCreateEventP" style="border: 2px solid green;">*</p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">createNewEvent</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>x = <span class="maroon">document.</span><span class="blue">createEvent</span>(<span class="olive">"mouseEvent"</span>);<br>
+          <span class="maroon">x.</span><span class="blue">initMouseEvent</span>(<span class="orange"><span class="olive">"mouseover"</span>, true, true, <span class="maroon">window</span>, 0, 0, 0, 0, 0, false, false, false, false, 0, null</span>);<br>
+          <span class="maroon">document.</span><span class="blue">getEventById</span>(<span class="olive">"example"</span>).<span class="blue">dispatchEvent</span>(x);<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

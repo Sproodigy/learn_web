@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document create document fragment</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">createDocumentFragment()</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The createDocumentFragment() method creates a imaginary Node object, with all the properties and methods of the Node object.
+    </div>
+    <div class="note-value">
+      The createDocumentFragment() method is usefull when you want to extract parts of your document,
+      change, add, or delete, some of the content, and insert it back to your document.
+    </div>
+    <div class="note-value">
+      You can also use the document's Document object to perform these changes,
+      but to prevent destroying the document structure, it can be safer to extract only parts of the document,
+      make the changes, and insert the part back to the document.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Nodes being appended to the document fragment, from the document, will be removed from the document.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentCreateDocumentFragmentExamplesBar" class="left-padding">
+    <a href="#documentCreateDocumentFragmentExamplesBar">
+      <button onclick="createNewDocumentFragment()" class="dom-buttons-prop">Change document fragment</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <ul><li>Banana</li><li>Apple</li></ul>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">createDocumentFragments</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>d = <span class="maroon">document.</span><span class="blue">createDocumentFragment</span>();<br>
+          <span class="maroon">d.</span><span class="blue">appendChild</span>(<span class="maroon">document.</span><span class="blue">getElementsByTagName</span>(<span class="olive">"li"</span>)[<span class="orange">0</span>]);<br>
+          <span class="maroon">d.childNodes</span>[<span class="orange">0</span>].<span class="maroon">childNodes</span>[<span class="orange">0</span>].<span class="maroon">nodeValue</span>
+          = <span class="olive">"Kiwi"</span>;<br>
+          <span class="maroon">documents.</span><span class="blue">getElementsByTagName</span>(<span class="olive">"ul"</span>)[<span class="orange">0</span>].<span class="blue">appendChild</span>(d);<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

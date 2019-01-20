@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document create comment</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">createComment()</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The createComment() method creates an comment with the specified name, and returns the comment as an Attr object.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>text</td>
+          <td>String</td>
+          <td>Optional. The text you want to be your comment, in the Comment object.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentCreateCommentExamplesBar" class="left-padding">
+    <a href="#documentCreateCommentExamplesBar">
+      <button onclick="createNewComment()" class="dom-buttons-prop">Create comment</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <p id="documentCreateCommentP"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">createComments</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>c = <span class="maroon">document.</span><span class="blue">createComment</span>(<span class="olive">"My new comment"</span>);<br>
+          <span class="maroon">document.body.</span><span class="blue">appendChild</span>(c);<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
+          = "Look in the inspector.";<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

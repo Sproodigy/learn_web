@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document create element</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">createElement()</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The createElement() method creates an Element Node with the specified name.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Use the createTextNode() method to create a text node.
+    </div>
+    <div class="note-value">
+      After the element is created, use the element.appendChild() or element.insertBefore() method to insert it to the document.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>nodename</td>
+          <td>String</td>
+          <td>Required. The name of the element you want to create.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentCreateElementExamplesBar" class="left-padding">
+    <a href="#documentCreateElementExamplesBar">
+      <button onclick="createNewElement()" class="dom-buttons-prop">Create element</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div id="documentCreateElementDiv" style="border: 2px solid green;">
+      <p>Some paragraph.</p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>
+      <span class="purple">id=</span><span class="olive">"example"</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>&gt;
+        <span class="black">Some paragraph.</span>
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">createNewElement</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>para = <span class="maroon">document.</span><span class="blue">createElement</span>(<span class="olive">"p"</span>);<br>
+          <span class="purple">let </span>t = <span class="maroon">document.</span><span class="blue">createTextNode</span>(<span class="olive">"This is a new paragraph."</span>);<br>
+          <span class="maroon">para.</span><span class="blue">appendChild</span>(t);<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>).<span class="blue">appendChild</span>(para);<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

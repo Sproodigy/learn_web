@@ -300,6 +300,53 @@ function closeDocumentInWindow() {
   w.document.close();
 }
 
+function createAttributes() {
+  let elem = document.getElementById("documentCreateAttributeP");
+  let att = document.createAttribute("href");
+  att.value = "https://www.w3schools.com";
+  elem.setAttributeNode(att);
+}
+
+function createNewComment() {
+  let c = document.createComment("My new comment");
+  let text = "Look in the inspector."
+  document.body.appendChild(c);
+  document.getElementById("documentCreateCommentP").innerHTML = text;
+  document.getElementsByClassName("replace")[0].innerHTML = text;
+}
+
+function createNewDocumentFragment() {
+  let d = document.createDocumentFragment();
+  d.appendChild(document.getElementsByTagName("LI")[0]);
+  d.childNodes[0].childNodes[0].nodeValue = "Kiwi";
+  document.getElementsByTagName("UL")[0].appendChild(d);
+}
+
+function createNewElement() {
+  let para = document.createElement("P");
+  let t = document.createTextNode("This is a new paragraph.");
+  para.appendChild(t);
+  document.getElementById("documentCreateElementDiv").appendChild(para);
+}
+
+function createNewEvent(event) {
+  var x = document.createEvent("MouseEvent");
+  x.initMouseEvent("mouseover", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+  document.getElementById("documentCreateEventP").dispatchEvent(x);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 function openDocument() {
   document.open("text/html", "replace");
   document.write("<html><body><p>Here I'm!</p></body></html>");
