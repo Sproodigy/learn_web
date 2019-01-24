@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<title>Document get elements by name</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<script src="../scripts/domDocument.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">getElementsByName()</h1></div>
+  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The getElementsByName() method returns a collection of all elements in the document
+      with the specified name (the value of the name attribute), as a NodeList object.
+    </div>
+    <div class="note-value">
+      The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      You can use the length property of the NodeList object to determine the number of elements with a specified class name,
+      then you can loop through all elements and extract the info you want.
+    </div>
+    <div class="note-value">
+      In HTML5, the "name" attribute is deprecated and has been replaced by the "id" attribute for many elements.
+      Use the document.getElementById() method where it is appropriate.
+      Also look at the getElementsByClassName() and getElementsByTagName() methods.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Property Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>name</td>
+          <td>String</td>
+          <td>Required. The name attribute value of the element you want to access/manipulate.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="documentGetElementsByNameExamplesBar" class="left-padding">
+    <a href="#documentGetElementsByNameExamplesBar">
+      <button onclick="getTag()" class="dom-buttons-prop">Get tag</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div style="text-align: center;">
+      Fruit: <input name="fname" type="text" value="Banana"><br>
+      Fruit: <input name="fname" type="text" value="Apple">
+      <p id="documentGetElementsByName"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        <span class="black">Fruit: </span>&lt;<span class="brown">input </span>
+        <span class="crimson">name=</span><span class="olive">"fname"</span>
+        <span class="crimson">type=</span><span class="olive">"text"</span>
+        <span class="crimson">value=</span><span class="olive">"Banana"</span>&gt;<br>
+        <span class="black">Fruit: </span>&lt;<span class="brown">input </span>
+        <span class="crimson">name=</span><span class="olive">"fname"</span>
+        <span class="crimson">type=</span><span class="olive">"text"</span>
+        <span class="crimson">value=</span><span class="olive">"Apple"</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">changeColorOneElem</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementsByName</span>(<span class="olive">"fname"</span>)[<span class="orange">0</span>]<span class="maroon">.tagName</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
+          = x;<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

@@ -249,15 +249,15 @@ function getURL() {
 
 function performActions() {
   if (document.addEventListener) {
+    document.addEventListener("click", changeColorListener);
     document.addEventListener("click", performAlert);
-    document.addEventListener("click", changeColor);
     document.addEventListener("mouseover", mouseOver);
     document.addEventListener("click", function(){
       document.body.style.backgroundColor = "rgba(20, 255, 0, 0.55)";
     });
   } else if (document.attachEvent) {
+    document.attachEvent("onclick", changeColorListener);
     document.attachEvent("onclick", performAlert);
-    document.attachEvent("onclick", changeColor);
     document.attachEvent("onmouseover", mouseOver);
     document.attachEvent("onclick", function(){
       document.body.style.backgroundColor = "rgba(20, 255, 0, 0.55)";
@@ -269,7 +269,7 @@ function performAlert() {
   alert("Color changed.");
 }
 
-function changeColor() {
+function changeColorListener() {
   document.body.color = "yellow";
 }
 
@@ -335,20 +335,120 @@ function createNewEvent(event) {
   document.getElementById("documentCreateEventP").dispatchEvent(x);
 }
 
+function onDesignMode() {
+  document.designMode = "on";
+}
 
+function executeCommand(event) {
+  if (event.keyCode == 16) {
+    document.execCommand("bold");
+  } else if (event.keyCode = 17){
+    document.execCommand("delete");
+  }
+}
 
+function openFullscreen() {
+  let elem = document.getElementById("documentFullscreenEnabledVideo");
+  if (document.fullscreenEnabled ||
+      document.webkitFullscreenEnabled ||
+      document.mozFullScreenEnabled ||
+      document.msFullscreenEnabled)
+  {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    }
+  }
+}
 
+function changeColor() {
+  let color = prompt("Input color:");
+  document.getElementById("docGetElemByIdP").style.color = color;
+}
 
+function changeColorOneElem() {
+  let color = prompt("Input color:");
+  document.getElementsByClassName("colorGetElemByClassName")[1].style.color = color;
+}
 
+function getTag() {
+  let x = document.getElementsByName("fname")[0].tagName;
+  document.getElementById("documentGetElementsByName").innerHTML = x;
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
 
+function changeTagColor() {
+  let color = prompt("Input color:");
+  document.getElementsByTagName("li")[2].style.color = color;
+}
 
+function checkFocus() {
+  let x = document.getElementById("documentHasFocusP");
 
+  if (document.hasFocus()) {
+    x.innerHTML = "The document has focus.";
+  } else {
+    x.innerHTML = "The document DOES NOT have focus.";
+  }
+}
 
+function importText() {
+  let text = document.getElementsByTagName("figcaption")[0];
+  let node = document.importNode(text);
+  document.getElementById("documentImportNodeP").appendChild(node);
+  document.getElementsByClassName("replace")[0].innerHTML = '';
+}
 
+function importTextDeep() {
+  let text = document.getElementsByTagName("figcaption")[0];
+  let node = document.importNode(text, true);
+  document.getElementById("documentImportNodeP").appendChild(node);
+  document.getElementsByClassName("replace")[0].innerHTML = ", true";
+}
 
+function addTextNode() {
+  var x = document.createTextNode(" Click again.");
+  var y = document.getElementById("documentNormalizeDiv");
+  y.appendChild(x);
+  var x = document.getElementsByClassName("replace")[0];
+  var z = document.getElementsByClassName("replace")[1];
+  x.innerHTML = y.childNodes.length;
+  z.innerHTML = y.childNodes.length;
+}
+
+function normPara() {
+  document.normalize();
+  var x = document.getElementById("documentNormalizeDiv");
+  var y = document.getElementsByClassName("replace")[0];
+  var z = document.getElementsByClassName("replace")[1];
+  y.innerHTML = x.childNodes.length;
+  z.innerHTML = x.childNodes.length;
+}
 
 function openDocument() {
   document.open("text/html", "replace");
   document.write("<html><body><p>Here I'm!</p></body></html>");
   document.close();
+}
+
+function showQuerySelector() {
+  document.querySelector(".example").style.color = "red";
+}
+
+function showQuerySelectorAll() {
+  document.querySelectorAll("p")[2].style.color = "red";
+}
+
+function documentWrite() {
+  document.write("Here I'm!");
+}
+
+function documentWriteln() {
+  document.writeln("Here I'm!");
+  document.writeln("Banana is a good fruit!");
 }

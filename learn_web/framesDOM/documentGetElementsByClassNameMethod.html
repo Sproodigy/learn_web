@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Document create text node</title>
+<title>Document get elements by class name</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
 <script src="../scripts/domDocument.js"></script>
 
-<body>
+<body onkeydown="executeCommand(event)">
   <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
     <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
     <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
@@ -20,13 +20,16 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">createTextNode()</h1></div>
+  <div><h1 class="domTitle">getElementsByClassName()</h1></div>
   <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The createTextNode() method creates an TextNode Node with the specified name.
+      The getElementsByClassName() method returns a collection of all elements in the document with the specified class name, as a NodeList object.
+    </div>
+    <div class="note-value">
+      The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -34,15 +37,13 @@
   <div class="note noteDOM">
     Notes:<br />
     <div class="note-value">
-      Use the createElement() method to create an Element Node with the specified name.
-    </div>
-    <div class="note-value">
-      After the Text Node is created, use the element.appendChild() or element.insertBefore() method to append it to an element.
+      You can use the length property of the NodeList object to determine the number of elements with a specified class name,
+      then you can loop through all elements and extract the info you want.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
-  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div><h2 class="tag domTitle">Property Values</h2></div>
   <div>
     <table class="tableDOMAttr tableDOM">
       <thead>
@@ -52,9 +53,12 @@
       </thead>
       <tbody>
         <tr>
-          <td>text</td>
+          <td>classname</td>
           <td>String</td>
-          <td>Required. The text of the Text node.</td>
+          <td>
+            Required. The class name of the elements you want to get.<br><br>
+            To search for multiple class names, separate them with spaces, like "test demo".
+          </td>
         </tr>
       </tbody>
     </table>
@@ -62,38 +66,41 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="documentCreateTextNodeExamplesBar" class="left-padding">
-    <a href="#documentCreateTextNodeExamplesBar">
-      <button onclick="createNewElement()" class="dom-buttons-prop">Create element</button>
+  <div id="documentGetElementsByClassNameExamplesBar" class="left-padding">
+    <a href="#documentGetElementsByClassNameExamplesBar">
+      <button onclick="changeColorOneElem()" class="dom-buttons-prop">Change color</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv">
-    <div id="documentCreateElementDiv" style="border: 2px solid green;">
-      <p>Some paragraph.</p>
+    <div style="text-align: center;">
+      <p class="colorGetElemByClassName">Example text.</p>
+      <p class="colorGetElemByClassName">Another text.</p>
     </div>
   </div>
 
   <div class="codeDOM">
     <div class="blue float-borders-none">
-      &lt;<span class="brown">div</span>
-      <span class="purple">id=</span><span class="olive">"example"</span>&gt;<br>
+      &lt;<span class="brown">div</span>&gt;<br>
       <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">p</span>&gt;
-        <span class="black">Some paragraph.</span>
-        <span class="black replace"></span>
+        &lt;<span class="brown">p</span>
+        <span class="crimson">class=</span><span class="olive">"example"</span>&gt;
+        <span class="black">Example text.</span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="crimson">class=</span><span class="olive">"example"</span>&gt;
+        <span class="black">Another text.</span>
         &lt;<span class="brown">/p</span>&gt;<br>
       </p>
       &lt;<span class="brown">/div</span>&gt;
     </div>
 
     <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">createNewElement</span>() {<br>
+      <span class="purple">function </span><span class="blue">changeColorOneElem</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>para = <span class="maroon">document.</span><span class="blue">createTextNode</span>(<span class="olive">"p"</span>);<br>
-          <span class="purple">let </span>t = <span class="maroon">document.</span><span class="blue">createTextNode</span>(<span class="olive">"This is a new paragraph."</span>);<br>
-          <span class="maroon">para.</span><span class="blue">appendChild</span>(t);<br>
-          <span class="maroon">document.</span><span class="blue">getTextNodeById</span>(<span class="olive">"example"</span>).<span class="blue">appendChild</span>(para);<br>
+          <span class="purple">let </span>color = <span class="blue">prompt</span>(<span class="olive">"Input color:"</span>);<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"example"</span>)[<span class="orange">1</span>]<span class="maroon">.style.color</span>
+          = color;
         </p>
       }
     </div>

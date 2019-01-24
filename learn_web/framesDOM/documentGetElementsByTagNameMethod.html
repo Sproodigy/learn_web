@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Document create text node</title>
+<title>Document get elements by tag name</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -20,13 +20,16 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">createTextNode()</h1></div>
+  <div><h1 class="domTitle">getElementsByTagName()</h1></div>
   <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The createTextNode() method creates an TextNode Node with the specified name.
+      The getElementsByTagName() method returns a collection of all elements in the document with the specified tag name, as a NodeList object.
+    </div>
+    <div class="note-value">
+      The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers. The index starts at 0.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -34,15 +37,12 @@
   <div class="note noteDOM">
     Notes:<br />
     <div class="note-value">
-      Use the createElement() method to create an Element Node with the specified name.
-    </div>
-    <div class="note-value">
-      After the Text Node is created, use the element.appendChild() or element.insertBefore() method to append it to an element.
+      The parametervalue "*" returns all elements in the document.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
-  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div><h2 class="tag domTitle">Property Values</h2></div>
   <div>
     <table class="tableDOMAttr tableDOM">
       <thead>
@@ -52,9 +52,9 @@
       </thead>
       <tbody>
         <tr>
-          <td>text</td>
+          <td>tagname</td>
           <td>String</td>
-          <td>Required. The text of the Text node.</td>
+          <td>Required. The tagname of the elements you want to get.</td>
         </tr>
       </tbody>
     </table>
@@ -62,25 +62,33 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="documentCreateTextNodeExamplesBar" class="left-padding">
-    <a href="#documentCreateTextNodeExamplesBar">
-      <button onclick="createNewElement()" class="dom-buttons-prop">Create element</button>
+  <div id="documentGetElementsByTagNameExamplesBar" class="left-padding">
+    <a href="#documentGetElementsByTagNameExamplesBar">
+      <button onclick="changeTagColor()" class="dom-buttons-prop">Change color</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv">
-    <div id="documentCreateElementDiv" style="border: 2px solid green;">
-      <p>Some paragraph.</p>
+    <div>
+      <ul>
+        <li>Banana</li>
+        <li>Apple</li>
+        <li>Kiwi</li>
+      </ul>
     </div>
   </div>
 
   <div class="codeDOM">
     <div class="blue float-borders-none">
-      &lt;<span class="brown">div</span>
-      <span class="purple">id=</span><span class="olive">"example"</span>&gt;<br>
+      &lt;<span class="brown">div</span>&gt;<br>
       <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">p</span>&gt;
-        <span class="black">Some paragraph.</span>
+        &lt;<span class="brown">ul</span>&gt;<br>
+          <span class="left-padding">&lt;<span class="brown">li</span>&gt;<span class="black">Banana</span>&lt;<span class="brown">/li</span>&gt;</span><br>
+          <span class="left-padding">&lt;<span class="brown">li</span>&gt;<span class="black">Apple</span>&lt;<span class="brown">/li</span>&gt;</span><br>
+          <span class="left-padding">&lt;<span class="brown">li</span>&gt;<span class="black">Kiwi</span>&lt;<span class="brown">/li</span>&gt;</span><br>
+        &lt;<span class="brown">/ul</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
         <span class="black replace"></span>
         &lt;<span class="brown">/p</span>&gt;<br>
       </p>
@@ -88,12 +96,11 @@
     </div>
 
     <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">createNewElement</span>() {<br>
+      <span class="purple">function </span><span class="blue">changeTagColor</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>para = <span class="maroon">document.</span><span class="blue">createTextNode</span>(<span class="olive">"p"</span>);<br>
-          <span class="purple">let </span>t = <span class="maroon">document.</span><span class="blue">createTextNode</span>(<span class="olive">"This is a new paragraph."</span>);<br>
-          <span class="maroon">para.</span><span class="blue">appendChild</span>(t);<br>
-          <span class="maroon">document.</span><span class="blue">getTextNodeById</span>(<span class="olive">"example"</span>).<span class="blue">appendChild</span>(para);<br>
+          <span class="purple">let </span>color = <span class="blue">prompt</span>(<span class="olive">"Input color:"</span>);<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByTagName</span>(<span class="olive">"li"</span>)[<span class="orange">2</span>]<span class="maroon">.style.color</span>
+          = color;
         </p>
       }
     </div>

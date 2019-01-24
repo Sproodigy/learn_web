@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Document create text node</title>
+<title>Document exec command</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
 <script src="../scripts/domDocument.js"></script>
 
-<body>
+<body onkeydown="executeCommand(event)">
   <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
     <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
     <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
@@ -20,13 +20,13 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">createTextNode()</h1></div>
+  <div><h1 class="domTitle">execCommand()</h1></div>
   <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The createTextNode() method creates an TextNode Node with the specified name.
+      The execCommand() method executes the specified command for the selected part of an editable section.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -47,14 +47,31 @@
     <table class="tableDOMAttr tableDOM">
       <thead>
         <tr>
-          <th>Parameter</th><th>Type</th><th>Description</th>
+          <th>Parameter</th><th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>text</td>
-          <td>String</td>
-          <td>Required. The text of the Text node.</td>
+          <td>command</td>
+          <td>
+            Specifies the name of the command to execute on the selected section.<br>
+            Legalvalues:<br><br>
+            "backColor"<br>"bold"<br>"createLink"<br>"copy"<br>"cut"<br>"defaultParagraphSeparator"<br>
+            "delete"<br>"fontName"<br>"fontSize"<br>"foreColor"<br>"formatBlock"<br>"forwardDelete"<br>
+            "insertHorizontalRule"<br>"insertHTML"<br>"insertImage"<br>"insertLineBreak"<br>
+            "insertOrderedList"<br>"insertParagraph"<br>"insertText"<br>"insertUnorderedList"<br>
+            "justifyCenter"<br>"justifyFull"<br>"justifyLeft"<br>"justifyRight"<br>"outdent"<br>
+            "paste"<br>"redo"<br>"selectAll"<br>"strikethrough"<br>"styleWithCss"<br>
+            "superscript"<br>"undo"<br>"unlink"<br>"useCSS"<br>
+          </td>
+        </tr>
+        <tr>
+          <td>showDefaultView</td>
+          <td>A Boolean, specifies if the UI should be shown or not.</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td>Some commands need a value to be completed.</td>
         </tr>
       </tbody>
     </table>
@@ -62,38 +79,41 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="documentCreateTextNodeExamplesBar" class="left-padding">
-    <a href="#documentCreateTextNodeExamplesBar">
-      <button onclick="createNewElement()" class="dom-buttons-prop">Create element</button>
+  <div id="documentExecCommandExamplesBar" class="left-padding">
+    <a href="#documentExecCommandExamplesBar">
+      <button onclick="onDesignMode()" class="dom-buttons-prop">On design mode</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv">
-    <div id="documentCreateElementDiv" style="border: 2px solid green;">
-      <p>Some paragraph.</p>
+    <div>
+      <p id="documentExecCommandP">Shift to change the style, Ctrl to delete.</p>
     </div>
   </div>
 
   <div class="codeDOM">
     <div class="blue float-borders-none">
-      &lt;<span class="brown">div</span>
-      <span class="purple">id=</span><span class="olive">"example"</span>&gt;<br>
+      &lt;<span class="brown">body</span>
+      <span class="maroon">onkeydown=</span><span class="olive">"executeCommand(event)"</span>&gt;<br>
+      &lt;<span class="brown">div</span>&gt;<br>
       <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">p</span>&gt;
-        <span class="black">Some paragraph.</span>
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
         <span class="black replace"></span>
         &lt;<span class="brown">/p</span>&gt;<br>
       </p>
-      &lt;<span class="brown">/div</span>&gt;
+      &lt;<span class="brown">/div</span>&gt;<br>
+      &lt;<span class="brown">/body</span>&gt;
     </div>
 
     <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">createNewElement</span>() {<br>
+      <span class="purple">function </span><span class="blue">executeCommand</span>(<span class="maroon">event</span>) {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">let </span>para = <span class="maroon">document.</span><span class="blue">createTextNode</span>(<span class="olive">"p"</span>);<br>
-          <span class="purple">let </span>t = <span class="maroon">document.</span><span class="blue">createTextNode</span>(<span class="olive">"This is a new paragraph."</span>);<br>
-          <span class="maroon">para.</span><span class="blue">appendChild</span>(t);<br>
-          <span class="maroon">document.</span><span class="blue">getTextNodeById</span>(<span class="olive">"example"</span>).<span class="blue">appendChild</span>(para);<br>
+          <span class="purple">if </span>(<span class="maroon">event.keyCode</span> = <span class="orange">16</span>) {<br>
+            <span class="maroon left-padding">document.</span><span class="blue">execCommand</span>(<span class="olive">"bold"</span>);<br>
+          } <span class="purple">else if </span>(<span class="maroon">event.keyCode</span> = <span class="orange">17</span>) {<br>
+            <span class="maroon left-padding">document.</span><span class="blue">execCommand</span>(<span class="olive">"delete"</span>);<br>
+          }<br>
         </p>
       }
     </div>
