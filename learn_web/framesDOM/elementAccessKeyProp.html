@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element accessKey</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">accessKey</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The accessKey property sets or returns the accesskey attribute of an element.
+    </div>
+    <div class="note-value">
+      The accesskey attribute specifies a shortcut key to activate/focus an element.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The shortcut varies from different browsers:
+      <ul>
+        <li>IE, Chrome, Safari, Opera 15+: [ALT] + accesskey.</li>
+        <li>Opera prior version 15: [SHIFT] [ESC] + accesskey.</li>
+        <li>Firefox: [ALT] [SHIFT] + accesskey.</li>
+      </ul>
+    </div>
+    <div class="note-value">
+      The behavior if more than one element has the same access key differs:
+      <ul>
+        <li>IE, Firefox: The next element with the pressed access key will be activated.</li>
+        <li>Chrome, Safari: The last element with the pressed access key will be activated.</li>
+        <li>Opera: The first element with the pressed access key will be activated.</li>
+      </ul>
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Propertie Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Propertie</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>character</td>
+          <td>Specifies the shortcut key to activate/focus the element.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemAccessKeyExamplesBar" class="left-padding">
+    <a href="#elemAccessKeyExamplesBar">
+      <button onclick="setAccessKey()" class="dom-buttons-prop">Set access key</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div style="text-align: center;">
+      <a id="elemAccessKeyLink" href="https://www.w3schools.com/">w3scools</a>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">setAccessKey</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>key = <span class="blue">prompt</span>(<span class="olive">"Input access key:"</span>);<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
+          = <span class="olive">"Access key:"</span> + key;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

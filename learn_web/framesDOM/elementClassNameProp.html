@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element className</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <style>
+    .yellowBackgr {
+      background-color: yellow;
+    }
+
+    .blueBackgr {
+      background-color: blue;
+    }
+
+    .border {
+      border: 2px solid green;
+    }
+
+    .padding {
+      padding: 30px;
+    }
+  </style>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">className</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The className property sets or returns the class name of an element (the value of an element's class attribute).
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      A similar property to className is the className property.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Property value</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Propertie</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>class</td>
+          <td>Specifies the class name of an element. To apply multiple classes, separate them with spaces, like "test demo".</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemClassNameExamplesBar" class="left-padding">
+    <a href="#elemClassNameExamplesBar">
+      <button onclick="getClassName('getClassName')" class="dom-buttons-prop">Get</button>
+    </a>
+    <a href="#elemClassNameExamplesBar">
+      <button onclick="setClassName('setClassName')" class="dom-buttons-prop">Set</button>
+    </a>
+    <a href="#elemClassNameExamplesBar">
+      <button onclick="removeClassName('removeClassName')" class="dom-buttons-prop">Remove</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div class="centerContent">
+      <p id="elemClassNameP" class="maroon yellowBackgr">Example text...</p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>
+        <span class="crimson">class=</span><span class="olive">"maroon yellowBackgr"</span>&gt;<br>
+        <span class="black left-padding">Example text...</span><br>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      &lt;<span class="brown">style</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        <span class="crimson">.padding</span> {<br>
+          <span class="left-padding">padding: </span><span class="crimson">30px</span>;<br>
+        }<br><br>
+        <span class="crimson">.maroon</span> {<br>
+          <span class="left-padding">color: </span><span class="crimson">maroon</span>;<br>
+        }<br><br>
+        <span class="crimson">.yellowBackgr</span> {<br>
+          <span class="left-padding">background-color: </span><span class="crimson">yellow</span>;<br>
+        }<br><br>
+        <span class="crimson">.border</span> {<br>
+          <span class="left-padding">border: </span><span class="crimson">2px solid blue</span>;<br>
+        }<br>
+      </p>
+      &lt;<span class="brown">/style</span>&gt;
+    </div>
+
+    <div id="getClassName" class="change black float-borders-none" style="display: none;">
+      <span class="purple">function </span><span class="blue">getClassName</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.className</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+
+    <div id="setClassName" class="change black float-borders-none" style="display: none;">
+      <span class="purple">function </span><span class="blue">setClassName</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.className</span>
+          = <span class="olive">"border padding"</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+
+    <div id="removeClassName" class="change black float-borders-none" style="display: none;">
+      <span class="purple">function </span><span class="blue">removeClassName</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.className</span>
+          = <span class="olive">""</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

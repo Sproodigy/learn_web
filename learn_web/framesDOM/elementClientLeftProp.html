@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element client left</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">clientLeft</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The clientLeft property returns the width of the left border of an element, in pixels.
+    </div>
+    <div class="note-value">
+      This property does not include the element's left padding or the left margin.
+    </div>
+    <div class="note-value">
+      This property is read-only.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      You can also use the style.borderLeftWidth property to return the width of an element's left border.
+    </div>
+    <div class="note-value">
+      For Chrome, Firefox and Opera on Windows, if the element has a scrollbar
+      (set by the CSS overflow property), and if the text direction of that element is right-to-left
+      (set by the CSS direction property), this property includes the width of the vertical scrollbar,
+      together with the left border width. In IE, however, it returns "0".
+      On Mac OS, using Safari, Chrome, Firefox or Opera, it returns only the left border width.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemClientLeftExamplesBar" class="left-padding">
+    <a href="#elemClientLeftExamplesBar">
+      <button onclick="getClientLeft()" class="dom-buttons-prop">Get client left</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <p id="elemClientLeftP1" style="border: 2px solid green;">Example text...</p>
+      <p id="elemClientLeftP2"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example1"</span>&gt;
+        <span class="black">Example text...</span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example2"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">getClientLeft</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>borderWidth =
+          <span class="blue">prompt</span>(<span class="olive">"Input border left Width:"</span>);<br>
+          <span class="purple">var </span>elmnt =
+          <span class="maroon">elmnt.style.borderLeftWidth</span> = borderWidth;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example1"</span>)</span>;<br>
+          <span class="purple">var </span>txt = <span class="olive">""</span>;<br>
+          txt = <span class="olive">"Border left width: "</span> + <span class="maroon">elmnt.clientLeft</span> + <span class="olive">"px"</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example2"</span>)</span><span class="maroon">.innerHTML</span>
+          = txt;<br>
+        </p>
+      <span class="black">}</span><br>
+
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

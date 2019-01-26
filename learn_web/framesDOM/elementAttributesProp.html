@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element attributes</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">attributes</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The attributes property returns a collection of the specified node's attributes, as a NamedNodeMap object.
+    </div>
+    <div class="note-value">
+      The nodes can be accessed by index numbers, and the index starts at 0.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Numerical indexing is useful for going through all of an element's attributes:
+      You can use the length property of the NamedNodeMap object to determine the number of attributes,
+      then you can loop through all attributes nodes and extract the info you want.
+    </div>
+    <div class="note-value">
+      HTML attributes are attribute nodes, with all the properties and methods available for the Attribute object.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemAttributesExamplesBar" class="left-padding">
+    <a href="#elemAttributesExamplesBar">
+      <button onclick="elemGetAttributesLength()" class="dom-buttons-prop">Get attr length</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div style="text-align: center;">
+      <p>Hint: max number = 5.</p>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">setAttributes</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>butNum = <span class="blue">prompt</span>(<span class="olive">"Input button number:"</span>);<br>
+          <span class="purple">var </span>but =
+          <span class="maroon">document.</span><span class="blue">getElementsByTagName</span>(<span class="olive">"button"</span>)[butNum];<br>
+          txt = <span class="olive">""</span><br><br>
+
+            <span class="purple">for </span>(<span class="purple">var </span>i=<span class="orange">0</span>;
+                                             i<<span class="maroon">but.attributes.length</span>; i++) {<br>
+              <span class="left-padding">txt = <span class="olive">"Attributes length: "</span> + <span class="maroon">but.attributes.length</span>;<br></span>
+              <span class="left-padding">txt2 = txt + <span class="maroon">but.attributes<span class="black">[i]</span>.name</span> +
+              <span class="maroon">but.attributes<span class="black">[i]</span>.value</span> + <span class="olive">"&lt;br&gt;"</span>;<br></span>
+              <span class="left-padding"><span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)<span class="maroon">.innerHTML</span>
+              = txt + txt2;<br></span>
+            }
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
