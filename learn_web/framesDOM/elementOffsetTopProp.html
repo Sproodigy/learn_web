@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element offset top</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">offsetTop</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The offsetTop property returns the top position (in pixels) relative to the top of the offsetParent element.
+    </div>
+    <div class="note-value">
+      The returned value includes:<br>
+      <ul>
+        <li>the top position, and margin of the element.</li>
+        <li>the top padding, scrollbar and border of the offsetParent element.</li>
+      </ul>
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The offsetParent element is the nearest ancestor that has a position other than static.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemOffsetTopExamplesBar" class="left-padding">
+    <a href="#elemOffsetTopExamplesBar">
+      <button onclick="getOffsetTop()" class="dom-buttons-prop">Get top offset</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div class="centerContent">
+      <p id="elemOffsetTopP1" style="border: 2px solid green; display: inline-block;">Example text...</p>
+      <p id="elemOffsetTopP2"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example1"</span>&gt;
+        <span class="black">Example text...</span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example2"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">getOffsetTop</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>elmnt =
+          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example1"</span>)</span>;<br>
+          <span class="purple">var </span>txt = <span class="olive">"Top offset: "</span> + <span class="maroon">elmnt.offsetTop</span> + <span class="olive">"px"</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example2"</span>)</span><span class="maroon">.innerHTML</span>
+          = txt;<br>
+        </p>
+      <span class="black">}</span><br>
+
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

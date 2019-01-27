@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Document body</title>
+<title>Element content editable</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../styles/dom_style.css" />
 <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
 
-<script src="../scripts/domDocument.js"></script>
+<script src="../scripts/domElements.js"></script>
 
 <body>
   <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
@@ -21,19 +21,13 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">body</h1></div>
-  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+  <div><h1 class="domTitle">contentEditable</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The body property sets or returns the document's body.
-    </div>
-    <div class="note-value">
-      On return, this property returns the &lt;body&gt; element of the current document.
-    </div>
-    <div class="note-value">
-      On set, this property overwrites all child elements inside the existing &lt;body&gt; element, and replaces it with the new, specified content.
+      The contentEditable property sets or returns whether the content of an element is editable or not.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -41,8 +35,7 @@
   <div class="note noteDOM">
     Notes:<br />
     <div class="note-value">
-      The difference between this property and the document.documentElement property,
-      is that the document.body element returns the &lt;body&gt; element, while the document.documentElement returns the &lt;html&gt; element.
+      You can also use the isContentEditable property to find out if the content of an element is editable or not.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -52,13 +45,21 @@
     <table class="tableDOMAttr tableDOM">
       <thead>
         <tr>
-          <th>Property</th><th>Description</th>
+          <th>Propertie</th><th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>newContent</td>
-          <td>Specifies the new content for &lt;body&gt;.</td>
+          <td>true|false</td>
+          <td>
+            Specifies whether the content of an element should be editable.<br>
+            Possible values:
+            <ul>
+              <li>"inherit" - Default. The element's content is editable if its parent element is editable.</li>
+              <li>"true" - The content is editable.</li>
+              <li>"false" - The content is not editable.</li>
+            </ul>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -66,17 +67,14 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="documentBodyExamplesBar" class="left-padding">
-    <a href="#documentBodyExamplesBar">
-      <button onclick="changeBodyStyle()" class="dom-buttons-prop">Change body style</button>
-    </a>
-    <a href="#documentBodyExamplesBar">
-      <button onclick="showBodyStyle()" class="dom-buttons-prop">Show body style</button>
+  <div id="elemContentEditableExamplesBar" class="left-padding">
+    <a href="#elemContentEditableExamplesBar">
+      <button onclick="changeEditContent(this)" class="dom-buttons-prop">Enable content editing</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv">
-    <p id="documentBodyP"></p>
+    <p id="elemContentEditableP">Example text...</p>
   </div>
 
   <div class="codeDOM">
@@ -91,19 +89,19 @@
       &lt;<span class="brown">/div</span>&gt;
     </div>
 
-    <div id="docBody1" class="black float-borders-none">
-      function <span class="blue">exampleFunction</span>() {<br>
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">changeEditContent</span>(button) {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="maroon">document.body.style.backgroundColor</span> = <span class="olive">"rgb(220, 238, 105)"</span>;<br>
-        </p>
-      <span class="black">}</span>
-    </div>
-
-    <div id="docBody2" class="black float-borders-none" style="display: none;">
-      function <span class="blue">exampleFunction</span>() {<br>
-        <p class="left-padding" style="margin: 0;">
-          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
-          = <span class="maroon">document.body.style</span>;<br>
+          <span class="purple">var </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>);<br>
+          <span class="purple">if </span>
+          (<span class="maroon">x.contentEditable</span> == <span class='orange'>true</span>) {<br>
+            <span class="maroon left-padding">x.contentEditable</span> = <span class="orange">false</span>;<br>
+            <span class="maroon left-padding">x.innerHTML</span> == <span class='olive'>"Enable content editing"</span>;<br>
+          } <span class="purple">else</span> {<br>
+            <span class="maroon left-padding">x.contentEditable</span> = <span class="orange">true</span>;<br>
+            <span class="maroon left-padding">x.innerHTML</span> == <span class='olive'>"Disable content editing"</span>;<br>
+          }<br>
         </p>
       <span class="black">}</span>
     </div>

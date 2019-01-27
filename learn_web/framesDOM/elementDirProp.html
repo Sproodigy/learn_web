@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element dir</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">dir</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The dir property sets or returns the value of the dir attribute of an element.
+    </div>
+    <div class="note-value">
+      The dir attribute specifies the text-direction (reading order) of the element's content.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      You can also use the style.direction property to set or return the text direction of an element.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Property Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Propertie</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ltr</td>
+          <td>Default. Left-to-right text direction.</td>
+        </tr>
+        <tr>
+          <td>rtl</td>
+          <td>Right-to-left text direction.</td>
+        </tr>
+        <tr>
+          <td>auto</td>
+          <td>
+            Let the browser figure out the text direction,
+            based on the content (only recommended if the text direction is unknown).
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemDirExamplesBar" class="left-padding">
+    <a href="#elemDirExamplesBar">
+      <button onclick="elemDirRtl()" class="dom-buttons-prop">rtl</button>
+    </a>
+    <a href="#elemDirExamplesBar">
+      <button onclick="elemDirLtr()" class="dom-buttons-prop">ltr</button>
+    </a>
+    <a href="#elemDirExamplesBar">
+      <button onclick="elemDirAuto()" class="dom-buttons-prop">auto</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <p id="elemDirP">Example text...</p>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div id="elemDirRtlDesc" class="black float-borders-none" style="display: none;">
+      <span class="purple">function </span><span class="blue">elemDirRtl</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>).<span class="maroon">dir</span>
+          = "rtl";<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+
+    <div id="elemDirLtrDesc" class="black float-borders-none" style="display: none;">
+      <span class="purple">function </span><span class="blue">elemDirLtr</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>).<span class="maroon">dir</span>
+          = "ltr";<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+
+    <div id="elemDirAutoDesc" class="black float-borders-none" style="display: none;">
+      <span class="purple">function </span><span class="blue">elemDirAuto</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>).<span class="maroon">dir</span>
+          = "auto";<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

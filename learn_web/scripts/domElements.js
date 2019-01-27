@@ -147,12 +147,71 @@ function getClientWidth() {
   document.getElementById("elemClientWidthP2").innerHTML = txt;
 }
 
+function changeEditContent(button) {
+  var x = document.getElementById("elemContentEditableP");
+  if (x.contentEditable == "true") {
+    x.contentEditable = "false";
+    button.innerHTML = "Enable content editing";
+  } else {
+    x.contentEditable = "true";
+    button.innerHTML = "Disable content editing";
+  }
+}
+
+function elemDirRtl() {
+  document.getElementById("elemDirP").dir = "rtl";
+  document.getElementById("elemDirRtlDesc").style.display = "block";
+  document.getElementById("elemDirLtrDesc").style.display = "none";
+  document.getElementById("elemDirAutoDesc").style.display = "none";
+}
+
+function elemDirLtr() {
+  document.getElementById("elemDirP").dir = "ltr";
+  document.getElementById("elemDirRtlDesc").style.display = "none";
+  document.getElementById("elemDirLtrDesc").style.display = "block";
+  document.getElementById("elemDirAutoDesc").style.display = "none";
+}
+
+function elemDirAuto() {
+  document.getElementById("elemDirP").dir = "ltr";
+  document.getElementById("elemDirRtlDesc").style.display = "none";
+  document.getElementById("elemDirLtrDesc").style.display = "none";
+  document.getElementById("elemDirAutoDesc").style.display = "block";
+}
+
+function getFirstChild() {
+  var node = document.getElementById("elemFirstChildDiv").firstChild;
+  var text = node.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = node + " — " + text;
+}
+
+function getFirstElementChild() {
+  var node = document.getElementById("elemFirstElementChildDiv").firstElementChild;
+  var text = node.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = node + " — " + text;
+}
+
+function getId() {
+  var x = document.getElementsByClassName("replace")[0].id;
+  document.getElementById("example1").innerHTML = x;
+}
 
 
 
 
 
 
+
+
+
+
+
+
+
+function getNamespaseURI() {
+  var x = document.documentElement.namespaceURI;
+  document.getElementById("elemNamespaseURIP").innerHTML = x;
+}
 
 
 
@@ -164,16 +223,34 @@ function getOffsetHeight() {
   var text2 = prompt("Input any text:");
   var elmnt = document.getElementById("elemOffsetHeightP1");
   elmnt.innerHTML = text1 + "<br>" + text2;
-  var txt = "";
-  txt = "Height including padding and border: " + elmnt.offsetHeight + "px";
+  var txt = "Height including padding and border: " + elmnt.offsetHeight + "px";
   document.getElementById("elemOffsetHeightP2").innerHTML = txt;
+}
+
+function getOffsetLeft() {
+  var text = prompt("Input any text:");
+  var elmnt = document.getElementById("elemOffsetLeftP1");
+  elmnt.innerHTML = text;
+  var txt = "Left offset: " + elmnt.offsetLeft + "px";
+  document.getElementById("elemOffsetLeftP2").innerHTML = txt;
+}
+
+function getOffsetParent() {
+  var elmnt = document.getElementById("elemOffsetParentP1");
+  var txt = "Parent offset is: " + elmnt.offsetParent;
+  document.getElementById("elemOffsetParentP2").innerHTML = txt;
+}
+
+function getOffsetTop() {
+  var elmnt = document.getElementById("elemOffsetTopP1");
+  var txt = "Top offset: " + elmnt.offsetTop + "px";
+  document.getElementById("elemOffsetTopP2").innerHTML = txt;
 }
 
 function getOffsetWidth() {
   var text = prompt("Input any text:");
   var elmnt = document.getElementById("elemOffsetWidthP1");
   elmnt.innerHTML = text;
-  var txt = "";
-  txt = "Width including padding and border: " + elmnt.offsetWidth + "px";
+  var txt = "Width including padding and border: " + elmnt.offsetWidth + "px";
   document.getElementById("elemOffsetWidthP2").innerHTML = txt;
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element id</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">id</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+       The id property sets or returns the id of an element (the value of an element's id attribute).
+    </div>
+    <div class="note-value">
+      An ID should be unique within a page, and is often used to return the element using the document.getElementById() method.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Property Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Propertie</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Specifies the id of an element.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemIdExamplesBar" class="left-padding">
+    <a href="#elemIdExamplesBar">
+      <button onclick="getId()" class="dom-buttons-prop">Get id</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div style="text-align: center;">
+      <p id="example1" class="replace example"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example1"</span>
+        <span class="crimson">class=</span><span class="olive">"example"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">getId</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"example"</span>)[<span class="orange">0</span>]<span class="maroon">.id</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example1"</span>)<span class="maroon">.innerHTML</span>
+          = x;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
