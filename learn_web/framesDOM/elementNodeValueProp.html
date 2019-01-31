@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element node value</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">nodeValue</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The nodeValue property sets or returns the node value of the specified node.
+    </div>
+    <div class="note-value">
+      If the node is an element node, the nodeValue property will return null.
+    </div>
+    <div class="note-value">
+      For other node types, the nodeValue property will return different values for different node types.
+    </div>
+    <div class="note-value">
+      Possible return values:<br>
+      <ul>
+        <li>Returns null for element nodes and document nodes.</li>
+        <li>Returns the value of the attribute for attribute nodes.</li>
+        <li>Returns the content for text nodes.</li>
+        <li>Returns the content for comment nodes.</li>
+      </ul>
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      If you want to return the text of an element, remember that text is always inside a Text node,
+      and you will have to return the Text node's node value (element.childNodes[0].nodeValue).
+    </div>
+    <div class="note-value">
+      An alternative to the nodeValue property can be the textContent property.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Property Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Property</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>value</td>
+          <td>Specifies the node value of the specified node.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemNodeValueExamplesBar" class="left-padding">
+    <a href="#elemNodeValueExamplesBar">
+      <button onclick="getNodeValue()" class="dom-buttons-prop">Get node value</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div id="elemNodeValueDiv" class="centerContent">
+      <p>First</p>
+      <p>Second</p>
+      <p class="replace"></p>
+    </div>
+  </div>
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>
+      <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>&gt;<span class="black">First</span>&lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>&gt;<span class="black">Second</span>&lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">getNodeValue</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>node =
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>);<br>
+          <span class="purple">var </span>value =
+          <span class="maroon">node.children</span>[<span class="orange">0</span>]<span class="maroon">.childNodes</span>[<span class="orange">0</span>]<span class="maroon">.nodeValue</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span> =<br>
+          <span class="olive">"Node value: "</span> + value;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

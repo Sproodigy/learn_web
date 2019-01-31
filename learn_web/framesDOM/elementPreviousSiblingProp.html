@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element previous sibling</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">previousSibling</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The previousSibling property returns the previous node of the specified node, in the same tree level.
+    </div>
+    <div class="note-value">
+      The returned node is returned as a Node object.
+    </div>
+    <div class="note-value">
+      The difference between this property and previousElementSibling,
+      is that previousSibling returns the previous sibling node as an element node,
+      a text node or a comment node, while previousElementSibling returns the previous sibling node
+      as an element node (ignores text and comment nodes).
+    </div>
+    <div class="note-value">
+      This property is read-only.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Use the nextSibling property to return the next node of the specified node, in the same tree level.
+    </div>
+    <div class="note-value">
+      Use the childNodes property to return any child node of a specified node.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemPreviousSiblingExamplesBar" class="left-padding">
+    <a href="#elemPreviousSiblingExamplesBar">
+      <button onclick="getPreviousSibling()" class="dom-buttons-prop">Get previous sibling</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div class="centerContent">
+      <p id="elem1">First</p>
+      <p id="elem2">Second</p>
+      <div><p class="replace"></p></div>
+    </div>
+  </div>
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"elem1"</span>&gt;<span class="black">First</span>&lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"elem2"</span>&gt;<span class="black">Second</span>&lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">getPreviousSibling</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>node =
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"elem2"</span>)<span class="maroon">.previousSibling.innerHTML</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)<span class="maroon">.innerHTML</span> =<br>
+          <span class="olive">"Previous sibling: "</span> + node;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

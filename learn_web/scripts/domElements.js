@@ -196,11 +196,87 @@ function getId() {
   document.getElementById("example1").innerHTML = x;
 }
 
+function getInnerHTML(id) {
+  var x = document.getElementById(id).innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function getInnerText() {
+  var x = document.getElementById("elemInnerText");
+  document.getElementsByClassName('replace')[0].innerText = "Inner HTML: " +  x.innerHTML + "\nInner text: " + x.innerText;
+}
+
+function isContentEdit() {
+  var x = document.getElementById("elemIsContentEditable").isContentEditable;
+  document.getElementsByClassName("replace")[0].innerHTML = "Content editable? " + x;
+}
+
+function getLang() {
+  var x = document.getElementById("elemLang").lang;
+  document.getElementsByClassName("replace")[0].innerHTML = "Language: " + x;
+}
+
+function getLastChild() {
+  var node = document.getElementById("elemLastChildDiv").lastChild.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = "Last child: " + node;
+}
+
+function getLastElementChild() {
+  var node = document.getElementById("elemLastElementChildDiv").lastElementChild.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = "Last element child: " + node;
+}
 
 
+function getNextSibling() {
+  var x = document.getElementById("elem1").nextSibling.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = "Next sibling: " + x;
+}
 
+function getNextElementSibling() {
+  var x = document.getElementById("elem1").nextElementSibling.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = "Next element sibling: " + x;
+}
 
+function getNodeName() {
+  var x = document.getElementById("elemNodeNameDiv").nodeName;
+  document.getElementsByClassName("replace")[0].innerHTML = "Node name: " + x;
+}
 
+function getNodeType() {
+  var x = document.getElementById("elemNodeTypeDiv").nodeType;
+  document.getElementsByClassName("replace")[0].innerHTML = "Node type: " + x;
+}
+
+function getNodeValue() {
+  var c = document.getElementById("elemNodeValueDiv");
+  var x = c.children[0].childNodes[0].nodeValue;
+  document.getElementsByClassName("replace")[0].innerHTML = "Node value: " + x;
+}
+
+function getOwnerDocument() {
+  var x= document.getElementById("elemOwnerDocumentDiv").ownerDocument.nodeType;
+  document.getElementsByClassName("replace")[0].innerHTML = "Owner document: " + x;
+}
+
+function getParentNode() {
+  var x = document.getElementById("elemParentNodeP").parentNode.nodeName;
+  document.getElementsByClassName("replace")[0].innerHTML = "Parent node name: " + x;
+}
+
+function getParentElement() {
+  var x = document.getElementById("elemParentElementP").parentElement.nodeName;
+  document.getElementsByClassName("replace")[0].innerHTML = "Parent element name: " + x;
+}
+
+function getPreviousSibling() {
+  var x = document.getElementById("elem2").previousSibling.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = "Previous sibling: " + x;
+}
+
+function getPreviousElementSibling() {
+  var x = document.getElementById("elem2").previousElementSibling.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = "Previous element sibling: " + x;
+}
 
 
 
