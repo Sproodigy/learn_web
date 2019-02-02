@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Element scroll height</title>
+<title>Element scroll top</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,21 +21,13 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">scrollHeight</h1></div>
+  <div><h1 class="domTitle">scrollTop</h1></div>
   <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The scrollHeight property returns the entire height of an element in pixels,
-      including padding, but not the border, scrollbar or margin.
-    </div>
-    <div class="note-value">
-      The scrollWidth and scrollHeight properties return the entire height and width of an element,
-      including the height and width that is not viewable (because of overflow).
-    </div>
-    <div class="note-value">
-      This property is read-only.
+      The scrollTop property sets or returns the number of pixels an element's content is scrolled horizontally.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -49,21 +41,16 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="elemScrollHeightExamplesBar" class="left-padding">
-    <a href="#elemScrollHeightExamplesBar">
-      <button onclick="getScrollHeight()" class="dom-buttons-prop">Get scroll height</button>
-    </a>
-  </div>
 
   <div class="exampleDOMDiv">
-    <div style="height: 150px; width: 300px; overflow: auto;">
-      <p id="elemScrollHeightP" style="border: 2px solid green;">Example text... Example text...
+    <div id="elemScrollTopP" onscroll="getScrollPoint('elemScrollTopP')" style="height: 200px; width: 100px; overflow: scroll;">
+      <p>Example text... Example text...
       Example text... Example text...Example text... Example text...Example text... Example text...
       Example text... Example text...Example text... Example text...Example text... Example text...
       Example text... Example text...Example text... Example text...Example text... Example text...
       Example text... Example text...Example text... Example text...Example text... Example text...</p>
     </div>
-    <div class="replace"></div>
+    <p class="replace"></p>
   </div>
 
   <div class="codeDOM">
@@ -71,7 +58,7 @@
       &lt;<span class="brown">div</span>&gt;<br>
       <p class="left-padding" style="margin: 0;">
         &lt;<span class="brown">p</span>
-        <span class="purple">id=</span><span class="olive">"example1"</span>&gt;<br>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;<br>
         <span class="black left-padding">Example text...Example text... Example text...</span><br>
         &lt;<span class="brown">/p</span>&gt;<br>
       </p>
@@ -82,12 +69,14 @@
     </div>
 
     <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">getScrollHeight</span>() {<br>
+      <span class="purple">function </span><span class="blue">getScrollPoint</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">var </span>x =
-          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span><span class="maroon">.scrollHeight</span>;<br>
+          <span class="purple">var </span>elmnt =
+          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span>;<br>
+          <span class="purple">var </span>x = <span class="maroon">elmnt.scrollLeft</span>;<br>
+          <span class="purple">var </span>y = <span class="maroon">elmnt.scrollTop</span>;<br>
           <span class="purple">var </span>txt =
-          <span class="olive">"Scroll height: "</span> + x + <span class="olive">"px"</span>;<br>
+          <span class="olive">"Horizontally: "</span> + x + <span class="olive">"px&lt;br&gt;Vertically: "</span>+ y + <span class="olive">"px"</span>;<br>
           <span class="maroon">document.</span><span class="blue">getElementsByClassName</span><span class="black">(<span class="olive">"replace"</span>)[<span class="orange">0</span>]</span><span class="maroon">.innerHTML</span>
           = txt;<br>
         </p>

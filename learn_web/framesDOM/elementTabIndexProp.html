@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element tab index</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">tabIndex</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The tabIndex property sets or returns the value of the tabindex attribute of an element.
+    </div>
+    <div class="note-value">
+      The tabindex attribute specifies the tab order of an element (when the "tab" button is used for navigating).
+    </div>
+  </div>
+
+  <div><h2 class="tag domTitle">Property Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Property</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>number</td>
+          <td>
+            Specifies the tabbing order of the element (1 is first).<br>
+            Note: If the number is negative, the element will be removed from the tab order.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemTabIndexExamplesBar" class="left-padding">
+    <a href="#elemTabIndexExamplesBar">
+      <button onclick="setTabOrder()" class="dom-buttons-prop">Set tab order</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div class="centerContent">
+      <p><a id="elemTabIndexA1" href="#">Link 1</a></p>
+      <p><a id="elemTabIndexA2" href="#">Link 2</a></p>
+      <p><a id="elemTabIndexA3" href="#">Link 3</a></p>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>&gt;&lt;<span class="brown">a</span>
+        <span class="purple">id=</span><span class="olive">"example1"</span>
+        <span class="crimson">href=</span><span class="olive">"#"</span>&gt;
+        <span class="black">Link 1</span>
+        &lt;<span class="brown">/a</span>&gt;&lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>&gt;&lt;<span class="brown">a</span>
+        <span class="purple">id=</span><span class="olive">"example2"</span>
+        <span class="crimson">href=</span><span class="olive">"#"</span>&gt;
+        <span class="black">Link 2</span>
+        &lt;<span class="brown">/a</span>&gt;&lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>&gt;&lt;<span class="brown">a</span>
+        <span class="purple">id=</span><span class="olive">"example3"</span>
+        <span class="crimson">href=</span><span class="olive">"#"</span>&gt;
+        <span class="black">Link 3</span>
+        &lt;<span class="brown">/a</span>&gt;&lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div id="elemSetBorderFunc" class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">setTabOrder</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example1"</span>)<span class="maroon">.tabIndex</span> =
+          <span class="olive">"3"</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example2"</span>)<span class="maroon">.tabIndex</span> =
+          <span class="olive">"2"</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example3"</span>)<span class="maroon">.tabIndex</span> =
+          <span class="olive">"1"</span>;<br>
+        </p>
+      <span class="black">}</span><br>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

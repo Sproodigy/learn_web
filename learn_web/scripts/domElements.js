@@ -226,6 +226,10 @@ function getLastElementChild() {
   document.getElementsByClassName("replace")[0].innerHTML = "Last element child: " + node;
 }
 
+function getNamespaseURI() {
+  var x = document.documentElement.namespaceURI;
+  document.getElementById("elemNamespaseURIP").innerHTML = x;
+}
 
 function getNextSibling() {
   var x = document.getElementById("elem1").nextSibling.innerHTML;
@@ -252,47 +256,6 @@ function getNodeValue() {
   var x = c.children[0].childNodes[0].nodeValue;
   document.getElementsByClassName("replace")[0].innerHTML = "Node value: " + x;
 }
-
-function getOwnerDocument() {
-  var x= document.getElementById("elemOwnerDocumentDiv").ownerDocument.nodeType;
-  document.getElementsByClassName("replace")[0].innerHTML = "Owner document: " + x;
-}
-
-function getParentNode() {
-  var x = document.getElementById("elemParentNodeP").parentNode.nodeName;
-  document.getElementsByClassName("replace")[0].innerHTML = "Parent node name: " + x;
-}
-
-function getParentElement() {
-  var x = document.getElementById("elemParentElementP").parentElement.nodeName;
-  document.getElementsByClassName("replace")[0].innerHTML = "Parent element name: " + x;
-}
-
-function getPreviousSibling() {
-  var x = document.getElementById("elem2").previousSibling.innerHTML;
-  document.getElementsByClassName("replace")[0].innerHTML = "Previous sibling: " + x;
-}
-
-function getPreviousElementSibling() {
-  var x = document.getElementById("elem2").previousElementSibling.innerHTML;
-  document.getElementsByClassName("replace")[0].innerHTML = "Previous element sibling: " + x;
-}
-
-
-
-
-
-
-
-function getNamespaseURI() {
-  var x = document.documentElement.namespaceURI;
-  document.getElementById("elemNamespaseURIP").innerHTML = x;
-}
-
-
-
-
-
 
 function getOffsetHeight() {
   var text1 = prompt("Input any text:");
@@ -329,4 +292,91 @@ function getOffsetWidth() {
   elmnt.innerHTML = text;
   var txt = "Width including padding and border: " + elmnt.offsetWidth + "px";
   document.getElementById("elemOffsetWidthP2").innerHTML = txt;
+}
+
+function getOwnerDocument() {
+  var x= document.getElementById("elemOwnerDocumentDiv").ownerDocument.nodeType;
+  document.getElementsByClassName("replace")[0].innerHTML = "Owner document: " + x;
+}
+
+function getParentNode() {
+  var x = document.getElementById("elemParentNodeP").parentNode.nodeName;
+  document.getElementsByClassName("replace")[0].innerHTML = "Parent node name: " + x;
+}
+
+function getParentElement() {
+  var x = document.getElementById("elemParentElementP").parentElement.nodeName;
+  document.getElementsByClassName("replace")[0].innerHTML = "Parent element name: " + x;
+}
+
+function getPreviousSibling() {
+  var x = document.getElementById("elem2").previousSibling.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = "Previous sibling: " + x;
+}
+
+function getPreviousElementSibling() {
+  var x = document.getElementById("elem2").previousElementSibling.innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = "Previous element sibling: " + x;
+}
+
+function getScrollHeight() {
+  var x = document.getElementById("elemScrollHeightP").scrollHeight;
+  var txt = "Scroll height: " + x + "px";
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function getScrollPoint(id) {
+  var elmnt = document.getElementById(id);
+  var x = elmnt.scrollLeft;
+  var y = elmnt.scrollTop;
+  document.getElementsByClassName("replace")[0].innerHTML = "Horizontally: " + x + "px<br>Vertically: " + y + "px";
+}
+
+function getScrollWidth() {
+  var x = document.getElementById("elemScrollWidthP").scrollWidth;
+  var txt = "Scroll width: " + x + "px";
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function setBorderStyle(id) {
+  var list = document.getElementsByClassName('list');
+  var x = document.getElementById("elemStyleP").style.border = "2px solid green";
+
+  for (var i=0; i<=list.length; i++) {
+    document.getElementById(id).style.display = "block";
+    list[i].style.display = "none";
+  }
+}
+
+function changeColorStyle(id) {
+  var list = document.getElementsByClassName('list');
+  var x = document.getElementById("elemStyleP").style.color = "red";
+
+  for (var i=0; i<=list.length; i++) {
+    document.getElementById(id).style.display = "block";
+    list[i].style.display = "none";
+  }
+}
+
+function clearStyle(id) {
+  var list = document.getElementsByClassName('list');
+  var x = document.getElementById("elemStyleP").style.border = "";
+  var x = document.getElementById("elemStyleP").style.color = "initial";
+
+  for (var i=0; i<=list.length; i++) {
+    document.getElementById(id).style.display = "block";
+    list[i].style.display = "none";
+  }
+}
+
+function setTabOrder() {
+  document.getElementById("elemTabIndexA1").tabIndex = "3";
+  document.getElementById("elemTabIndexA2").tabIndex = "2";
+  document.getElementById("elemTabIndexA3").tabIndex = "1";
+}
+
+function getTagName() {
+  var x = document.getElementById("elemTagNameP").tagName;
+  var txt = "Tag name: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
 }

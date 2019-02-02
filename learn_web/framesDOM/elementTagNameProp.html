@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element tag name</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">tagName</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The tagName property returns the tag name of the element.
+    </div>
+    <div class="note-value">
+      In HTML, the returned value of the tagName property is always in UPPERCASE.
+    </div>
+    <div class="note-value">
+      This property is read-only.
+    </div>
+  </div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      You can also use the nodeName property to return the tag name of an element.
+      The difference is that nodeName also returns attribute nodes, text nodes, comment nodes.
+    </div>
+  </div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemTagNameExamplesBar" class="left-padding">
+    <a href="#elemTagNameExamplesBar">
+      <button onclick="getTagName()" class="dom-buttons-prop">Get tag name</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div class="centerContent">
+      <p id="elemTagNameP"></p>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>&gt;
+        <span class="purple">id=</span><span class="olive">"example1"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div id="elemSetBorderFunc" class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">setTabOrder</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example1"</span>)<span class="maroon">.tagName</span>;<br>
+          <span class="purple">var </span>txt = <span class="olive">"Tag name: "</span> + x;<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassNameById</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span> =
+          <span class="olive">txt</span>;<br>
+        </p>
+      <span class="black">}</span><br>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

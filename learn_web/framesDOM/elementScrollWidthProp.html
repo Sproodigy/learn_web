@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Element scroll height</title>
+<title>Element scroll width</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,18 +21,18 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">scrollHeight</h1></div>
+  <div><h1 class="domTitle">scrollWidth</h1></div>
   <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The scrollHeight property returns the entire height of an element in pixels,
+      The scrollWidth property returns the entire width of an element in pixels,
       including padding, but not the border, scrollbar or margin.
     </div>
     <div class="note-value">
-      The scrollWidth and scrollHeight properties return the entire height and width of an element,
-      including the height and width that is not viewable (because of overflow).
+      The scrollWidth and scrollHeight properties return the entire width and width of an element,
+      including the width and width that is not viewable (because of overflow).
     </div>
     <div class="note-value">
       This property is read-only.
@@ -49,15 +49,15 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="elemScrollHeightExamplesBar" class="left-padding">
-    <a href="#elemScrollHeightExamplesBar">
-      <button onclick="getScrollHeight()" class="dom-buttons-prop">Get scroll height</button>
+  <div id="elemScrollWidthExamplesBar" class="left-padding">
+    <a href="#elemScrollWidthExamplesBar">
+      <button onclick="getScrollWidth()" class="dom-buttons-prop">Get scroll width</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv">
-    <div style="height: 150px; width: 300px; overflow: auto;">
-      <p id="elemScrollHeightP" style="border: 2px solid green;">Example text... Example text...
+    <div style="height: 100px; width: 400px; overflow: scroll;">
+      <p id="elemScrollWidthP" style="border: 2px solid green;">Example text... Example text...
       Example text... Example text...Example text... Example text...Example text... Example text...
       Example text... Example text...Example text... Example text...Example text... Example text...
       Example text... Example text...Example text... Example text...Example text... Example text...
@@ -82,10 +82,10 @@
     </div>
 
     <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">getScrollHeight</span>() {<br>
+      <span class="purple">function </span><span class="blue">getScrollWidth</span>() {<br>
         <p class="left-padding" style="margin: 0;">
           <span class="purple">var </span>x =
-          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span><span class="maroon">.scrollHeight</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span><span class="black">(<span class="olive">"example"</span>)</span><span class="maroon">.scrollWidth</span>;<br>
           <span class="purple">var </span>txt =
           <span class="olive">"Scroll height: "</span> + x + <span class="olive">"px"</span>;<br>
           <span class="maroon">document.</span><span class="blue">getElementsByClassName</span><span class="black">(<span class="olive">"replace"</span>)[<span class="orange">0</span>]</span><span class="maroon">.innerHTML</span>

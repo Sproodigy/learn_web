@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element style</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">style</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The style property returns a CSSStyleDeclaration object, which represents an element's style attribute.
+    </div>
+    <div class="note-value">
+      The style property is used to get or set a specific style of an element using different CSS properties.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The style property only returns the CSS declarations set in the element's inline style attribute, e.g. &lt;p style="color: red;"&gt;.
+      It is not possible to use this property to get information about style rules from the &lt;head&gt; section in the document or external style sheets.
+      However, you can access the &lt;style&gt; element from &lt;head&gt; by using document.getElementsByTagName().<br>
+      It is recommended to use the style property instead of the element.setAttribute("style", "...") method,
+      because the style property will not overwrite other CSS properties that may be specified in the style attribute.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Property Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Property</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>value</td>
+          <td>Specifies the value of the specified property.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemStyleExamplesBar" class="left-padding">
+    <a href="#elemStyleExamplesBar">
+      <button onclick="setBorderStyle('elemSetBorderFunc')" class="dom-buttons-prop">Set border style</button>
+    </a>
+    <a href="#elemStyleExamplesBar">
+      <button onclick="changeColorStyle('elemChangeColorFunc')" class="dom-buttons-prop">Change color style</button>
+    </a>
+    <a href="#elemStyleExamplesBar">
+      <button onclick="clearStyle('elemClearStyleFunc')" class="dom-buttons-prop">Clear style</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div class="centerContent">
+      <p id="elemStyleP">Example text...</p>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;<br>
+        <span class="black left-padding">Example text...</span><br>
+        &lt;<span class="brown">/p</span>&gt;<br>
+        <!-- &lt;<span class="brown">p</span>
+        <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br> -->
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div id="elemSetBorderFunc" class="list black float-borders-none" style="display: none;">
+      <span class="purple">function </span><span class="blue">setBorderStyle</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.style.border</span> =
+          <span class="olive">"2px solid green"</span>;<br>
+        </p>
+      <span class="black">}</span><br>
+    </div>
+
+    <div id="elemChangeColorFunc" class="list black float-borders-none" style="display: none;">
+      <span class="purple">function </span><span class="blue">changeColorStyle</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.style.color</span> =
+          <span class="olive">"red"</span>;<br>
+        </p>
+      <span class="black">}</span><br>
+    </div>
+
+    <div id="elemClearStyleFunc" class="list black float-borders-none" style="display: none;">
+      <span class="purple">function </span><span class="blue">clearStyle</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.style.border</span> =
+          <span class="olive">""</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.style.color</span> =
+          <span class="olive">"initial"</span>;<br>
+        </p>
+      <span class="black">}</span><br>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
