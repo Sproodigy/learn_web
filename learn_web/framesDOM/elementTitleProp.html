@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Element node name</title>
+<title>Element title</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,64 +21,64 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">nodeName</h1></div>
+  <div><h1 class="domTitle">title</h1></div>
   <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The nodeType property returns the node type, as a number, of the specified node.
+      The title property sets or returns the value of the title attribute of an element.
     </div>
     <div class="note-value">
-      If the node is an element node, the nodeType property will return 1.
+      The title attribute specifies extra information about an element.
     </div>
     <div class="note-value">
-      If the node is an attribute node, the nodeType property will return 2.
-    </div>
-    <div class="note-value">
-      If the node is a text node, the nodeType property will return 3.
-    </div>
-    <div class="note-value">
-      If the node is a comment node, the nodeType property will return 8.
-    </div>
-    <div class="note-value">
-      This property is read-only.
+      The information is most often shown as a tooltip text when the mouse moves over the element.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
-  <div class="note noteDOM">
-    Notes:<br />
-    <div class="note-value">
-      You can also use the tagName property to return the tag name of an element.
-      The difference is that tagName only return tag names,
-      while nodeName returns the name of all nodes (tags, attributes, text, comments).
-    </div>
+  <div><h2 class="tag domTitle">Property Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Value</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>text</td>
+          <td>A tooltip text for an element.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="elemNodeNameExamplesBar" class="left-padding">
-    <a href="#elemNodeNameExamplesBar">
-      <button onclick="getNodeName()" class="dom-buttons-prop">Get node name</button>
+  <div id="elemTitleExamplesBar" class="left-padding">
+    <a href="#elemTitleExamplesBar">
+      <button onclick="getTitle()" class="dom-buttons-prop">Get title</button>
     </a>
   </div>
 
   <div class="exampleDOMDiv">
-    <div id="elemNodeNameDiv" class="centerContent">
-      <p>First</p>
-      <p>Second</p>
+    <div class="centerContent">
+      <p id="elemTitleP" title="My title">Hover over the element</p>
       <div><p class="replace"></p></div>
     </div>
   </div>
 
   <div class="codeDOM">
     <div class="blue float-borders-none">
-      &lt;<span class="brown">div</span>
-      <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+      &lt;<span class="brown">div</span>&gt;
       <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">p</span>&gt;<span class="black">First</span>&lt;<span class="brown">/p</span>&gt;<br>
-        &lt;<span class="brown">p</span>&gt;<span class="black">Second</span>&lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>
+        <span class="crimson">title=</span><span class="olive">"My title"</span>&gt;<br>
+          <span class="black left-padding">Hover over the element</span><br>
+        &lt;<span class="brown">/p</span>&gt;<br>
         &lt;<span class="brown">p</span>
         <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
         &lt;<span class="brown">/p</span>&gt;<br>
@@ -87,12 +87,12 @@
     </div>
 
     <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">getNodeName</span>() {<br>
+      <span class="purple">function </span><span class="blue">getTitle</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">var </span>node =
-          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.nodeName</span>;<br>
-          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)<span class="maroon">.innerHTML</span> =<br>
-          <span class="olive">"Node name: "</span> + node;<br>
+          <span class="purple">var </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.title</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span> =<br>
+          <span class="olive">"Title: "</span> + x;<br>
         </p>
       <span class="black">}</span>
     </div>

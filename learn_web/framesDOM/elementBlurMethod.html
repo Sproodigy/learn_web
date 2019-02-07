@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element blur</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+  a:focus {
+    color: green;
+  }
+</style>
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">blur()</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The blur() method is used to remove focus from an element.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Use the focus() method to give focus to an element.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="" class="left-padding">
+    <a href="#elemBlurExamplesBar">
+      <button onclick="getFocus()" class="dom-buttons-prop">Get focus</button>
+    </a>
+    <a href="#elemBlurExamplesBar">
+      <button onclick="loseFocus()" class="dom-buttons-prop">Lose focus</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv ">
+    <div>
+      <a id="elemBlurA" href="../framesDOM/windowBlurMethod.html">Window blur()</a>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">a</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>
+        <span class="crimson">href=</span><span class="olive">"../framesDOM/windowBlurMethod.html"</span>&gt;<br>
+        <span class="black left-padding">Window blur()</span><br>
+        &lt;<span class="brown">/a</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">style</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        <span class="crimson">a:focus</span> {<br>
+          <span class="black left-padding">color: </span><span class="olive">green;</span><br>
+        }<br>
+      </p>
+      &lt;<span class="brown">/style</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">getFocus</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="blue">.focus</span>();<br>
+        </p>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function </span><span class="blue">loseFocus</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="blue">.blur</span>();<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

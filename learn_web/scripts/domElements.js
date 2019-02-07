@@ -380,3 +380,208 @@ function getTagName() {
   var txt = "Tag name: " + x;
   document.getElementsByClassName("replace")[0].innerHTML = txt;
 }
+
+function getTextContent() {
+  var x = document.getElementById("elemTextContentP").textContent;
+  var txt = "Text content: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function getTitle() {
+  var x = document.getElementById("elemTitleP").title;
+  var txt = "Title: " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function performActionsOnElem() {
+  if (elem.addEventListener) {
+    elem.addEventListener("click", changeColorListener);
+    elem.addEventListener("click", performAlert);
+    elem.addEventListener("mouseover", mouseOver);
+    elem.addEventListener("click", function(){
+      elem.style.backgroundColor = "rgba(20, 255, 0, 0.55)";
+    });
+  } else if (elem.attachEvent) {
+    elem.attachEvent("onclick", changeColorListener);
+    elem.attachEvent("onclick", performAlert);
+    elem.attachEvent("onmouseover", mouseOver);
+    elem.attachEvent("onclick", function(){
+      elem.style.backgroundColor = "rgba(20, 255, 0, 0.55)";
+    });
+  }
+}
+
+function performAlert() {
+  alert("Color changed.");
+}
+
+function changeColorListener() {
+  var elem = document.getElementById('elemAddEventListenerP');
+  elem.color = "yellow";
+}
+
+function mouseOver() {
+  var elem = document.getElementById('elemAddEventListenerP');
+  let rand = Math.random();
+  document.getElementsByClassName("replace")[0].innerHTML = rand;
+}
+
+function removeHandler() {
+  var elem = document.getElementById('elemAddEventListenerP');
+  if (elem.addEventListener) {
+    elem.removeEventListener("mouseover", mouseOver);
+  } else {
+    elem.detachEvent("onmouseover", mouseOver);
+  }
+}
+
+function addChild() {
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode("Kiwi");
+  node.appendChild(textnode);
+  document.getElementById("elemAppendChildUl").appendChild(node);
+}
+
+function getFocus() {
+  document.getElementById("elemBlurA").focus();
+}
+
+function loseFocus() {
+  document.getElementById("elemBlurA").blur();
+}
+
+function simulateClick() {
+  document.getElementById("elemClickA").click();
+}
+
+function performCloning() {
+  var item = document.getElementById("elemCloneNodeUl2").lastElementChild;
+  var cln = item.cloneNode(true);
+  document.getElementById("elemCloneNodeUl1").appendChild(cln);
+}
+
+function compareDocPos() {
+  var p1 = document.getElementById("elemCompareDocPosUl1").lastElementChild;
+  var p2 = document.getElementById("elemCompareDocPosUl2").lastElementChild;
+  var x = p1.compareDocumentPosition(p2);
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function containsOrNot() {
+  var para = document.getElementById("elemContainsP");
+  var div = document.getElementById("elemContainsDiv").contains(para);
+  document.getElementsByClassName("replace")[0].innerHTML = div;
+}
+
+var elemExFullScr = document.documentElement;
+function openFullscreenElem() {
+  if (elemExFullScr.requestFullscreen) {
+    elemExFullScr.requestFullscreen();
+  } else if (elemExFullScr.mozRequestFullScreen) {
+    elemExFullScr.mozRequestFullScreen();
+  } else if (elemExFullScr.webkitRequestFullscreen) {
+    elemExFullScr.webkitRequestFullscreen();
+  } else if (elemExFullScr.msRequestFullscreen) {
+    elemExFullScr.msRequestFullscreen();
+  }
+}
+
+function closeFullscreenElem() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+    document.msExitFullscreen();
+  }
+}
+
+function getAttr() {
+  var x = document.getElementsByTagName("P")[1].getAttribute("class");
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function getAttrNode() {
+  var x = document.getElementsByTagName("P")[1];
+  var attr = x.getAttributeNode("class").value;
+  document.getElementsByClassName("replace")[0].innerHTML = attr;
+}
+
+function getBoundClientRect() {
+  var para = document.getElementById("elemGetBoundClientRectP");
+  var rect = para.getBoundingClientRect();
+  x = rect.left;
+  y = rect.top;
+  r = rect.right;
+  b = rect.bottom;
+  x2 = rect.x;
+  y2 = rect.y;
+  w = rect.width;
+  h = rect.height;
+  document.getElementsByClassName("replace")[0].innerHTML =
+  "Left: " + x + ",<br>Top: " + y + ",<br>Right: " + r + ",<br>Bottom: " + b +
+  ",<br> Width: " + w + ",<br> Height: " + h + ",<br> X: " + x2 + ",<br> Y: " + y2;
+}
+
+function getElemByClassName() {
+  var list = document.getElementsByClassName("fruit");
+  var num = prompt("Input item number:");
+  var text = list[num].innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = text;
+}
+
+function getElemByTagName() {
+  var list = document.getElementsByTagName("li");
+  var num = prompt("Input item number:");
+  var text = list[num].innerHTML;
+  document.getElementsByClassName("replace")[0].innerHTML = text;
+}
+
+function hasAttr() {
+  var check = document.getElementById("elemHasAttrP").hasAttribute("class");
+  document.getElementsByClassName("replace")[0].innerHTML = check;
+}
+
+function hasAttrs() {
+  var check = document.getElementsByTagName("div")[10].hasAttributes();
+  document.getElementsByClassName("replace")[0].innerHTML = check;
+}
+
+function checkChildNodes() {
+  var check = document.getElementById("elemHasChildNodesUl").hasChildNodes();
+  document.getElementsByClassName("replace")[0].innerHTML = check;
+}
+
+function insAdjacentElement(place) {
+  var elem1 = document.getElementsByClassName("fruit")[0];
+  var elem2 = document.getElementsByClassName("fruit")[1];
+  elem1.insertAdjacentElement(place, elem2);
+}
+
+function insAdjacentHTML(place) {
+  var elem = document.getElementsByClassName("fruit")[1];
+  elem.insertAdjacentHTML(place, "<span> Grape </span>");
+}
+
+function insAdjacentText(place) {
+  var elem = document.getElementsByClassName("fruit")[1];
+  elem.insertAdjacentText(place, " Grape ");
+}
+
+function addBefore() {
+  var newItem = document.createElement("LI");
+  var textnode = document.createTextNode("Kiwi");
+  newItem.appendChild(textnode);
+
+  var list = document.getElementById("elemInsertBeforeUl");
+  list.insertBefore(newItem, list.childNodes[0]);
+}
+
+function isDefaultNamesp() {
+  var d = document.documentElement;
+  var x = d.isDefaultNamespace("http://www.w3.org/1999/xhtml");
+  var text = "Is default namespace? " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}

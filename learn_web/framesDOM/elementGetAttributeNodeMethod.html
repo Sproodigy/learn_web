@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element getAttributeNode</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">getAttributeNode()</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The getAttributeNode() method returns the attribute node with the specified name of an element, as an Attr object.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Use the attribute.value property to return the value of the attribute node.
+    </div>
+    <div class="note-value">
+      Use the getAttribute() method if you just want to return the attribute value.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>attributename</td>
+          <td>String</td>
+          <td>Required. The name of the attribute you want to return.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemGetAttrNodeExamplesBar" class="left-padding">
+    <a href="#elemGetAttrNodeExamplesBar">
+      <button onclick="getAttrNode()" class="dom-buttons-prop">Get attribute node</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv ">
+    <div>
+      <p id="elemGetAttrNodeP" class="olive">Example text...</p>
+      <p class="replace centerContent"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="crimson">class=</span><span class="olive">"olive"</span>&gt;<br>
+        <span class="black left-padding">Example text...</span><br>
+        &lt;<span class="brown">/p</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;&lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">getAttr</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementsByTagName</span>(<span class="olive">"p"</span>)[<span class="orange">0</span>];<br>
+          <span class="purple">var </span>attr =
+          <span class="maroon">document.</span><span class="blue">getAttributeNode</span>(<span class="olive">"class"</span>)<span class="maroon">.value</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span> = x;<br>
+        </p>
+      <span class="black">}</span><br>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

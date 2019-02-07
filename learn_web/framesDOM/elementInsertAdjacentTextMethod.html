@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element insertAdjacentText</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">insertAdjacentText()</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The insertAdjacentText() method inserts a the specified element into a specified position.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>position</td>
+          <td>String</td>
+          <td>
+            Required. A position relative to the element.<br><br>
+            Legal values:<br>
+            "afterbegin" - After the beginning of the element (as the first child).<br>
+            "afterend" - After the element.<br>
+            "beforebegin" - Before the element.<br>
+            "beforeend" - Before the end of the element (as the last child).
+          </td>
+        </tr>
+        <tr>
+          <td>element</td>
+          <td>HTML Element</td>
+          <td>The element you want to insert.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemnIsertAdjacentElementExamplesBar" class="left-padding">
+    <a href="#elemnIsertAdjacentElementExamplesBar">
+      <button onclick="insAdjacentText('afterbegin')" class="dom-buttons-prop">afterbegin</button>
+    </a>
+    <a href="#elemnIsertAdjacentElementExamplesBar">
+      <button onclick="insAdjacentText('afterend')" class="dom-buttons-prop">afterend</button>
+    </a>
+    <a href="#elemnIsertAdjacentElementExamplesBar">
+      <button onclick="insAdjacentText('beforebegin')" class="dom-buttons-prop">beforebegin</button>
+    </a>
+    <a href="#elemnIsertAdjacentElementExamplesBar">
+      <button onclick="insAdjacentText('beforeend')" class="dom-buttons-prop">beforeend</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <span class="fruit">Banana</span>
+      <span class="fruit">Kiwi</span>
+      <span class="fruit">Apple</span>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">span</span>
+        <span class="crimson">class=</span><span class="olive">"fruit"</span>&gt;
+        <span class="black">Banana</span>
+        &lt;<span class="brown">/span</span>&gt;<br>
+        &lt;<span class="brown">span</span>
+        <span class="crimson">class=</span><span class="olive">"fruit"</span>&gt;
+        <span class="black">Kiwi</span>
+        &lt;<span class="brown">/span</span>&gt;<br>
+        &lt;<span class="brown">span</span>
+        <span class="crimson">class=</span><span class="olive">"fruit"</span>&gt;
+        <span class="black">Aple</span>
+        &lt;<span class="brown">/span</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">insAdjacentText</span>(place) {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>elem =
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"fruit"</span>)[<span class="orange">1</span>];<br>
+          <span class="maroon">elem.</span><span class="blue">insertAdjacentText</span>(place, <span class="olive">" Grape "</span>);<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
