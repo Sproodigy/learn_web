@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element is supported</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">isSupported()</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The isSupported() method checks if a specified feature is supported for the specified node.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Nodes:<br />
+    <div class="note-value">
+      This method was supported in Chrome, Firefox and Opera before, but they no longer support it.
+    </div>
+    <div class="note-value">
+      This method is obsolete in many browsers. Try to avoid using it.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>feature</td>
+          <td>String</td>
+          <td>Required. Defines the feature you want to check if is supported.</td>
+        </tr>
+        <tr>
+          <td>version</td>
+          <td>String</td>
+          <td>Optional. Defines the version of the feature you want to check if is supported.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemIsSameNodeExamplesBar" class="left-padding">
+    <a href="#elemIsSameNodeExamplesBar">
+      <button onclick="sameNodes()" class="dom-buttons-prop">Is supported?</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <ul>
+        <li>Banana</li>
+        <li>Apple</li>
+      </ul>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">ul</span>&gt;</span><br>
+        <p class="more-padding" style="margin: 0;">
+          &lt;<span class="brown">li</span>&gt;<span class="black">Banana</span>&lt;<span class="brown">/li</span>&gt;<br>
+          &lt;<span class="brown">li</span>&gt;<span class="black">Apple</span>&lt;<span class="brown">/li</span>&gt;<br>
+        </p>
+        <span class="left-padding">&lt;<span class="brown">/ul</span>&gt;</span><br>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">sameNodes</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>item =
+          <span class="maroon">document.</span><span class="blue">getElementsByTagName</span>(<span class="olive">"li"</span>)[<span class="orange">0</span>];<br>
+          <span class="purple">var </span>x =
+          <span class="maroon">item.</span><span class="blue">isSupported</span>[<span class="olive">"Core", "2.0"</span>];<br>
+          <span class="purple">var </span>text = <span class="olive">"Is supported? "</span> + x;<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
+          = text;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

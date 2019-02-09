@@ -585,3 +585,71 @@ function isDefaultNamesp() {
   var text = "Is default namespace? " + x;
   document.getElementsByClassName("replace")[0].innerHTML = x;
 }
+
+function compareNodes() {
+  var item1 = document.getElementById("list1").firstElementChild;
+  var item2 = document.getElementById("list2").firstElementChild;
+  var x = item1.isEqualNode(item2);
+  var text = "Are the nodes equal? " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = text;
+}
+
+function sameNodes() {
+  var item1 = document.getElementById("list1");
+  var item2 = document.getElementById("list2");
+  var x = item1.isSameNode(item2);
+  var text = "Are the nodes the same? " + x;
+  document.getElementsByClassName("replace")[0].innerHTML = text;
+}
+
+function isSupported() {
+  var item = document.getElementsByTagName("UL")[0];
+  var x = item.isSupported("Core", "2.0");
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function addTextNode() {
+  var x = document.createTextNode(" Click again.");
+  var y = document.getElementById("elementNormalizeP");
+  y.appendChild(x);
+  var x = document.getElementsByClassName("replace")[0];
+  x.innerHTML = y.childNodes.length;
+}
+
+function normPara() {
+  document.normalize();
+  var x = document.getElementById("elementNormalizeP");
+  var y = document.getElementsByClassName("replace")[0];
+  y.innerHTML = x.childNodes.length;
+}
+
+function showQuerySelectorElem() {
+  document.querySelector(".example").style.color = "red";
+}
+
+function showQuerySelectorAllElem() {
+  document.querySelectorAll("p")[2].style.color = "red";
+}
+
+function removeAttr() {
+  document.getElementById("elemRemoveAttrP").removeAttribute("class");
+}
+
+function removeAttrNode() {
+  var elmnt = document.getElementById("elemRemoveAttrNodeP");
+  var attr = elmnt.getAttributeNode("class");
+  elmnt.removeAttributeNode(attr);
+}
+
+function rmvChild() {
+  var list = document.getElementById("elemRemoveChildUl");
+  while (list.hasChildNodes()) {
+    list.removeChild(list.firstElementChild);
+  }
+}
+
+function replcChild() {
+  var textnode = document.createTextNode("Grape");
+  var item = document.getElementById("elemReplaceChildUl").firstElementChild;
+  item.replaceChild(textnode, item.firstChild);
+}

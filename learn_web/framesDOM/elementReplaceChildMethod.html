@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element replaceChild</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">replaceChild()</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The replaceChild() method replaces a child node with a new node.
+    </div>
+    <div class="note-value">
+      The new node could be an existing node in the document, or you can create a new node.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Use the removeChild() method to remove a child node from an element.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>newnode</td>
+          <td>Node object</td>
+          <td>Required. The node object you want to insert.</td>
+        </tr>
+        <tr>
+          <td>oldnode</td>
+          <td>Node object</td>
+          <td>Required. The node object you want to remove.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemReplaceChildExamplesBar" class="left-padding">
+    <a href="#elemReplaceChildExamplesBar">
+      <button onclick="replcChild()" class="dom-buttons-prop">Replace child</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <ul id="elemReplaceChildUl">
+        <li>Banana</li>
+        <li>Apple</li>
+        <li>Kiwi</li>
+      </ul>
+      <p class="replace centerContent"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">ul</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;<br>
+        <span class="blue left-padding">&lt;<span class="brown">li</span>&gt;<span class="black">Banana</span>&lt;<span class="brown">/li</span>&gt;</span><br>
+        <span class="blue left-padding">&lt;<span class="brown">li</span>&gt;<span class="black">Apple</span>&lt;<span class="brown">/li</span>&gt;</span><br>
+        <span class="blue left-padding">&lt;<span class="brown">li</span>&gt;<span class="black">Kiwi</span>&lt;<span class="brown">/li</span>&gt;</span><br>
+        &lt;<span class="brown">/ul</span>&gt;<br>
+        <!-- &lt;<span class="brown">p</span>
+        <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;<br> -->
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">replcChild</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>textnode =
+          <span class="maroon">document.</span><span class="blue">createTextNode</span>(<span class="olive">"Grape"</span>);<br>
+          <span class="purple">var </span>item =
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.firstElementChild</span>;<br>
+          <span class="maroon">item.</span><span class="blue">replaceChild</span>(textnode, <span class="maroon">item.firstChild</span>);<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

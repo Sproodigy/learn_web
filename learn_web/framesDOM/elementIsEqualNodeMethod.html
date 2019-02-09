@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element is equal node</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">isEqualNode()</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The isEqualNode() method checks if two nodes are equal.
+    </div>
+    <div class="note-value">
+      Two nodes are equal if all the following conditions are true:<br>
+      <ul>
+        <li>They have the same Node Type.</li>
+        <li>They have the same nodeName, NodeValue, localName, nameSpaceURI and prefix.</li>
+        <li>They have the same childNodes with all the descendants.</li>
+        <li>They have the same attributes and attribute values (the attributes does not have be in the same order).</li>
+      </ul>
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>node</td>
+          <td>Node object</td>
+          <td>Required. The node you want to compare the specified node with.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemIsEqualNodeExamplesBar" class="left-padding">
+    <a href="#elemIsEqualNodeExamplesBar">
+      <button onclick="compareNodes()" class="dom-buttons-prop">Are the nodes equal?</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <ul id="list1">
+        <li>Banana</li>
+        <li>Apple</li>
+      </ul>
+      <ul id="list2">
+        <li>Kiwi</li>
+        <li>Grape</li>
+      </ul>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">ul</span>
+        <span class="purple">id=</span><span class="olive">"list1"</span>&gt;</span><br>
+        <p class="more-padding" style="margin: 0;">
+          &lt;<span class="brown">li</span>&gt;<span class="black">Banana</span>&lt;<span class="brown">/li</span>&gt;<br>
+          &lt;<span class="brown">li</span>&gt;<span class="black">Apple</span>&lt;<span class="brown">/li</span>&gt;<br>
+        </p>
+        <span class="left-padding">&lt;<span class="brown">/ul</span>&gt;</span><br><br>
+
+        <span class="left-padding">&lt;<span class="brown">ul</span>
+        <span class="purple">id=</span><span class="olive">"list2"</span>&gt;</span><br>
+        <p class="more-padding" style="margin: 0;">
+          &lt;<span class="brown">li</span>&gt;<span class="black">Kiwi</span>&lt;<span class="brown">/li</span>&gt;<br>
+          &lt;<span class="brown">li</span>&gt;<span class="black">Grape</span>&lt;<span class="brown">/li</span>&gt;<br>
+        </p>
+        <span class="left-padding">&lt;<span class="brown">/ul</span>&gt;</span><br>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">compareNodes</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>item1 =
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"list1"</span>)<span class="maroon">.firstElementChild</span>;<br>
+          <span class="purple">var </span>item2 =
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"list2"</span>)<span class="maroon">.firstElementChild</span>;<br>
+          <span class="purple">var </span>x =
+          <span class="maroon">item1.</span><span class="blue">isEqualNode</span>(item2);<br>
+          <span class="purple">var </span>text = <span class="olive">"Are the nodes equal? "</span> + x;<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
+          = text;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

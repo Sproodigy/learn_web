@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Element addEventListener</title>
+<title>Element removeEventListener</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,13 +21,13 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">addEventListener()</h1></div>
+  <div><h1 class="domTitle">removeEventListener()</h1></div>
   <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The addEventListener() method attaches an event handler to the specified element.
+      The removeEventListener() method removes an event handler that has been attached with the addEventListener() method.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -35,11 +35,10 @@
   <div class="note noteDOM">
     Notes:<br />
     <div class="note-value">
-      Use the element.removeEventListener() method to remove an event handler
-      that has been attached with the addEventListener() method.
+      To remove event handlers, the function specified with the addEventListener() method must be an external function
     </div>
     <div class="note-value">
-      Use the document.addEventListener() method to attach an event handler to the document.
+      Anonymous functions, like "element.removeEventListener("event", function(){ myScript });" will not work.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -56,27 +55,22 @@
         <tr>
           <td>event</td>
           <td>
-            Required. A String that specifies the name of the event.<br>
+            Required. A String that specifies the name of the event to remove.<br>
             Note: Do not use the "on" prefix. For example, use "click" instead of "onclick".
           </td>
         </tr>
         <tr>
           <td>function</td>
-          <td>
-            Required. Specifies the function to run when the event occurs.<br>
-            When the event occurs, an event object is passed to the function as the first parameter.
-            The type of the event object depends on the specified event.
-            For example, the "click" event belongs to the MouseEvent object.
-          </td>
+          <td>Required. Specifies the function to remove.</td>
         </tr>
         <tr>
           <td>useCapture</td>
           <td>
-            Optional. A Boolean value that specifies whether the event should be executed in the capturing or in the bubbling phase.<br>
+            Optional. A Boolean value that specifies the event phase to remove the event handler from.<br>
             Possible values:
             <ul>
-              <li>true - The event handler is executed in the capturing phase.</li>
-              <li>false- Default. The event handler is executed in the bubbling phase.</li>
+              <li>true - Removes the event handler from the capturing phase.</li>
+              <li>false- false- Default. Removes the event handler from the bubbling phase.</li>
             </ul>
           </td>
         </tr>

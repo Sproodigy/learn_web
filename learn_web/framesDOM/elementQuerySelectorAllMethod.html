@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Document query selector</title>
+<title>Element query selector all</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../styles/dom_style.css" />
 <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
 
-<script src="../scripts/domDocument.js"></script>
+<script src="../scripts/domElements.js"></script>
 
 <body>
   <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
@@ -21,27 +21,37 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">querySelector()</h1></div>
-  <p><a href="../pagesDOM/domDocument.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+  <div><h1 class="domTitle">querySelectorAll()</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
+      The querySelectorAll() method returns a collection of an element's child elements
+      that match a specified CSS selector(s), as a static NodeList object.
     </div>
     <div class="note-value">
-      If the selector matches an ID in document that is used several times
-      (Note that an "id" should be unique within a page and should not be used more than once), it returns the first matching element.
+      The NodeList object represents a collection of nodes. The nodes can be accessed by index numbers.
+      The index starts at 0.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
-  <div><h2 class="tag domTitle">Propertie Values</h2></div>
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      You can use the length property of the NodeList object to determine the number of child nodes
+      that matches the specified selector, then you can loop through all nodes and extract the info you want.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
   <div>
     <table class="tableDOMAttr tableDOM">
       <thead>
         <tr>
-          <th>Propertie</th><th>Type</th><th>Description</th>
+          <th>Parameter</th><th>Type</th><th>Description</th>
         </tr>
       </thead>
       <tbody>
@@ -52,7 +62,6 @@
             Required. Specifies one or more CSS selectors to match the element.
             These are used to select HTML elements based on their id, classes, types, attributes, values of attributes, etc.<br><br>
             For multiple selectors, separate each selector with a comma.
-            The returned element depends on which element that is first found in the document.
           </td>
         </tr>
       </tbody>
@@ -61,9 +70,9 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="documentQuirySelectorExamplesBar" class="left-padding">
-    <a href="#documentQuirySelectorExamplesBar">
-      <button onclick="showQuerySelector()" class="dom-buttons-prop">Perform</button>
+  <div id="elemQuerySelectorAllExamplesBar" class="left-padding">
+    <a href="#elemQuerySelectorAllExamplesBar">
+      <button onclick="showQuerySelectorAllElem()" class="dom-buttons-prop">Perform</button>
     </a>
   </div>
 
@@ -90,10 +99,10 @@
       &lt;<span class="brown">/div</span>&gt;
     </div>
 
-    <div id="docQuirySelector1" class="black float-borders-none">
+    <div id="elemQuerySelectorAll" class="black float-borders-none">
       <span class="purple">function </span><span class="blue">exampleFunction</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="maroon">document.</span><span class="blue">querySelector</span>(<span class="olive">"p"</span>)<span class="maroon">.style.color</span>
+          <span class="maroon">elem.</span><span class="blue">querySelectorAll</span>(<span class="olive">"p"</span>)[<span class="orange">1</span>]<span class="maroon">.style.color</span>
           = <span class="olive">"red"</span>;<br>
         </p>
       <span class="black">}</span>
