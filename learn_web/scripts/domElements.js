@@ -653,3 +653,21 @@ function replcChild() {
   var item = document.getElementById("elemReplaceChildUl").firstElementChild;
   item.replaceChild(textnode, item.firstChild);
 }
+
+function setAttr() {
+  let elem = document.getElementById("elemSetAttrP");
+  elem.setAttribute("class", "olive");
+}
+
+function setAttrNode() {
+  var attr = document.createAttribute("class");
+  attr.value = "olive";
+  var target = document.getElementById("elemSetAttrP");
+  target.setAttributeNode(attr);
+}
+
+function elemScrollIntoView(boolean) {
+  var elmnt = document.getElementById("elemScrollIntoViewP");
+  elmnt.scrollIntoView(boolean);
+  document.getElementsByClassName("replace")[0].innerHTML = boolean;
+}

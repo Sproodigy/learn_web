@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<title>Element set attribute</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domElements.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">setAttribute()</h1></div>
+  <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The setAttribute() method adds the specified attribute to an element, and gives it the specified value.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      If the specified attribute already exists, only the value is set/changed.
+    </div>
+    <div class="note-value">
+      Although it is possible to add the style attribute with a value to an element with this method,
+      it is recommended that you use properties of the Style object instead for inline styling,
+      because this will not overwrite other CSS properties that may be specified in the style attribute.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h2 class="tag domTitle">Parameter Values</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Parameter</th><th>Type</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>attributename</td>
+          <td>String</td>
+          <td>Required. The name of the attribute you want to add.</td>
+        </tr>
+        <tr>
+          <td>attributevalue</td>
+          <td>String</td>
+          <td>Required. The value of the attribute you want to add.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemSetAttributeExamplesBar" class="left-padding">
+    <a href="#elemSetAttributeExamplesBar">
+      <button onclick="setAttr()" class="dom-buttons-prop">Set attribute</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div>
+      <p id="elemSetAttrP">Example text...</p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>&gt;<br>
+        <span class="black left-padding">Example text...</span><br>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;
+    </div>
+
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">style</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        <span class="brown">.olive </span><span class="black">{</span><br>
+          <span class="crimson left-padding">color: </span><span class="olive">olive</span>;<br>
+        <span class="black">}</span>
+      </p>
+      &lt;<span class="brown">/style</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">setAttr</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">let </span>elem = <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>);<br>
+          <span class="maroon">elem.</span><span class="blue">setAttribute</span>(<span class="olive">"class", "olive"</span>);<br>
+        </p>
+      }
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

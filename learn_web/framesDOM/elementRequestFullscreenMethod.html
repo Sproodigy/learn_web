@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Element exit fullscreen</title>
+<title>Element request fullscreen</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -20,13 +20,13 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">exitFullscreen()</h1></div>
+  <div><h1 class="domTitle">requestFullscreen()</h1></div>
   <p><a href="../pagesDOM/domElements.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The exitFullscreen() method cancels an element in fullscreen mode.
+      The requestFullscreen() method opens an element in fullscreen mode.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -37,7 +37,7 @@
       This method requires specific prefixes to work in different browsers.
     </div>
     <div class="note-value">
-      Use the requestFullscreen() method to open an element in fullscreen mode.
+      Use the exitFullscreen() method to cancel fullscreen mode.
     </div>
     <div class="note-value">
       Prefix for different brousers: Chrome — 15.0 (webkit), IE — 11.0 (ms), Firefox — 9.0 (moz), Safari — 5.1 (webkit), Opera — 12.10 (webkit).
@@ -46,11 +46,11 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="elemExitFullScreenExamplesBar" class="left-padding">
-    <a href="#elemExitFullScreenExamplesBar">
+  <div id="elemRequestFullScreenExamplesBar" class="left-padding">
+    <a href="#elemRequestFullScreenExamplesBar">
       <button onclick="openFullscreenElem()" class="dom-buttons-prop">Open fullscreen</button>
     </a>
-    <a href="#elemExitFullScreenExamplesBar">
+    <a href="#elemRequestFullScreenExamplesBar">
       <button onclick="closeFullscreenElem()" class="dom-buttons-prop">Close fullscreen</button>
     </a>
   </div>
