@@ -12,3 +12,8 @@ function roundBorders() {
     }
   }
 }
+
+function isBubbles(event) {
+  var x = event.bubbles;
+  document.getElementsByClassName("replace")[0].innerHTML = "Bubbles: " + x;
+}
