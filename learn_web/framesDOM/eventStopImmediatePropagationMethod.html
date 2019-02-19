@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event stop immediate propagation</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+</style>
+
+<script src="../scripts/domEventObjects.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">stopImmediatePropagation()</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The stopImmediatePropagation() method prevents other listeners of the same event from being called.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemStopImmedPropagationExamplesBar" class="left-padding">
+    <a href="#elemStopImmedPropagationExamplesBar">
+      <button id="elemStopImmedPropagationBtn" class="dom-buttons-prop">Perform</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv ">
+    <div class="centerContent">
+      <p class="replace"></p>
+
+      Cancel immediate propagation:
+      <input type="checkbox" id="check">
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">button</span>&gt;<span class="black">Perform</span>&lt;<span class="brown">/button</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="maroon">class=</span><span class="olive">"example"</span>&gt;
+        <span class="black replace"></span>
+        &lt;<span class="brown">/p</span>&gt;<br>
+      </p>
+      &lt;<span class="brown">/div</span>&gt;<br><br>
+
+      <span class="black">Cancel immediate propagation: </span><br>
+      &lt;<span class="brown">input</span>
+      <span class="crimson">type=</span><span class="olive">"checkbox"</span>
+      <span class="purple">id=</span><span class="olive">"check"</span>&gt;<br>
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">printText</span>(<span class="maroon">event</span>) {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>];<br>
+          <span class="maroon">x.innerHTML</span> = <span class="olive">"Example text..."</span>;<br><br>
+          <span class="purple">if </span>(<span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"check"</span>)<span class="maroon">.checked</span>) {<br>
+          <span class="maroon left-padding">event.</span><span class="blue">stopImmediatePropagation</span>();<br>
+        }
+        </p>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function </span><span class="blue">addText</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>];<br>
+          <span class="maroon">x.innerHTML</span> += <span class="olive">" other text..."</span>;<br>
+        </p>
+      <span class="black">}</span><br><br>
+
+      <span class="maroon">document.</span><span class="blue">getElementsByTagName</span>(<span class="olive">"button"</span>)[<span class="orange">0</span>];<br>
+      <span class="maroon">x.</span><span class="blue">addEventListener</span>(<span class="olive">"click"</span>, printText);<br>
+      <span class="maroon">x.</span><span class="blue">addEventListener</span>(<span class="olive">"click"</span>, addText);<br>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <script>
+    var x = document.getElementById("elemStopImmedPropagationBtn");
+    x.addEventListener("click", printText);
+    x.addEventListener("click", addText);
+  </script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Event bubbles prop</title>
+<title>Event cancelable</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,32 +21,27 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">bubbles</h1></div>
+  <div><h1 class="domTitle">cancelable</h1></div>
   <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The bubbles event property returns a Boolean value that indicates whether or not an event is a bubbling event.
+      The cancelable event property returns a Boolean value indicating whether or not an event is a cancelable event.
     </div>
     <div class="note-value">
-      Event bubbling directs an event to its intended target, it works like this:<br>
-      <ul>
-        <li>A button is clicked and the event is directed to the button.</li>
-        <li>If an event handler is set for that object, the event is triggered.</li>
-        <li>If no event handler is set for that object, the event bubbles up (like a bubble in water) to the objects parent.</li>
-      </ul>
+      The event is cancelable if it is possible to prevent the events default action.
     </div>
     <div class="note-value">
-      The event bubbles up from parent to parent until it is handled, or until it reaches the document object.
+      To cancel an event, use the preventDefault() method.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="eventBubblesExamplesBar" class="left-padding">
-    <a href="#eventBubblesExamplesBar">
-      <button onclick="isBubbles(event)" class="dom-buttons-prop">Perform</button>
+  <div id="eventCancelableExamplesBar" class="left-padding">
+    <a href="#eventCancelableExamplesBar">
+      <button onclick="cancelable(event)" class="dom-buttons-prop">Perform</button>
     </a>
   </div>
 
@@ -61,7 +56,7 @@
       &lt;<span class="brown">div</span>&gt;
       <p class="left-padding" style="margin: 0;">
         &lt;<span class="brown">button</span>
-        <span class="crimson">onclick=</span><span class="olive">"isBubbles(event)"</span>&gt;&lt;<span class="brown">/button</span>&gt;<br>
+        <span class="crimson">onclick=</span><span class="olive">"cancelable(event)"</span>&gt;&lt;<span class="brown">/button</span>&gt;<br>
         &lt;<span class="brown">p</span>
         <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;&lt;<span class="brown">/p</span>&gt;
       </p>
@@ -69,7 +64,7 @@
     </div>
 
     <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">isBubbles</span>(<span class="maroon">event</span>) {<br>
+      <span class="purple">function </span><span class="blue">cancelable</span>(<span class="maroon">event</span>) {<br>
         <p class="left-padding" style="margin: 0;">
           <span class="purple">var </span>x = <span class="maroon">event.bubbles</span>;<br>
           <span class="maroon">document.</span><span class="blue">getElementsByClassNameById</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>

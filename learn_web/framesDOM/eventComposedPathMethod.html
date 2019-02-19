@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event composed path</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+  .change {
+    padding:30px;
+    background-color: rgba(0, 255, 48, 0.2);
+    text-align:center;
+    cursor:pointer;
+  }
+</style>
+
+<script src="../scripts/domEventObjects.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">composedPath</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The composedPath() method returns an array of objects containing the elements in the event flow, in the correct execution order.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div class="exampleDOMDiv ">
+    <div class="centerContent">
+      <div class="change">DIV 2
+        <div class="change" onclick="getComposedPath(event)">DIV 1</div>
+        <p class="replace"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;
+      <span class="black">DIV 2</span><br>
+      <span class="left-padding">&lt;<span class="brown">div</span>
+      <span class="crimson">onclick=</span><span class="olive">"getComposedPath()"</span>&gt;
+      <span class="black">DIV 1</span></span>
+      &lt;<span class="brown">/div</span>&gt;<br>
+      &lt;<span class="brown">/div</span>&gt;<br>
+    </div>
+
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">style</span>&gt;<br>
+        <span class="brown left-padding">div </span><span class="black">{</span><br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="crimson">padding: </span><span class="olive">50px;</span><br>
+            <span class="crimson">text-align: </span><span class="olive">center;</span><br>
+            <span class="crimson">background: </span><span class="olive">rgba(0, 255, 48, 0.2);</span><br>
+            <span class="crimson">cursor: </span><span class="olive">pointer;</span><br>
+          </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/style</span>&gt;<br>
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">getComposedPath</span>(<span class="maroon">event</span>) {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>x =<span class="blue">event.</span><span class="blue">composedPath</span>();<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
+          = x;<br>
+        </p>
+      <span class="black">}</span><br>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

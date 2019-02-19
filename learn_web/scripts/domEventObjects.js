@@ -17,3 +17,81 @@ function isBubbles(event) {
   var x = event.bubbles;
   document.getElementsByClassName("replace")[0].innerHTML = "Bubbles: " + x;
 }
+
+function firstLevel(event) {
+  alert("DIV 1");
+  if (document.getElementById("check").checked) {
+    event.cancelBubble = true;
+  }
+}
+
+function secLevel() {
+  alert("DIV 2");
+}
+
+function cancelable(event) {
+  var x = event.cancelable;
+  document.getElementsByClassName("replace")[0].innerHTML = "Cancelable: " + x;
+}
+
+function currentTarget(event) {
+  var x = event.currentTarget.nodeName;
+  document.getElementsByClassName("replace")[0].innerHTML = "Node name: " + x;
+}
+
+function eventPhase(event) {
+  var x = event.eventPhase;
+  document.getElementsByClassName("replace")[0].innerHTML = "Event phase: " + x;
+}
+
+function isTrusted(event) {
+  var x = event.isTrusted;
+  document.getElementsByClassName("replace")[0].innerHTML = "Is trusted: " + x;
+}
+
+function target(event) {
+  var x = event.target;
+  document.getElementsByClassName("replace")[0].innerHTML = "Triggered by a " + x.tagName + " element";
+}
+
+function type(event) {
+  var x = event.type;
+  document.getElementsByClassName("replace")[0].innerHTML = "Event: " + x;
+}
+
+function timeStamp(event) {
+  var x = event.timeStamp;
+  document.getElementsByClassName("replace")[0].innerHTML = "Time stamp: " + x;
+}
+
+function createNewEvent(event) {
+  var x = document.createEvent("MouseEvent");
+  x.initMouseEvent("mouseover", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+  document.getElementById("elemCreateEventP").dispatchEvent(x);
+}
+
+function getComposedPath(event) {
+  var x = event.composedPath();
+  document.getElementsByClassName("replace")[0].innerHTML = "Path: " + x;
+}
+
+function cancelPropagation(event) {
+  alert("DIV 1");
+  if (document.getElementById("check").checked) {
+    event.stopPropagation();
+  }
+}
+
+function printText(event) {
+  var x = document.getElementsByClassName("replace")[0];
+  x.innerText = "Example text...";
+  
+  if (document.getElementById("check").checked) {
+    event.stopImmediatePropagation();
+  }
+}
+
+function addText() {
+  var x = document.getElementsByClassName("replace")[0];
+  document.getElementsByClassName("replace")[0].innerText += " other text...";
+}

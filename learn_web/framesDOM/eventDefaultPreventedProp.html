@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Event bubbles prop</title>
+<title>Event defaultPrevented</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -21,61 +21,64 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">bubbles</h1></div>
+  <div><h1 class="domTitle">defaultPrevented</h1></div>
   <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The bubbles event property returns a Boolean value that indicates whether or not an event is a bubbling event.
-    </div>
-    <div class="note-value">
-      Event bubbling directs an event to its intended target, it works like this:<br>
-      <ul>
-        <li>A button is clicked and the event is directed to the button.</li>
-        <li>If an event handler is set for that object, the event is triggered.</li>
-        <li>If no event handler is set for that object, the event bubbles up (like a bubble in water) to the objects parent.</li>
-      </ul>
-    </div>
-    <div class="note-value">
-      The event bubbles up from parent to parent until it is handled, or until it reaches the document object.
+      The defaultPrevented event property checks whether the preventDefault() method was called for the event.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="eventBubblesExamplesBar" class="left-padding">
-    <a href="#eventBubblesExamplesBar">
-      <button onclick="isBubbles(event)" class="dom-buttons-prop">Perform</button>
+  <!-- <div id="eventDefaultPreventExamplesBar" class="left-padding">
+    <a href="#eventDefaultPreventExamplesBar">
+      <button onclick="defaultPrevent(event)" class="dom-buttons-prop">Perform</button>
     </a>
-  </div>
+  </div> -->
 
   <div class="exampleDOMDiv ">
-    <div>
+    <div class="centerContent">
+      <p><a id="elemDefaultPreventA" href="https://w3schools.com/">https://w3schools.com/</a></p>
       <p class="replace"></p>
     </div>
   </div>
+
+  <script>
+    document.getElementById("elemDefaultPreventA").addEventListener("click", function(event) {
+    event.preventDefault()
+    document.getElementsByClassName("replace")[0].innerHTML = "Was preventDefault() called: " + event.defaultPrevented;
+    });
+  </script>
 
   <div class="codeDOM">
     <div class="blue float-borders-none">
       &lt;<span class="brown">div</span>&gt;
       <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">button</span>
-        <span class="crimson">onclick=</span><span class="olive">"isBubbles(event)"</span>&gt;&lt;<span class="brown">/button</span>&gt;<br>
+        &lt;<span class="brown">a</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>
+        <span class="crimson">href=</span><span class="olive">"https://w3schools.com/"</span>&gt;
+        <span class="black">https://w3schools.com/</span>
+        &lt;<span class="brown">/a</span>&gt;<br>
         &lt;<span class="brown">p</span>
         <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;&lt;<span class="brown">/p</span>&gt;
       </p>
       &lt;<span class="brown">div</span>&gt;
     </div>
 
-    <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">isBubbles</span>(<span class="maroon">event</span>) {<br>
-        <p class="left-padding" style="margin: 0;">
-          <span class="purple">var </span>x = <span class="maroon">event.bubbles</span>;<br>
-          <span class="maroon">document.</span><span class="blue">getElementsByClassNameById</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
-          = x;<br>
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">style</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        <span class="maroon">document.</span>getElementById(<span class="olive">"example"</span>).addEventListener(<span class="olive">"click"</span>,
+        <span class="purple">function</span>(<span class="maroon">event</span>) {<br>
+        <span class="maroon left-padding">event.</span>preventDefault();<br>
+        <span class="maroon left-padding">document.</span><span class="blue">getElementsByClassNameById</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
+        = <span class="maroon">event.defaultPrevented</span>;<br>
+        });<br>
         </p>
-      <span class="black">}</span><br>
+      &lt;<span class="brown">/style</span>&gt;<br>
     </div>
   </div>
   <p style="clear: left;"></p>

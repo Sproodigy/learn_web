@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event cancel bubbles</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+  .change {
+    padding:30px;
+    background-color: rgba(0, 255, 48, 0.2);
+    text-align:center;
+    cursor:pointer;
+  }
+</style>
+
+<script src="../scripts/domEventObjects.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">cancelBubble</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The cancelBubble() method prevents the event-flow from bubbling up to parent elements.
+    </div>
+    <div class="note-value">
+      To prevent both bubbling up to parent elements and capturing down to child elements, use the stopPropagation() method instead.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div class="exampleDOMDiv ">
+    <div class="centerContent">
+      <div class="change" onclick="secLevel()">DIV 2
+        <div class="change" onclick="firstLevel(event)">DIV 1</div>
+      </div>
+
+      Cancel bubble:
+      <input type="checkbox" id="check">
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>
+      <span class="crimson">onclick=</span><span class="olive">"secLevel()"</span>&gt;
+      <span class="black">DIV 2</span><br>
+      <span class="left-padding">&lt;<span class="brown">div</span>
+      <span class="crimson">onclick=</span><span class="olive">"firstLevel()"</span>&gt;
+      <span class="black">DIV 1</span></span>
+      &lt;<span class="brown">/div</span>&gt;<br>
+      &lt;<span class="brown">/div</span>&gt;<br><br>
+
+      <span class="black">Cancel bubble: </span><br>
+      &lt;<span class="brown">input</span>
+      <span class="crimson">type=</span><span class="olive">"checkbox"</span>
+      <span class="purple">id=</span><span class="olive">"check"</span>&gt;<br>
+    </div>
+
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">style</span>&gt;<br>
+        <span class="brown left-padding">div </span><span class="black">{</span><br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="crimson">padding: </span><span class="olive">50px;</span><br>
+            <span class="crimson">text-align: </span><span class="olive">center;</span><br>
+            <span class="crimson">background: </span><span class="olive">rgba(0, 255, 48, 0.2);</span><br>
+            <span class="crimson">cursor: </span><span class="olive">pointer;</span><br>
+          </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/style</span>&gt;<br>
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">firstLevel</span>(<span class="maroon">event</span>) {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="blue">alert</span>(<span class="olive">"DIV 1"</span>);<br>
+          <span class="purple">if </span>(<span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"check"</span>)<span class="maroon">.checked</span>) {<br>
+          <span class="maroon left-padding">event.cancelBubble</span> = <span class="orange">true</span>;<br>
+        }
+        </p>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function </span><span class="blue">secLevel</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="blue">alert</span>(<span class="olive">"DIV 2"</span>);<br>
+        </p>
+      <span class="black">}</span><br>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
