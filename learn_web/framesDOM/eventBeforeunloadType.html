@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event onbeforeunload</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+</style>
+
+<script src="../scripts/domEventObjects.js"></script>
+
+<body onbeforeunload="return onbeforeunloadMessage()">
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">onbeforeunload</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The onbeforeunload event occurs when the document is about to be unloaded.
+    </div>
+    <div class="note-value">
+      This event allows you to display a message in a confirmation dialog box
+      to inform the user whether he/she wants to stay or leave the current page.
+    </div>
+    <div class="note-value">
+      The default message that appears in the confirmation box, is different in different browsers.
+      However, the standard message is something like "Are you sure you want to leave this page?".
+      This message cannot be removed.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      However, you can write a custom message together with the default message.
+      See an example on this page. Note: This only works in Internet Explorer.
+    </div>
+    <div class="note-value">
+      If the onbeforeunload event is not assigned to the &lt;body&gt; element,
+      you must assign/attach the event on the window object,
+      and use the returnValue property to create a custom message.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemBeforeprintExamplesBar" class="left-padding">
+  </div>
+
+  <div class="exampleDOMDiv ">
+    <div class="centerContent">
+      <p class="replace">
+      </p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">body</span>
+      <span class="maroon">onbeforeunload=</span><span class="olive">"return onbeforeunloadMessage()"</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;
+      </p>
+      &lt;<span class="brown">/body</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">onbeforeunloadMessage</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">return </span><span class="olive">"Example text..."</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

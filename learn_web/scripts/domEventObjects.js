@@ -85,7 +85,7 @@ function cancelPropagation(event) {
 function printText(event) {
   var x = document.getElementsByClassName("replace")[0];
   x.innerText = "Example text...";
-  
+
   if (document.getElementById("check").checked) {
     event.stopImmediatePropagation();
   }
@@ -94,4 +94,33 @@ function printText(event) {
 function addText() {
   var x = document.getElementsByClassName("replace")[0];
   document.getElementsByClassName("replace")[0].innerText += " other text...";
+}
+
+function afterprintMessage() {
+  document.getElementsByClassName("replace")[0].innerText = "This document is now being printed.";
+}
+
+function beforeprintMessage() {
+  document.getElementsByClassName("replace")[0].innerText = "You are about to print this document!";
+}
+
+function onbeforeunloadMessage() {
+  return "Example text...";
+}
+
+function oncanplayMessage() {
+  document.getElementsByClassName("replace")[0].innerText = "Can start playing video.";
+}
+
+function oncanplaythroughMessage() {
+  document.getElementsByClassName("replace")[0].innerText = "Can play through video without stopping.";
+}
+
+function onchangeData() {
+  var x = document.getElementById("eventChangeSelect").value;
+  document.getElementsByClassName("replace")[0].innerText = "You selected " + x;
+}
+
+function onerrorMessage() {
+  document.getElementsByClassName("replace")[0].innerText = "The image could not be loaded.";
 }

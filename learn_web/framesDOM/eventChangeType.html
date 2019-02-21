@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event onchange</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+</style>
+
+<script src="../scripts/domEventObjects.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">onchange</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The onchange event occurs when the value of an element has been changed.
+    </div>
+    <div class="note-value">
+      For radiobuttons and checkboxes, the onchange event occurs when the checked state has been changed.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      This event is similar to the oninput event. The difference is that the oninput event occurs immediately
+      after the value of an element has changed, while onchange occurs when the element loses focus,
+      after the content has been changed. The other difference is that the onchange event also works on &lt;select&gt; elements.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="elemOncanplaythroughExamplesBar" class="left-padding">
+  </div>
+
+  <div class="exampleDOMDiv ">
+    <div class="centerContent">
+      <select id="eventChangeSelect" onchange="onchangeData()">
+        <option value="banana">Banana</option>
+        <option value="apple">Apple</option>
+        <option value="orange">Orange</option>
+        <option value="kiwi">Kiwi</option>
+      </select>
+
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">body</span>&gt;<br>
+      <span class="left-padding">&lt;<span class="brown">select</span>
+      <span class="purple">id=</span><span class="olive">"example"</span>
+      <span class="crimson">onchange=</span><span class="olive">"onchangeData()"</span>&gt;</span><br>
+        <p class="more-padding" style="margin: 0">
+          &lt;<span class="brown">option</span>
+          <span class="crimson">value=</span><span class="olive">"banana"</span>
+          <span class="crimson replaceSelectAutofocus"></span>&gt;
+          <span class="black">Banana</span>
+          &lt;<span class="brown">/option</span>&gt;<br>
+
+          &lt;<span class="brown">option</span>
+          <span class="crimson">value=</span><span class="olive">"apple"</span>&gt;
+          <span class="black">Apple</span>
+          &lt;<span class="brown">/option</span>&gt;<br>
+
+          &lt;<span class="brown">option</span>
+          <span class="crimson">value=</span><span class="olive">"orange"</span>&gt;
+          <span class="black">Orange</span>
+          &lt;<span class="brown">/option</span>&gt;<br>
+
+          &lt;<span class="brown">option</span>
+          <span class="crimson">value=</span><span class="olive">"kiwi"</span>&gt;
+          <span class="black">Kiwi</span>
+          &lt;<span class="brown">/option</span>&gt;<br>
+        </p>
+      <span class="left-padding">&lt;<span class="brown">/select</span>&gt;</span><br><br>
+
+        <span class="left-padding">
+          &lt;<span class="brown">p</span>
+          <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
+          &lt;<span class="brown">/p</span>&gt;
+        </span><br>
+      &lt;<span class="brown">/body</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">onchangeData</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span> x =
+          <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.value</span>;<br>
+          <span class="purple">var </span> y =
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>];<br>
+          <span class="maroon">y.innerHTML</span> = <span class="olive">"You select "</span> + x;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
