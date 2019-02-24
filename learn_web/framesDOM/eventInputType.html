@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event oninput</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/domEventObjects.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">oninput</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The oninput event occurs when an element gets user input.
+    </div>
+    <div class="note-value">
+      This event occurs when the value of an &lt;input&gt; or &lt;textarea&gt; element is changed.
+    </div>
+    <div class="note-value">
+      This event is similar to the onchange event.
+      The difference is that the oninput event occurs immediately after the value of an element has changed,
+      while onchange occurs when the element loses focus, after the content has been changed.
+      The other difference is that the onchange event also works on &lt;select&gt; elements.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <!-- <div id="eventBubblesExamplesBar" class="left-padding">
+    <a href="#eventBubblesExamplesBar">
+      <button onclick="isBubbles(event)" class="dom-buttons-prop">Perform</button>
+    </a>
+  </div> -->
+
+  <div class="exampleDOMDiv ">
+    <div class="centerContent">
+      <input type="text" id="eventInput" oninput="eventOninputFunc()">
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">div</span>&gt;
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">input</span>
+        <span class="crimson">type=</span><span class="olive">"text"</span>
+        <span class="purple">id=</span><span class="olive">"example"</span>
+        <span class="crimson">oninput=</span><span class="olive">"eventOninputFunc()"</span>&gt;<br>
+        &lt;<span class="brown">p</span>
+        <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;&lt;<span class="brown">/p</span>&gt;
+      </p>
+      &lt;<span class="brown">div</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">eventOninputFunc</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>x = <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>);<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
+          = <span class="olive">"You wrote: "</span> + x;<br>
+        </p>
+      <span class="black">}</span><br>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

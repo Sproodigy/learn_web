@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event onfullscreenerror</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<script src="../scripts/domEventObjects.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">onfullscreenerror</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The fullscreenerror event occurs when an element can not be viewed in fullscreen mode, even if it has been requested.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Use the element.requestFullscreen() method to view an element in fullscreen mode.
+    </div>
+    <div class="note-value">
+      Use the element.exitFullscreen() method to cancel fullscreen mode.
+    </div>
+    <div class="note-value">
+      Prefix for different brousers: Chrome — 45.0 (webkit), IE — 11.0 (ms), Firefox — 47.0 (moz), Safari — 5.1 (webkit), Opera — 15.0 (webkit).
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="eventFullscreenerrorExamplesBar" class="left-padding">
+    <a href="#eventFullscreenerrorExamplesBar">
+      <button onclick="openFullscreenElem()" class="dom-buttons-prop">Open fullscreen</button>
+    </a>
+    <a href="#eventFullscreenerrorExamplesBar">
+      <button onclick="closeFullscreenElem()" class="dom-buttons-prop">Close fullscreen</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div class="centerContent">
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="black float-borders-none">
+      <span class="purple">var </span>elem = <span class="maroon">document.documentElement</span>;<br><br>
+      <span class="purple">function </span><span class="blue">openFullscreen</span>() {<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">if </span>(<span class="maroon">elem.requestFullscreen</span>) {<br>
+              <span class="maroon left-padding">elem.</span><span class="blue">requestFullscreen</span>();<br>
+            } <span class="purple">else if </span>(<span class="maroon">elem.mozRequestFullscreen</span>) {<br>
+              <span class="maroon left-padding">elem.</span><span class="blue">mozRequestFullscreen</span>();<br>
+            } <span class="purple">else if </span>(<span class="maroon">elem.webkitRequestFullscreen</span>) {<br>
+              <span class="maroon left-padding">elem.</span><span class="blue">webkitRequestFullscreen</span>();<br>
+            } <span class="purple">else if </span>(<span class="maroon">elem.msRequestFullscreen</span>) {<br>
+              <span class="maroon left-padding">elem.</span><span class="blue">msRequestFullscreen</span>();<br>
+            }<br>
+          </p>
+        <span>}</span><br><br>
+
+      <span class="purple">function </span><span class="blue">closeFullscreen</span>() {<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">if </span>(<span class="maroon">document.exitFullscreen</span>) {<br>
+              <span class="maroon left-padding">document.</span><span class="blue">exitFullscreen</span>();<br>
+            } <span class="purple">else if </span>(<span class="maroon">document.mozCancelFullscreen</span>) {<br>
+              <span class="maroon left-padding">document.</span><span class="blue">mozCancelFullscreen</span>();<br>
+            } <span class="purple">else if </span>(<span class="maroon">document.webkitExitFullscreen</span>) {<br>
+              <span class="maroon left-padding">document.</span><span class="blue">webkitExitFullscreen</span>();<br>
+            } <span class="purple">else if </span>(<span class="maroon">document.msExitFullscreen</span>) {<br>
+              <span class="maroon left-padding">document.</span><span class="blue">msExitFullscreen</span>();<br>
+            }<br>
+          </p>
+        <span>}</span><br>
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">var </span>output = <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>];<br><br>
+      <span class="maroon">document.</span><span class="blue">addEventListener</span>(<span class="olive">"fullscreenchange"</span>, <span class="purple">function </span>() {<br>
+        <span class="maroon left-padding">output.innerHTML</span> = <span class="olive">"Fullscreen denied!"</span>;<br>
+      });<br>
+      <span class="maroon">document.</span><span class="blue">addEventListener</span>(<span class="olive">"mozfullscreenchange"</span>, <span class="purple">function </span>() {<br>
+        <span class="maroon left-padding">output.innerHTML</span> = <span class="olive">"Fullscreen denied!"</span>;<br>
+      });<br>
+      <span class="maroon">document.</span><span class="blue">addEventListener</span>(<span class="olive">"webkitfullscreenchange"</span>, <span class="purple">function </span>() {<br>
+        <span class="maroon left-padding">output.innerHTML</span> = <span class="olive">"Fullscreen denied!"</span>;<br>
+      });<br>
+      <span class="maroon">document.</span><span class="blue">addEventListener</span>(<span class="olive">"msfullscreenchange"</span>, <span class="purple">function </span>() {<br>
+        <span class="maroon left-padding">output.innerHTML</span> = <span class="olive">"Fullscreen denied!"</span>;<br>
+      });
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <script>
+    var output = document.getElementsByClassName("replace")[0];
+    document.addEventListener("fullscreenerror", function() {
+      output.innerHTML = "Fullscreen denied!";
+    });
+    document.addEventListener("mozfullscreenerror", function() {
+      output.innerHTML = "Fullscreen denied!";
+    });
+    document.addEventListener("webkitfullscreenerror", function() {
+      output.innerHTML = "Fullscreen denied!";
+    });
+    document.addEventListener("msfullscreenerror", function() {
+      output.innerHTML = "Fullscreen denied!";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event onscroll</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+</style>
+
+<script src="../scripts/domEventObjects.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">onscroll</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The onscroll event occurs when an element's scrollbar is being scrolled.
+    </div>
+    <div class="note-value">
+      Supported HTML tags: 	&lt;address>, &lt;blockquote>, &lt;body>, &lt;caption>,
+      &lt;center&gt;, &lt;dd&gt;, &lt;dir&gt;, &lt;div&gt;, &lt;dl&gt;, &lt;dt&gt;, &lt;fieldset&gt;,
+      &lt;form&gt;, &lt;h1&gt; to &lt;h6&gt;, &lt;html&gt;, &lt;li&gt;, &lt;menu&gt;, &lt;object&gt;,
+      &lt;ol&gt;, &lt;p&gt;, &lt;pre&gt;, &lt;select&gt;, &lt;tbody&gt;, &lt;textarea&gt;, &lt;tfoot&gt;, &lt;thead&gt;, &lt;ul&gt;
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      Use the CSS overflow style property to create a scrollbar for an element.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="eventOnscrollExamplesBar" class="left-padding">
+    <!-- <a href="#eventOnscrollExamplesBar">
+      <button onclick="setPlaySpeed()" class="dom-buttons-prop">Set the play speed slowly</button>
+    </a> -->
+  </div>
+
+  <div class="exampleDOMDiv" >
+    <div class="centerContent">
+      <p id="eventOnscroll" onscroll="eventOnscrollFunc()" style="width: 300px; height: 150px; overflow: scroll;">
+        We animals are the most complicated things in the known universe.
+        The universe that we know, of course, is a tiny fragment of the actualuniverse.
+        There may be yet more complicated objects than us on otherplanets,
+        and some of them may already know about us. But this doesn't alter the point that I want to make.
+      </p>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"example"</span>
+            <span class="purple">onscroll=</span><span class="olive">"eventOnscrollFunc()"</span>&gt;<br>
+              <span class="black left-padding">We animals are the most complicated things in the known universe...</span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;<br>
+          </p>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+      &lt;<span class="brown">/body</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      &lt;<span class="brown">style</span>&gt;<br>
+        <span class="blue left-padding">#example</span> {<br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="crimson">width: </span>300px;<br>
+            <span class="crimson">height: </span>150px;<br>
+            <span class="crimson">overflow: </span>scroll;
+          </p>
+        <span class="left-padding">}</span><br>
+      &lt;<span class="brown">/style</span>&gt;<br>
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">eventOnscrollFunc</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>x = <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">example</span>);<br>
+          <span class="purple">var </span>scroll = <span class="maroon">x.scrollTop</span>;<br>
+          <span class="purple">if </span>(scroll > <span class="orange">80</span>) {<br>
+            <span class="maroon left-padding">x.style.background</span> = <span class="olive">"green"</span>;<br>
+          } <span class="purple">else if </span>(scroll < <span class="orange">80</span>) {<br>
+            <span class="maroon left-padding">x.style.background</span> = <span class="olive">"initial"</span>;<br>
+          }<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
+          = scroll;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

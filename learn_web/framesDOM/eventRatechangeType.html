@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event onratechange</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+</style>
+
+<script src="../scripts/domEventObjects.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">onratechange</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The onratechange event occurs when the playing speed of the audio/video is changed
+      (like when a user switches to a slow motion or fast forward mode).
+    </div>
+    <div class="note-value">
+      This event is invoked by the playbackRate property of the Audio/Video Object,
+      which sets or returns the current playback speed of an audio/video.
+    </div>
+    <div class="note-value">
+      Supported HTML tags: 	&lt;audio&gt; and &lt;video&gt;
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div id="eventRatechangeExamplesBar" class="left-padding">
+    <a href="#eventRatechangeExamplesBar">
+      <button onclick="setPlaySpeed()" class="dom-buttons-prop">Set the play speed slowly</button>
+    </a>
+  </div>
+
+  <div class="exampleDOMDiv" >
+    <div class="centerContent">
+      <video id="eventOnratechangeVideo" width="320" height="240" controls onratechange="eventOnratechangeFunc()">
+        <source src="../video/scolopendra_giant.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">
+          &lt;<span class="brown">button </span>
+          <span class="crimson">onclick=</span><span class="olive">"setPlaySpeed()"</span>&gt;
+          <span class="black">Set the play speed slowly</span>
+          &lt;<span class="brown">button</span>&gt;
+        </span><br><br>
+        <span class="left-padding">&lt;<span class="brown">video </span></span>
+        <span class="crimson">controls</span>
+        <span class="crimson">onratechange=</span><span class="olive">"eventOnratechangeFunc()"</span>&gt;<br />
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">source</span>
+            <span class="crimson">src=</span><span class="olive">"../video/scolopendra_giant.mp4"</span>
+            <span class="crimson">type=</span><span class="olive">"video/mp4"</span>&gt;<br>
+            <span class="black">Your browser does not support the video element.</span><br>
+          </p>
+        <span class="left-padding">&lt;<span class="brown">/video</span>&gt;</span><br><br>
+
+        <span class="left-padding">
+          &lt;<span class="brown">p</span>
+          <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
+          &lt;<span class="brown">/p</span>&gt;
+        </span><br>
+      &lt;<span class="brown">/body</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">setPlaySpeed</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementsByTagName</span>(<span class="olive">"video"</span>)[<span class="orange">0</span>];<br>
+          <span class="maroon">x.playbackRate</span> = <span class="orange">0.3</span>;<br>
+        </p>
+      <span class="black">}</span><br></br>
+
+      <span class="purple">function </span><span class="blue">eventOnratechangeFunc</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
+          = <span class="olive">"The playing speed of the video was changed!"</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

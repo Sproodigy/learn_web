@@ -124,3 +124,120 @@ function onchangeData() {
 function onerrorMessage() {
   document.getElementsByClassName("replace")[0].innerText = "The image could not be loaded.";
 }
+
+var elemExFullScr = document.documentElement;
+function openFullscreenElem() {
+  if (elemExFullScr.requestFullscreen) {
+    elemExFullScr.requestFullscreen();
+  } else if (elemExFullScr.mozRequestFullScreen) {
+    elemExFullScr.mozRequestFullScreen();
+  } else if (elemExFullScr.webkitRequestFullscreen) {
+    elemExFullScr.webkitRequestFullscreen();
+  } else if (elemExFullScr.msRequestFullscreen) {
+    elemExFullScr.msRequestFullscreen();
+  }
+}
+
+function closeFullscreenElem() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+    document.msExitFullscreen();
+  }
+}
+
+function eventOninputFunc() {
+  var x = document.getElementById("eventInput").value;
+  document.getElementsByClassName("replace")[0].innerText = "You wrote: " + x;
+}
+
+function eventOninvalidFunc() {
+  var x = document.getElementById("eventOninvalid").value;
+  document.getElementsByClassName("replace")[0].innerText = "You must fill out the form!";
+}
+
+function eventOnloadFunc() {
+  alert("Page is loaded!");
+}
+
+function eventOnloadeddataFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "Browser has loaded the current frame!";
+}
+
+function eventOnloadedmetadataFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "Meta data for video loaded!";
+}
+
+function goToAnchor(id) {
+  var offsetY = document.getElementById(id).offsetTop;
+  window.scrollTo(0, offsetY);
+}
+
+function eventOnprogressFunc() {
+  alert("Downloading video!");
+}
+
+function eventOnonlineFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "Your browser is working online!";
+}
+
+function eventOnofflineFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "Your browser is working offline!";
+}
+
+function eventOnpauseFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "The video was paused!";
+}
+
+function eventOnplayFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "The video was played!";
+}
+
+function eventOnresizeFunc() {
+  var w = window.outerWidth;
+  var h = window.outerHeight;
+  var txt = "Window size: width=" + w + ", height=" + h;
+  document.getElementsByClassName("replace")[0].innerText = txt;
+}
+
+function setPlaySpeed() {
+  var x = document.getElementById("eventOnratechangeVideo");
+  x.playbackRate = 0.3;
+}
+
+function eventOnratechangeFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "The playing speed of the video was changed!";
+}
+
+function eventOnresetFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "The form was reset!";
+}
+
+function eventOnsubmitFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "The form was submitted!";
+}
+
+function eventOnsearchFunc() {
+  var x = document.getElementById("eventSearchInput");
+  var text = "You are searching for: " + x.value;
+  document.getElementsByClassName("replace")[0].innerText = text;
+}
+
+function eventOnscrollFunc() {
+  var x = document.getElementById("eventOnscroll");
+  var scroll = x.scrollTop;
+  if (scroll > 80) {
+    x.style.background = "green";
+  } else if (scroll < 80) {
+    x.style.background = "initial";
+  }
+  document.getElementsByClassName("replace")[0].innerText = scroll;
+}
+
+function eventOnseekedFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "Seek operation completed!";
+}
