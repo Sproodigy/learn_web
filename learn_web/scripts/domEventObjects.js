@@ -241,3 +241,24 @@ function eventOnscrollFunc() {
 function eventOnseekedFunc() {
   document.getElementsByClassName("replace")[0].innerText = "Seek operation completed!";
 }
+
+function eventOnseekingFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "Seek operation began!";
+}
+
+function eventOntimeupdateFunc(event) {
+  text = "Playback position: " + event.currentTime;
+  document.getElementsByClassName("replace")[0].innerText = text;
+}
+
+function eventOnwaitingFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "Wait! I need to buffer the next frame!";
+}
+
+function eventOnselectFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "You selected some text!";
+}
+
+function eventOntoggleFunc() {
+  document.getElementsByClassName("replace")[0].innerText = "The ontoggle event occured!";
+}

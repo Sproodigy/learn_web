@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event ontoggle</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+</style>
+
+<script src="../scripts/domEventObjects.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">ontoggle</h1></div>
+  <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The ontoggle event occurs when the user opens or closes the &lt;details&gt; element.
+    </div>
+    <div class="note-value">
+      The &lt;details&gt; element specifies additional details that the user can view or hide on demand.
+    </div>
+    <div class="note-value">
+      Supported HTML tags: &lt;details&gt;.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The details element and the ontoggle event is not supported in Internet Explorer or Safari 5 (and earlier).
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div class="left-padding">
+  </div>
+
+  <div class="exampleDOMDiv" >
+    <div class="centerContent">
+      <details ontoggle="eventOntoggleFunc()">
+        <summary>Sweet fruits</summary>
+        <p>Banana</p>
+        <p>Apple</p>
+        <p>Peach</p>
+      </details>
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">details</span>
+        <span class="crimson">ontoggle=</span><span class="olive">"eventOntoggleFunc()"</span></span>&gt;<br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">summary</span>&gt;Sweet fruits&lt;<span class="brown">/summary</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;Banana&lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;Apple&lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;Peach&lt;<span class="brown">/p</span>&gt;
+          </p>
+        <span class="left-padding">&lt;<span class="brown">/details</span>&gt;</span><br><br>
+
+        <span class="left-padding">
+          &lt;<span class="brown">p</span>
+          <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
+          &lt;<span class="brown">/p</span>&gt;
+        </span><br>
+      &lt;<span class="brown">/body</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">eventOntoggleFunc</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
+          = <span class="olive">"The ontoggle event occured!"</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
