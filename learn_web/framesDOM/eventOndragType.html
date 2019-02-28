@@ -12,7 +12,15 @@
 <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
 
 <style>
+  .droptarget {
+    width: 150px;
+    height: 100px;
+    border: 2px solid green;
+  }
 
+  #dragtarget {
+    margin-top: 0px;
+  }
 </style>
 
 <script src="../scripts/domDragEventObj.js"></script>
@@ -62,8 +70,11 @@
 
   <div class="exampleDOMDiv" >
     <div class="centerContent">
-      <input type="text" value="Try copying or cutting text" oncopy="clipBoardEventOncopyFunc()" oncut="clipBoardEventOncutFunc()">
-      <input type="text" value="Try pasting text" onpaste="clipBoardEventOnpasteFunc()">
+      <div class="droptarget" ondragover="eventOndragoverFunc(event)" ondrop="eventOndropFunc(event)">
+        <p draggable="true" id="dragtarget" ondragstart="eventOndragstartFunc(event)">Drag text!</p>
+      </div>
+
+      <div class="droptarget" ondragover="eventOndragoverFunc(event)" ondrop="eventOndropFunc(event)"></div>
       <p class="replace"></p>
     </div>
   </div>
@@ -122,7 +133,21 @@
   <div><hr class="dom-hr-length-90perc" /></div>
 
 <script>
+  // var text = document.getElementById('dragtarget');
 
+
+
+
+  // document.addEventListener("dragstart", function(event) {
+  //   // The dataTransfer.setData() method sets the data type and the value of the dragged data
+  //   event.dataTransfer.setData("Text", event.target.id);
+  //
+  //   // Output some text when starting to drag the p element
+  //   document.getElementById("demo").innerHTML = "Started to drag the p element.";
+  //
+  //   // Change the opacity of the draggable element
+  //   event.target.style.opacity = "0.4";
+  // });
 </script>
 </body>
 </html>
