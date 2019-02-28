@@ -12,12 +12,14 @@ function clipBoardEventOnpasteFunc() {
 
 function eventOndragstartFunc(event) {
   event.dataTransfer.setData("text", event.target.id);
-  event.target.innerText = "Started dragging text!";
+  document.getElementsByClassName("replace")[0].innerHTML = "Started dragging text!";
+  document.getElementsByClassName("replace")[2].innerHTML = "";
 }
 
 function eventOndragoverFunc(event) {
   event.preventDefault();
-  document.getElementsByClassName("replace")[0].innerHTML = "The text is above the target point!";
+  document.getElementsByClassName("replace")[1].innerHTML = "The text is above the target point!";
+  document.getElementsByClassName("replace")[2].innerHTML = "";
 }
 
 function eventOndropFunc(event) {
@@ -25,4 +27,9 @@ function eventOndropFunc(event) {
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
   document.getElementsByClassName("replace")[0].innerHTML = "Text dropped!";
+}
+
+function eventOndragendFunc(event) {
+  document.getElementsByClassName("replace")[1].innerHTML = "";
+  document.getElementsByClassName("replace")[2].innerHTML = "Finished dragging an element.";
 }
