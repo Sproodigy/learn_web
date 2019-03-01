@@ -22,6 +22,20 @@ function eventOndragoverFunc(event) {
   document.getElementsByClassName("replace")[2].innerHTML = "";
 }
 
+function eventOndragleaveFunc(event) {
+  if ( event.target.className == "droptarget" ) {
+    document.getElementsByClassName("replace")[3].innerHTML = "Entered the dropzone";
+    event.target.style.border = "3px dotted green";
+  }
+}
+
+function eventOndragenterFunc(event) {
+  if ( event.target.className == "droptarget" ) {
+    document.getElementsByClassName("replace")[3].innerHTML = "Left the dropzone";
+    event.target.style.border = "";
+  }
+}
+
 function eventOndropFunc(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
