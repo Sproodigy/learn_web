@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Event ondrag</title>
+<title>Event relatedTarget</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -19,7 +19,7 @@
   }
 </style>
 
-<script src="../scripts/domDragEventObj.js"></script>
+<script src="../scripts/domFocusEventObj.js"></script>
 
 <body>
   <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
@@ -29,13 +29,20 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">ondrag</h1></div>
-  <p><a href="../pagesDOM/eventDragEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+  <div><h1 class="domTitle">relatedTarget</h1></div>
+  <p><a href="../pagesDOM/eventFocusEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The ondrag event occurs when an element or text selection is being dragged.
+      The ondragleave event occurs when a draggable element or text selection leaves a valid drop target.
+    </div>
+    <div class="note-value">
+      The ondragenter and ondragleave events can help the user to understand
+      that a draggable element is about to enter or leave a drop target.
+      This can be done by, for example, setting a background color
+      when the draggable element enters the drop target,
+      and removing the color when the element is moved out of the target.
     </div>
     <div class="note-value">
       Drag and drop is a very common feature in HTML5. It is when you "grab" an object and drag it to a different location.
@@ -52,7 +59,7 @@
       Links and images are draggable by default, and do not need the draggable attribute.
     </div>
     <div class="note-value">
-      While dragging an element, the ondrag event fires every 350 milliseconds.
+      While dragging an element, the ondragover event fires every 350 milliseconds.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -66,12 +73,13 @@
 
   <div class="exampleDOMDiv">
     <div class="centerContent">
-      <div class="droptarget" ondragover="ondragoverFunc(event, '')" ondrop="ondropFunc(event)">
+      <div class="droptarget" ondragleave="ondragleaveFunc(event)" ondragenter="ondragenterFunc(event)" ondragover="ondragoverFunc(event, '')" ondrop="ondropFunc(event)">
         <p draggable="true" id="dragtarget" ondragstart="ondragstartFunc(event)" ondrag="ondragFunc(event, 'Text is being dragged!')" ondragend="ondragendFunc(event)">Drag text!</p>
       </div>
 
-      <div class="droptarget" ondragover="ondragoverFunc(event, '')" ondrop="ondropFunc(event)"></div>
+      <div class="droptarget" ondragenter="ondragenterFunc(event)" ondragleave="ondragleaveFunc(event)" ondragover="ondragoverFunc(event, '')" ondrop="ondropFunc(event)"></div>
 
+      <div class="replace" style="width: 150px;"></div>
       <div class="replace" style="width: 150px;"></div>
       <div class="replace" style="width: 150px;"></div>
       <div class="replace" style="width: 150px;"></div>
@@ -84,8 +92,10 @@
         <span class="left-padding">
           &lt;<span class="brown">div</span>&gt;
           <span class="crimson">class=</span><span class="olive">"example"</span>
-          <span class="crimson">ondragover=</span><span class="olive">"ondragoverFunc(event, '')"</span>
-          <span class="crimson">ondrop=</span><span class="olive">"ondrop(event)"</span>&gt;
+          <span class="crimson">ondragover=</span><span class="olive">"ondragoverFunc(event, 'The text is over the target!')"</span>
+          <span class="crimson">ondrop=</span><span class="olive">"ondrop(event)"</span>
+          <span class="crimson">ondragleave=</span><span class="olive">"ondragleaveFunc(event)"</span>
+          <span class="crimson">ondropenter=</span><span class="olive">"ondropenterFunc(event)"</span>&gt;
         </span><br>
           <span class="more-padding">&lt;<span class="brown">p</span>
           <span class="purple">id=</span><span class="olive">"droptarget"</span>
@@ -100,12 +110,17 @@
         <span class="left-padding">
           &lt;<span class="brown">div</span>
           <span class="crimson">class=</span><span class="olive">"example"</span>
-          <span class="crimson">ondragover=</span><span class="olive">"ondragoverFunc(event, '')"</span>
-          <span class="crimson">ondrop=</span><span class="olive">"ondrop(event)"</span>&gt;
+          <span class="crimson">ondragover=</span><span class="olive">"ondragoverFunc(event, 'The text is over the target!')"</span>
+          <span class="crimson">ondrop=</span><span class="olive">"ondrop(event)"</span>
+          <span class="crimson">ondragleave=</span><span class="olive">"ondragleaveFunc(event)"</span>
+          <span class="crimson">ondropenter=</span><span class="olive">"ondropenterFunc(event)"</span>&gt;
           &lt;<span class="brown">/div</span>&gt;
         </span><br><br>
 
         <p class="left-padding" style="margin: 0;">
+          &lt;<span class="brown">div</span>
+          <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
+          &lt;<span class="brown">/div</span>&gt;<br>
           &lt;<span class="brown">div</span>
           <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
           &lt;<span class="brown">/div</span>&gt;<br>
@@ -142,6 +157,24 @@
         </p>
       <span class="left-padding">}</span><br><br>
 
+      <span class="purple left-padding">function </span><span class="blue">ondragleaveFunc</span>(event) {<br>
+        <span class="purple more-padding">if </span>(<span class="maroon">event.target.className</span> == <span class="olive">"droptarget"</span>) {<br>
+          <p class="max-padding" style="margin: 0;">
+            <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">3</span>]<span class="maroon">.innerHTML</span>
+            = <span class="olive">"Left the dropzone!"</span>;
+          </p>
+        <span class="more-padding">{</span><br>
+      <span class="left-padding">}</span><br><br>
+
+      <span class="purple left-padding">function </span><span class="blue">ondragenterFunc</span>(event) {<br>
+        <span class="purple more-padding">if </span>(<span class="maroon">event.target.className</span> == <span class="olive">"droptarget"</span>) {<br>
+          <p class="max-padding" style="margin: 0;">
+            <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">3</span>]<span class="maroon">.innerHTML</span>
+            = <span class="olive">"Entered the dropzone!"</span>;
+          </p>
+        <span class="more-padding">{</span><br>
+      <span class="left-padding">}</span><br><br>
+
       <span class="purple left-padding">function </span><span class="blue">ondragFunc</span>(event, text) {<br>
         <p class="more-padding" style="margin: 0;">
           <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">1</span>]<span class="maroon">.innerHTML</span>
@@ -163,15 +196,17 @@
           <span class="purple">var </span>data =
           <span class="maroon">event.dataTransfer.</span><span class="blue"></span>setData(<span class="olive">"text"</span>);<br>
           <span class="maroon">event.target.</span><span class="blue"></span>appendChild(<span class="maroon">document.</span><span class="blue">getElementById</span>(data));<br>
-          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">1</span>]<span class="maroon">.innerHTML</span>
           = <span class="olive">"Text dropped!"</span>;<br>
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">2</span>]<span class="maroon">.innerHTML</span>
+          = <span class="olive">""</span>;<br>
         </p>
       <span class="left-padding">}</span><br><br>
 
       <span class="purple left-padding">function </span><span class="blue">ondragendFunc</span>(event) {<br>
         <p class="more-padding" style="margin: 0;">
           <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">1</span>]<span class="maroon">.innerHTML</span>
-          = <span class="olive">"Finished dragging text!"</span>;<br>
+          = <span class="olive">"Finished dragging text!"</span>;
         </p>
       <span class="left-padding">}</span><br>
 
