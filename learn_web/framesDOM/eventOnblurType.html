@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Event relatedTarget</title>
+<title>Event onblur</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -30,20 +30,32 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">relatedTarget</h1></div>
+  <div><h1 class="domTitle">onblur</h1></div>
   <p><a href="../pagesDOM/eventFocusEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The relatedTarget property returns the element related to the element that triggered the focus/blur event.
-      <ul>
-        <li>For onfocus and onfocusin events, the related element is the element that LOST focus.</li>
-        <li>For onblur and onfocusout events, the related element is the element that GOT focus.</li>
-      </ul>
+      The onblur event occurs when an object loses focus.
     </div>
     <div class="note-value">
-      This property is read-only.
+      The onblur event is most often used with form validation code (e.g. when the user leaves a form field).
+    </div>
+    <div class="note-value">
+      Supported HTML tags: 	ALL HTML elements, EXCEPT: &lt;base&gt;, &lt;bdo&gt;,
+      &lt;br&gt;, &lt;head&gt;, &lt;html&gt;, &lt;iframe&gt;, &lt;meta&gt;,
+      &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The onblur event is similar to the onfocusout event. The main difference is that
+      the onblur event does not bubble. Therefore, if you want to find out
+      whether an element or its child loses focus, you could use the onfocusout event.
+      However, you can achieve this by using the optional useCapture parameter of the addEventListener() method for the onblur event.
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
@@ -57,13 +69,8 @@
 
   <div class="exampleDOMDiv">
     <div class="centerContent">
-      <textarea class="example" onfocus="relatedTargetFunc(event)"></textarea>
-
-      <div class="example" contentEditable="true" onfocus="relatedTargetFunc(event)">
-        Editable content
-      </div>
-
-      <div class="replace" style="width: 150px;"></div>
+      Enter your name: <input type="text" id="example" onblur="onblurFunc()">
+      <!-- <div class="replace" style="width: 150px;"></div> -->
     </div>
   </div>
 
@@ -71,49 +78,34 @@
     <div class="blue float-borders-none">
       &lt;<span class="brown">body</span>&gt;<br>
         <span class="left-padding">
-          &lt;<span class="brown">textarea</span>
-          <span class="crimson">class=</span><span class="olive">"example"</span>
-          <span class="crimson">onfocus=</span><span class="olive">"relatedTargetFunc(event)"</span>&gt;
-          &lt;<span class="brown">/textarea</span>&gt;
-        </span><br><br>
-
-        <span class="left-padding">
-          &lt;<span class="brown">div</span>
-          <span class="crimson">class=</span><span class="olive">"example"</span>
-          <span class="crimson">onfocus=</span><span class="olive">"relatedTargetFunc(event)"</span>&gt;
-          &lt;<span class="brown">/div</span>&gt;
-        </span><br><br>
-
-        <p class="left-padding" style="margin: 0;">
-          &lt;<span class="brown">div</span>
-          <span class="crimson">class=</span><span class="olive">"replace"</span>&gt;
-          &lt;<span class="brown">/div</span>&gt;<br>
-        </p>
+          &lt;<span class="brown">input</span>
+          <span class="crimson">type=</span><span class="olive">"text"</span>
+          <span class="purple">id=</span><span class="olive">example"</span>
+          <span class="crimson">onblur=</span><span class="olive">onblurFunc()"</span>&gt;
+        </span><br>
       &lt;<span class="brown">/body</span>&gt;
     </div>
 
     <div class="blue float-borders-none">
       &lt;<span class="brown">style</span>&gt;<br>
-        <span class="crimson left-padding">.example</span> {<br>
+        <!-- <span class="crimson left-padding">.example</span> {<br>
           <p class="more-padding" style="margin: 0;">
             width:  <span class="crimson">150px;</span><br>
             height: <span class="crimson">100px;</span><br>
             border: <span class="crimson">2px solid green;</span><br>
             overflow: <span class="crimson">auto;</span><br>
           </p>
-        <span class="left-padding">}</span><br>
+        <span class="left-padding">}</span><br> -->
       &lt;<span class="brown">/style</span>&gt;<br>
     </div>
 
     <div class="blue float-borders-none">
       &lt;<span class="brown">script</span>&gt;<br>
-        <span class="purple left-padding">function </span><span class="blue">ondragstartFunc</span>(event) {<br>
+        <span class="purple left-padding">function </span><span class="blue">onblurFunc</span>() {<br>
           <p class="more-padding" style="margin: 0;">
-            <span class="purple">var </span>text =
-            <span class="olive">"The related element that lost focus was: "</span>
-            + <span class="maroon">event.relatedTarget.tagName</span>;<br>
-            <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>]<span class="maroon">.innerHTML</span>
-            = text;<br>
+            <span class="purple">var </span>x =
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>);<br>
+            <span class="maroon">x.value</span> = <span class="olive">"Hello, John! :)"</span>
           </p>
         <span class="left-padding">}</span><br>
       &lt;<span class="brown">/script</span>&gt;<br>
