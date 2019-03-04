@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Event onbeforeunload</title>
+<title>Event onunload</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -15,7 +15,7 @@
 
 <script src="../scripts/domEventObjects.js"></script>
 
-<body onbeforeunload="return onbeforeunloadMessage()">
+<body onunload="eventOnunloadFunc()">
   <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
     <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
     <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
@@ -23,22 +23,17 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">onbeforeunload</h1></div>
+  <div><h1 class="domTitle">onunload</h1></div>
   <p><a href="../pagesDOM/eventEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The onbeforeunload event occurs when the document is about to be unloaded.
+      The onunload event occurs once a page has unloaded (or the browser window has been closed).
     </div>
     <div class="note-value">
-      This event allows you to display a message in a confirmation dialog box
-      to inform the user whether he/she wants to stay or leave the current page.
-    </div>
-    <div class="note-value">
-      The default message that appears in the confirmation box, is different in different browsers.
-      However, the standard message is something like "Are you sure you want to leave this page?".
-      This message cannot be removed.
+      onunload occurs when the user navigates away from the page
+      (by clicking on a link, submitting a form, closing the browser window, etc.).
     </div>
     <div class="note-value">
       Supported HTML tags: &lt;body&gt;.
@@ -49,44 +44,39 @@
   <div class="note noteDOM">
     Notes:<br />
     <div class="note-value">
-      However, you can write a custom message together with the default message.
-      See an example on this page. Note: This only works in Internet Explorer.
+      Due to different browser settings, this event may not always work as expected.
     </div>
     <div class="note-value">
-      If the onbeforeunload event is not assigned to the &lt;body&gt; element,
-      you must assign/attach the event on the window object,
-      and use the returnValue property to create a custom message.
+      The onunload event is also triggered when a user reloads the page (and the onload event).
     </div>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
 
   <div><h2 class="tag domTitle">Examples</h2></div>
-  <div id="elemBeforeprintExamplesBar" class="left-padding">
-  </div>
+  <div></div>
 
   <div class="exampleDOMDiv ">
     <div class="centerContent">
-      <p class="replace">
-      </p>
+      <div class="replace"></div>
     </div>
   </div>
 
   <div class="codeDOM">
     <div class="blue float-borders-none">
       &lt;<span class="brown">body</span>
-      <span class="maroon">onbeforeunload=</span><span class="olive">"return onbeforeunloadMessage()"</span>&gt;<br>
+      <span class="maroon">onunload=</span><span class="olive">"eventOnunloadFunc()"</span>&gt;<br>
       <p class="left-padding" style="margin: 0;">
-        &lt;<span class="brown">p</span>
+        &lt;<span class="brown">div</span>
         <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
-        &lt;<span class="brown">/p</span>&gt;
+        &lt;<span class="brown">/div</span>&gt;
       </p>
       &lt;<span class="brown">/body</span>&gt;
     </div>
 
     <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">onbeforeunloadMessage</span>() {<br>
+      <span class="purple">function </span><span class="blue">eventOnunloadFunc</span>() {<br>
         <p class="left-padding" style="margin: 0;">
-          <span class="purple">return </span><span class="olive">"Example text..."</span>;<br>
+          <span class="blue">alert</span>(<span class="olive">"Goodby!"</span>);<br>
         </p>
       <span class="black">}</span>
     </div>

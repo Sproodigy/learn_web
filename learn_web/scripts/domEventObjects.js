@@ -251,6 +251,10 @@ function eventOntimeupdateFunc(event) {
   document.getElementsByClassName("replace")[0].innerText = text;
 }
 
+function eventOnunloadFunc() {
+  alert("Hello!");
+}
+
 function eventOnwaitingFunc() {
   document.getElementsByClassName("replace")[0].innerText = "Wait! I need to buffer the next frame!";
 }
