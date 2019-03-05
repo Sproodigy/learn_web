@@ -45,6 +45,21 @@ function eventKeyFunc(event) {
 }
 
 function eventKeyCodeFunc(event) {
-  var x = event.keyCode;
+  var x = event.keyCode || event.which;
   document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function eventCharCodeFunc(event) {
+  var x = event.charCode;
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function eventLocationFunc(event) {
+  var x = event.location;
+  document.getElementsByClassName("replace")[0].innerHTML = x;
+}
+
+function eventLocationFunc(event) {
+  var x = event.getModifierState("CapsLock");
+  document.getElementsByClassName("replace")[0].innerHTML = "Caps Lock activated: " + x;
 }

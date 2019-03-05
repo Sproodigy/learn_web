@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Event keyCode</title>
+<title>Event charCode</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -15,7 +15,7 @@
 
 <script src="../scripts/domKeyboardEventObj.js"></script>
 
-<body onkeypress="eventKeyCodeFunc(event)">
+<body onkeypress="eventCharCodeFunc(event)">
   <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
     <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
     <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
@@ -23,24 +23,13 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">keyCode</h1></div>
+  <div><h1 class="domTitle">charCode</h1></div>
   <p><a href="../pagesDOM/eventKeyboardEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The keyCode property returns the Unicode character code of the key that triggered the onkeypress event,
-      or the Unicode key code of the key that triggered the onkeydown or onkeyup event.<br>
-      The difference between the two code types:
-      <ul>
-        <li>Character codes - A number which represents an ASCII character.</li>
-        <li>Key codes - A number which represents an actual key on the keyboard.</li>
-      </ul>
-      These types do not always mean the same thing; for example,
-      a lower case "w" and an upper case "W" have the same keyboard code,
-      because the key that is pressed on the keyboard is the same
-      (just "W" = the number "87"), but a different character code because the resulting character is different
-      (either "w" or "W", which is "119" or "87").
+      The charCode property returns the Unicode character code of the key that triggered the onkeypress event.
     </div>
     <div class="note-value">
        This property is read-only.
@@ -51,15 +40,15 @@
   <div class="note noteDOM">
     Notes:<br />
     <div class="note-value">
-      In Firefox, the keyCode property does not work on the onkeypress event (will only return 0).
-      For a cross-browser solution, use the which property together with keyCode.
+      If this property is used on onkeydown or onkeyup events, the returned value is always "0".
     </div>
     <div class="note-value">
-      To find out if the user is pressing a printable key (e.g. "a" or "5"), it is recommended to use this property on the onkeypress event.
-      To find out if the user is pressing a function key (e.g. "F1", "CAPS LOCK" or "Home") use the onkeydown or onkeyup event.
+      The charCode property is not supported in IE8 and earlier.
+      However, for these browser versions, you can use the charCode property.
     </div>
     <div class="note-value">
-      Both the keyCode and which property is provided for compatibility only.
+      You can also use the charCode property to detect special keys (e.g. "caps lock" or arrow keys).
+      However, both the charCode and charCode property is provided for compatibility only.
       The latest version of the DOM Events Specification recommend using the key property instead (if available).
     </div>
     <div class="note-value">
@@ -72,7 +61,7 @@
   <div><h2 class="tag domTitle">Examples</h2></div>
   <!-- <div id="eventAltKey">
     <a href="#eventAltKey">
-      <button class="dom-buttons-prop" onclick="eventKeyCodeFunc(event)">Get</button>
+      <button class="dom-buttons-prop" onclick="eventCharCodeFunc(event)">Get</button>
     </a>
   </div> -->
 
@@ -85,7 +74,7 @@
   <div class="codeDOM">
     <div class="blue float-borders-none">
       &lt;<span class="brown">body</span>
-      <span class="maroon">onkeypress=</span><span class="olive">"eventKeyCodeFunc(event)"</span>&gt;<br>
+      <span class="maroon">onkeypress=</span><span class="olive">"eventCharCodeFunc(event)"</span>&gt;<br>
       <p class="left-padding" style="margin: 0;">
         <!-- &lt;<span class="brown">button</span>&gt;<br>
         <span class="left-padding">Get</span><br>
@@ -118,11 +107,11 @@
     </div>
 
     <div class="black float-borders-none">
-      <span class="purple">function </span><span class="blue">eventKeyCodeFunc</span>(event) {<br>
+      <span class="purple">function </span><span class="blue">eventCharCodeFunc</span>(event) {<br>
         <p class="left-padding" style="margin: 0;">
         <span class="purple">var </span>x =
         <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[0];<br>
-          <span class="maroon">x.innerText</span> = <span class="maroon">event.keyCode</span> || <span class="maroon">event.which</span>;<br>
+          <span class="maroon">x.innerText</span> = <span class="maroon">event.charCode</span>;<br>
         </p>
       <span class="black">}</span>
     </div>

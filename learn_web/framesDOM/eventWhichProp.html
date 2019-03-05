@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Event keyCode</title>
+<title>Event which</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../images/dom.png" type="image/png" />
@@ -23,13 +23,13 @@
     <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
   </div>
   <div><hr class="dom-hr-length-90perc" /></div>
-  <div><h1 class="domTitle">keyCode</h1></div>
+  <div><h1 class="domTitle">which</h1></div>
   <p><a href="../pagesDOM/eventKeyboardEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
 
   <div class="note descriptionDOM">
     Description:<br />
     <div class="note-value">
-      The keyCode property returns the Unicode character code of the key that triggered the onkeypress event,
+      The which property returns the Unicode character code of the key that triggered the onkeypress event,
       or the Unicode key code of the key that triggered the onkeydown or onkeyup event.<br>
       The difference between the two code types:
       <ul>
@@ -51,15 +51,16 @@
   <div class="note noteDOM">
     Notes:<br />
     <div class="note-value">
-      In Firefox, the keyCode property does not work on the onkeypress event (will only return 0).
-      For a cross-browser solution, use the which property together with keyCode.
+      The which property is not supported in IE8 and earlier.
+      For these browser versions, you can use the keyCode property.
+      However, the keyCode property does not work on the onkeypress event in Firefox.
     </div>
     <div class="note-value">
       To find out if the user is pressing a printable key (e.g. "a" or "5"), it is recommended to use this property on the onkeypress event.
       To find out if the user is pressing a function key (e.g. "F1", "CAPS LOCK" or "Home") use the onkeydown or onkeyup event.
     </div>
     <div class="note-value">
-      Both the keyCode and which property is provided for compatibility only.
+      Both the which and keyCode property is provided for compatibility only.
       The latest version of the DOM Events Specification recommend using the key property instead (if available).
     </div>
     <div class="note-value">
