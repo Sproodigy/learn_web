@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event onmouseout</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+</style>
+
+<script src="../scripts/domMouseEventObj.js"></script>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">onmouseout</h1></div>
+  <p><a href="../pagesDOM/eventMouseEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The onmouseout event occurs when the mouse pointer is moved out of an element, or out of one of its children.
+    </div>
+    <div class="note-value">
+      This event is often used together with the onmouseover event,
+      which occurs when the pointer is moved onto an element, or onto one of its children.
+    </div>
+    <div class="note-value">
+      Supported HTML tags:<br>
+      All HTML elements, EXCEPT: &lt;base&gt;, &lt;bdo&gt;, &lt;br&gt;, &lt;head&gt;,
+      &lt;html&gt;, &lt;iframe&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <!-- <div id="eventAltKey">
+    <a href="#eventAltKey">
+      <button class="dom-buttons-prop" onclick="eventOnkeyupFunc(event)">Get</button>
+    </a>
+  </div> -->
+
+  <div class="exampleDOMDiv">
+    <div style="border: 2px solid;" class="centerContent" onmouseover="eventOnmouseperformFunc()" onmouseout="eventOnmousePerformFunc()">
+      <!-- <div> -->
+        <p style="background: lightgreen; padding: 1em;">
+          We animals are the most complicated things in the known universe.
+          The universe that we know, of course, is a tiny fragment of the actualuniverse.
+        </p>
+        <p class="replace" style="background: olive;">Count: </p>
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>
+        <span class="maroon">onmouseover=</span><span class="olive">"eventOnmousePerformFunc()"</span>
+        <span class="maroon">onmouseout=</span><span class="olive">"eventOnmousePerformFunc()"</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>&gt;
+            <span class="black">We animals are the most complicated things...</span>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;<br>
+          </p>
+        <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+      &lt;<span class="brown">/body</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      &lt;<span class="brown">script</span>&gt;<br>
+        <span class="purple left-padding">var </span>y = <span class="orange">0</span>;<br><br>
+        <span class="purple left-padding">function </span><span class="blue">eventOnmousePerformFunc</span>() {<br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="purple">var </span>y =
+            <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>];<br>
+            <span class="maroon">x.innerHTML</span> = (x += <span class="orange">1</span>);
+          </p>
+        <span class="black left-padding">}</span><br>
+      &lt;<span class="brown">/script</span>&gt;<br>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

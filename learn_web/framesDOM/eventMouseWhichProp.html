@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event which</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+</style>
+
+<script src="../scripts/domMouseEventObj.js"></script>
+
+<body onmousedown="eventMouseWhichFunc(event)">
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">which</h1></div>
+  <p><a href="../pagesDOM/eventMouseEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The which property returns a number that indicates which mouse button was pressed when a mouse event was triggered.
+    </div>
+    <div class="note-value">
+      This property is mostly used together with the onmousedown event.
+    </div>
+    <div class="note-value">
+      Possible values:<br>
+      <ol start="0">
+        <li>No button.</li>
+        <li>Left mouse button.</li>
+        <li>Wheel button or middle button (if present).</li>
+        <li>Right mouse button.</li>
+      </ol>
+      For a left-hand configured mouse, the return values are reversed.
+    </div>
+    <div class="note-value">
+      This property is read-only.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      The values returned by this property are the same as those returned by the button property plus one.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <!-- <div id="eventAltKey">
+    <a href="#eventAltKey">
+      <button class="dom-buttons-prop" onclick="eventAltKeyFunc(event)">Get</button>
+    </a>
+  </div> -->
+
+  <div class="exampleDOMDiv ">
+    <div class="centerContent">
+      <div class="replace"></div>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">body</span>
+      <span class="maroon">onmousedown=</span><span class="olive">"eventMouseWhichFunc(event)"</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;
+      </p>
+      &lt;<span class="brown">/body</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">function </span><span class="blue">eventMouseWhichFunc</span>(event) {<br>
+        <p class="left-padding" style="margin: 0;">
+        <span class="purple">var </span>x =
+        <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[0];<br>
+          <span class="maroon">x.innerText</span> =<span class="olive">"You pressed button: "</span> + <span class="maroon">event.which</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>

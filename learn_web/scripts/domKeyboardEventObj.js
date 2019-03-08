@@ -63,3 +63,33 @@ function eventLocationFunc(event) {
   var x = event.getModifierState("CapsLock");
   document.getElementsByClassName("replace")[0].innerHTML = "Caps Lock activated: " + x;
 }
+
+function eventOnkeydownFunc(event) {
+  var k = event.key;
+  var c = event.code;
+  var kc = event.keyCode;
+  var cc = event.charCode;
+  var w = event.which;
+  var text = "Onkeydown:<br>" + "key: " + k + "<br>code: " + c + "<br>keyCode: " + kc + "<br>charCode: " + cc + "<br>which: " + w;
+  document.getElementsByClassName("replace")[0].innerHTML = text;
+}
+
+function eventOnkeypressFunc(event) {
+  var k = event.key;
+  var c = event.code;
+  var kc = event.keyCode;
+  var cc = event.charCode;
+  var w = event.which;
+  var text = "Onkeypress:<br>" + "key: " + k + "<br>code: " + c + "<br>keyCode: " + kc + "<br>charCode: " + cc + "<br>which: " + w;
+  document.getElementsByClassName("replace")[1].innerHTML = text;
+}
+
+function eventOnkeyupFunc(event) {
+  var k = event.key;
+  var c = event.code;
+  var kc = event.keyCode;
+  var cc = event.charCode;
+  var w = event.which;
+  var text = "Onkeyup:<br>" + "key: " + k + "<br>code: " + c + "<br>keyCode: " + kc + "<br>charCode: " + cc + "<br>which: " + w;
+  document.getElementsByClassName("replace")[2].innerHTML = text;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event metaKey</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<style>
+</style>
+
+<script src="../scripts/domMouseEventObj.js"></script>
+
+<body onmousedown="eventMouseMetaKeyFunc(event)">
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">metaKey</h1></div>
+  <p><a href="../pagesDOM/eventMouseEventObj.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The metaKey property returns a Boolean value that indicates
+      whether or not the "META" key was pressed when a mouse event was triggered.
+    </div>
+    <div class="note-value">
+      Not all keyboards have the meta key. It is common for Sun microsystem keyboards, and MIT and LISP machine keyboards.
+      The meta key is either labeled "META" or marked with a solid diamond "◆" symbol.
+    </div>
+    <div class="note-value">
+      On Mac keyboards, the META key is represented by the the "Command/Cmd" ("⌘") key.
+    </div>
+    <div class="note-value">
+      This property is read-only.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <!-- <div id="eventAltKey">
+    <a href="#eventAltKey">
+      <button class="dom-buttons-prop" onclick="eventAltKeyFunc(event)">Get</button>
+    </a>
+  </div> -->
+
+  <div class="exampleDOMDiv ">
+    <div class="centerContent">
+      <div class="replace"></div>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">body</span>
+      <span class="maroon">onmousedown=</span><span class="olive">"eventMouseMetaKeyFunc(event)"</span>&gt;<br>
+      <p class="left-padding" style="margin: 0;">
+        &lt;<span class="brown">p</span>
+        <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
+        &lt;<span class="brown">/p</span>&gt;
+      </p>
+      &lt;<span class="brown">/body</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+        <span class="purple">function </span><span class="blue">eventMouseMetaKeyFunc</span>(event) {<br>
+          <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>x =
+          <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[0];<br><br>
+            <span class="purple">if </span>(<span class="maroon">x.metaKey</span>) {<br>
+              <span class="maroon left-padding">x.innerText</span> = <span class="olive">"The META key was pressed!"</span>;<br>
+            } <span class="purple">else</span> {<br>
+              <span class="maroon left-padding">x.innerText</span> =<span class="olive">"The META key was not pressed!"</span>;<br>
+            }
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+</body>
+</html>
