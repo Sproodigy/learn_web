@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+  <title>Geolocation</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/dom.png" type="image/png" />
+  <link rel="stylesheet" href="../styles/button.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/common.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/dom_style.css" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+  <script src="../scripts/domAttributes.js"></script>
+
+<body>
+
+  <div class="just-cont-flex-center" style="width: 70%; margin-left: auto; margin-right: auto;">
+    <a href="../pages/main_window_dom.html">
+      <button class="dom-buttons link-buttons" type="button" style="padding: 10px 20px; margin: 0;">DOM</button>
+    </a>
+    <a href="../pages/main_window_html.html">
+      <button class="home html-buttons link-buttons" type="button" style="margin: 0;">HTML</button>
+    </a>
+    <a href="../pages/main_window_css.html">
+      <button class="css-buttons link-buttons" type="button" style="padding: 10px 24px; margin: 0;">CSS</button>
+    </a>
+    <a href="../pages/main_window_js.html">
+      <button class="js-buttons link-buttons" type="button" style="padding: 10px 31px; margin: 0;">JS</button>
+    </a>
+  </div>
+
+  <div class="dom-buttons-prop-node just-cont-flex-center">
+    <p><a href="../framesDOM/geolocationCoordinatesProp.html"><button class="dom-buttons-prop">coordinates</button></a></p>
+    <p><a href="../framesDOM/geolocationPositionProp.html"><button class="dom-buttons-prop">position</button></a></p>
+    <p>
+      <a href="../framesDOM/geolocationPositionErrorProp.html">
+        <button class="dom-buttons-prop" disabled>positionError<br>Returns the reason of an error occurring when using the geolocating device.</button>
+      </a>
+    </p>
+    <p>
+      <a href="../framesDOM/geolocationPositionOptionsProp.html">
+        <button class="dom-buttons-prop" disabled>positionOptions<br>Describes an object containing option properties to pass as a parameter of Geolocation.getCurrentPosition() and Geolocation.watchPosition().</button>
+      </a>
+    </p>
+
+    <p>
+      <a href="../framesDOM/geolocationClearWatch()Method.html">
+        <button class="dom-buttons-prop" disabled>clearWatch()<br>Unregister location/error monitoring handlers previously installed using Geolocation.watchPosition().</button>
+      </a>
+    </p>
+    <p>
+      <a href="../framesDOM/geolocationGetCurrentPosition()Method.html">
+        <button class="dom-buttons-prop" disabled>getCurrentPosition()<br>Returns the current position of the device.</button>
+      </a>
+    </p>
+    <p>
+      <a href="../framesDOM/geolocationWatchPosition()Method.html">
+        <button class="dom-buttons-prop" disabled>watchPosition()<br>Returns a watch ID value that then can be used to unregister the handler by passing it to the Geolocation.clearWatch() method.</button>
+      </a>
+    </p>
+  </div>
+
+</body>
+</html>

@@ -30,6 +30,16 @@ function eventMouseButtonsFunc(event) {
   x.innerText = "You pressed button: " + event.buttons;
 }
 
+function eventClientXFunc(event) {
+  var txt = "X coords: " + event.clientX;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function eventClientYFunc(event) {
+  var txt = "Y coords: " + event.clientY;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
 function eventMouseCtrlKeyFunc(event) {
   var x = document.getElementsByClassName("replace")[0];
 
@@ -50,6 +60,42 @@ function eventMouseMetaKeyFunc(event) {
   }
 }
 
+function eventOffsetXFunc(event) {
+  var txt = "offsetX: " + event.offsetX;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function eventOffsetYFunc(event) {
+  var txt = "offsetY: " + event.offsetY;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function eventPageXFunc(event) {
+  var txt = "X coords: " + event.pageX;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function getRelatedElement(event) {
+  var x = event.relatedTarget.tagName;
+  var txt = "The cursor just exited the " + x + " element.";
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function eventPageYFunc(event) {
+  var txt = "Y coords: " + event.pageY;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function eventScreenXFunc(event) {
+  var txt = "X coords: " + event.screenX;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
+function eventScreenYFunc(event) {
+  var txt = "Y coords: " + event.screenY;
+  document.getElementsByClassName("replace")[0].innerHTML = txt;
+}
+
 function eventMouseShiftKeyFunc(event) {
   var x = document.getElementsByClassName("replace")[0];
 
@@ -59,9 +105,6 @@ function eventMouseShiftKeyFunc(event) {
     x.innerText ="The SHIFT key was not pressed!";
   }
 }
-
-
-
 
 function eventMouseWhichFunc(event) {
   var x = document.getElementsByClassName("replace")[0];

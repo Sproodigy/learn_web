@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<title>Event coordinates</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/dom.png" type="image/png" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/dom_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+<script src="../scripts/domGeolocationEventObj.js"></script>
+<style>
+</style>
+
+<body>
+  <div style="background: black; display: inline-block; width: auto; margin-bottom: 1em;">
+    <a href="../pages/main_window_dom.html"><button class="dom-buttons" type="button" style="padding: 10px 20px;">DOM</button></a>
+    <a href="../pages/main_window_html.html"><button class="home html-buttons" type="button">HTML</button></a>
+    <a href="../pages/main_window_css.html"><button class="css-buttons" type="button" style="padding: 10px 24px;">CSS</button></a>
+    <a href="../pages/main_window_js.html"><button class="js-buttons" type="button" style="padding: 10px 31px;">JS</button></a>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <div><h1 class="domTitle">coordinates</h1></div>
+  <p><a href="../pagesDOM/domGeolocation.html"><button class="dom-buttons-prop dom-close-but-pos">X</button></a></p>
+
+  <div class="note descriptionDOM">
+    Description:<br />
+    <div class="note-value">
+      The Geolocation object allows the user to provide their location to web applications.
+      For privacy reasons, the user is asked for permission to report location information.
+    </div>
+    <div class="note-value">
+      The Geolocation API is published through the navigator.geolocation object.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div class="note noteDOM">
+    Notes:<br />
+    <div class="note-value">
+      This feature is available only in secure contexts (HTTPS).
+    </div>
+    <div class="note-value">
+      Geolocation is most accurate for devices with GPS, like iPhone.
+    </div>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Coordinates Properties</h2></div>
+  <div>
+    <table class="tableDOMAttr tableDOM">
+      <thead>
+        <tr>
+          <th>Property</th><th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>coordinates.latitude</td>
+          <td>Returns the position's latitude in decimal degrees.</td>
+        </tr>
+        <tr>
+          <td>coordinates.longitude</td>
+          <td>Returns the position's longitude in decimal degrees.</td>
+        </tr>
+        <tr>
+          <td>coordinates.altitude</td>
+          <td>Returns the position's altitude in meters, relative to sea level.</td>
+        </tr>
+        <tr>
+          <td>coordinates.accuracy</td>
+          <td>Returns the accuracy of the latitude and longitude properties in meters.</td>
+        </tr>
+        <tr>
+          <td>coordinates.altitudeAccuracy</td>
+          <td>Returns the accuracy of the altitude property in meters.</td>
+        </tr>
+        <tr>
+          <td>coordinates.heading</td>
+          <td>
+            Returns the direction in which the device is traveling.
+            This value, specified in degrees, indicates how far off from heading true north the device is.
+            0 degrees represents true north, and the direction is determined clockwise
+            (east is 90 degrees and west is 270 degrees).
+            If speed is 0, heading is NaN. If the device is unable to provide heading information, this value is null.</td>
+        </tr>
+        <tr>
+          <td>coordinates.speed</td>
+          <td>Returns the velocity of the device in meters per second. This value can be null.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div><hr class="dom-hr-length-90perc" /></div>
+
+  <div><h2 class="tag domTitle">Examples</h2></div>
+  <div class="left-padding">
+    <button onclick="eventGeolocationFunc()" class="dom-buttons-prop">Show location</button>
+  </div>
+
+  <div class="exampleDOMDiv">
+    <div style="text-align: center;">
+      <p class="replace"></p>
+    </div>
+  </div>
+
+  <div class="codeDOM">
+    <div class="blue float-borders-none">
+      &lt;<span class="brown">body</span>&gt;<br>
+      <span class="left-padding">&lt;<span class="brown">div</span>
+      <span class="maroon">onclick=</span><span class="olive">"eventGeolocationFunc()"</span>&gt;</span><br>
+        <p class="more-padding" style="margin: 0;">
+          &lt;<span class="brown">p</span>
+          <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
+          &lt;<span class="brown">/p</span>&gt;
+        </p>
+        <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+      &lt;<span class="brown">/body</span>&gt;
+    </div>
+
+    <div class="black float-borders-none">
+      <span class="purple">var </span>x =
+      <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[0];<br><br>
+      <span class="purple">function </span><span class="blue">eventGeolocationFunc</span>() {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">if </span>(<span class="maroon">navigator.geolocation</span>) {<br>
+            <span class="maroon left-padding">x.innerHTML</span> = <span class="maroon">navigator.geolocation.</span><span class="blue">getCurrentPosition</span>(showPosition);<br>
+          } <span class="purple">else</span> {<br>
+            <span class="maroon left-padding">x.innerHTML</span> = <span class="olive">"Geolocation is not supported by this browser."</span>;<br>
+          }
+        </p>
+      <span class="black">}</span><br><br>
+
+      <span class="purple">function </span><span class="blue">showPosition</span>(pos) {<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="maroon">x.innerHTML</span> = <span class="olive">"Latitude: "</span> + <span class="maroon">pos.coords.latitude</span> +
+          <span class="olive">"&lt;br&gt;Longitude: "</span> + <span class="maroon">pos.coords.longitude</span> +
+          <span class="olive">"&lt;br&gt;Altitude: "</span> + <span class="maroon">pos.coords.altitude</span> +
+          <span class="olive">"&lt;br&gt;Accuracy: "</span> + <span class="maroon">pos.coords.accuracy</span> +
+          <span class="olive">"&lt;br&gt;Altitude accuracy: "</span> + <span class="maroon">pos.coords.altitudeAccuracy</span> +
+          <span class="olive">"&lt;br&gt;Heading: "</span> + <span class="maroon">pos.coords.heading</span> +
+          <span class="olive">"&lt;br&gt;Speed: "</span> + <span class="maroon">pos.coords.speed</span>;<br>
+        </p>
+      <span class="black">}</span>
+    </div>
+  </div>
+  <p style="clear: left;"></p>
+  <div><hr class="dom-hr-length-90perc" /></div>
+  <script>
+    var x = document.getElementsByClassName("replace")[0];
+
+    function eventGeolocationFunc() {
+      if (navigator.geolocation) {
+        x.innerHTML = navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude +
+      "<br>Altitude: " + position.coords.altitude +
+      "<br>Accuracy: " + position.coords.accuracy +
+      "<br>Altitude accuracy: " + position.coords.altitudeAccuracy +
+      "<br>Heading: " + position.coords.heading +
+      "<br>Speed: " + position.coords.speed;
+    }
+  </script>
+</body>
+</html>
