@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+  <title>Array</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/dom.png" type="image/png" />
+  <link rel="stylesheet" href="../styles/button.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/common.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/js_style.css" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+  <script src="../scripts/array.js"></script>
+
+<body>
+  <div class="just-cont-flex-center" style="width: 70%; margin-left: auto; margin-right: auto;">
+    <a href="../pages/main_window_dom.html">
+      <button class="dom-buttons link-buttons" type="button" style="padding: 10px 20px; margin: 0;">DOM</button>
+    </a>
+    <a href="../pages/main_window_html.html">
+      <button class="home html-buttons link-buttons" type="button" style="margin: 0;">HTML</button>
+    </a>
+    <a href="../pages/main_window_css.html">
+      <button class="css-buttons link-buttons" type="button" style="padding: 10px 24px; margin: 0;">CSS</button>
+    </a>
+    <a href="../pages/main_window_js.html">
+      <button class="js-buttons link-buttons" type="button" style="padding: 10px 31px; margin: 0;">JS</button>
+    </a>
+  </div>
+
+  <div class="note descriptionJS" style="margin-left: 5%;">
+    Description:<br />
+    <div class="note-value">
+      The Array object is used to store multiple values in a single variable.
+    </div>
+    <div class="note-value">
+      Array indexes are zero-based: The first element in the array is 0, the second is 1, and so on.
+    </div>
+  </div>
+  <div><hr class="js-hr-length-90perc" style="margin-left: 2.5%; margin-bottom: -2em;"/></div>
+
+  <div class="js-buttons-prop-node" style="margin-top: 3em;">
+    <p id="JSConstructor()Btn">
+        <button class="js-buttons-prop" onclick="JSShowFrame('JSConstructor()Btn', 'JSConstructor()Frame')">constructor</button>
+    </p>
+    <p id="JSLength()Btn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSLength()Btn', 'JSLength()Frame')">length</button>
+    </p>
+    <p id="JSPrototype()Btn" style="margin-bottom: 3em;">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSPrototype()Btn', 'JSPrototype()Frame')">prototype</button>
+    </p>
+
+    <p id="JSConcat()Btn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSConcat()Btn', 'JSConcat()Frame')">concat()</button>
+    </p>
+    <p id="JSCopyWithin()Btn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSCopyWithin()Btn', 'JSCopyWithin()Frame')">copyWithin()</button>
+    </p>
+    <p id=""><a href="../framesJS/JSEntries()Method.html"><button class="js-buttons-prop">entries()</button></a></p>
+    <p id=""><a href="../framesJS/JSEvery()Method.html"><button class="js-buttons-prop">every()</button></a></p>
+    <p id=""><a href="../framesJS/JSFill()Method.html"><button class="js-buttons-prop">fill()</button></a></p>
+    <p id=""><a href="../framesJS/JSFilter()Method.html"><button class="js-buttons-prop">filter()</button></a></p>
+    <p id=""><a href="../framesJS/JSFind()Method.html"><button class="js-buttons-prop">find()</button></a></p>
+    <p id=""><a href="../framesJS/JSFindIndex()Method.html"><button class="js-buttons-prop">findIndex()</button></a></p>
+    <p id=""><a href="../framesJS/JSForEach()Method.html"><button class="js-buttons-prop">forEach()</button></a></p>
+    <p id=""><a href="../framesJS/JSFrom()Method.html"><button class="js-buttons-prop">from()</button></a></p>
+    <p id=""><a href="../framesJS/JSIncludes()Method.html"><button class="js-buttons-prop">includes()</button></a></p>
+    <p id="JSIndexOf()Btn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSIndexOf()Btn', 'JSIndexOf()Frame')">indexOf()</button>
+    </p>
+    <p id=""><a href="../framesJS/JSIsArray()Method.html"><button class="js-buttons-prop">isArray()</button></a></p>
+    <p id=""><a href="../framesJS/JSJoin()Method.html"><button class="js-buttons-prop">join()</button></a></p>
+    <p id=""><a href="../framesJS/JSKeys()Method.html"><button class="js-buttons-prop">keys()</button></a></p>
+    <p id=""><a href="../framesJS/JSLastIndexOf()Method.html"><button class="js-buttons-prop">lastIndexOf()</button></a></p>
+    <p id=""><a href="../framesJS/JSMap()Method.html"><button class="js-buttons-prop">map()</button></a></p>
+    <p id=""><a href="../framesJS/JSPop()Method.html"><button class="js-buttons-prop">pop()</button></a></p>
+    <p id=""><a href="../framesJS/JSPush()Method.html"><button class="js-buttons-prop">push()</button></a></p>
+    <p id=""><a href="../framesJS/JSReduce()Method.html"><button class="js-buttons-prop">reduce()</button></a></p>
+    <p id=""><a href="../framesJS/JSReduceRight()Method.html"><button class="js-buttons-prop">reduceRight()</button></a></p>
+    <p id=""><a href="../framesJS/JSReverse()Method.html"><button class="js-buttons-prop">reverse()</button></a></p>
+    <p id=""><a href="../framesJS/JSShift()Method.html"><button class="js-buttons-prop">shift()</button></a></p>
+    <p id=""><a href="../framesJS/JSSlice()Method.html"><button class="js-buttons-prop">slice()</button></a></p>
+    <p id=""><a href="../framesJS/JSSome()Method.html"><button class="js-buttons-prop">some()</button></a></p>
+    <p id=""><a href="../framesJS/JSSort()Method.html"><button class="js-buttons-prop">sort()</button></a></p>
+    <p id=""><a href="../framesJS/JSSplice()Method.html"><button class="js-buttons-prop">splice()</button></a></p>
+    <p id=""><a href="../framesJS/JSToString()Method.html"><button class="js-buttons-prop">toString()</button></a></p>
+    <p id=""><a href="../framesJS/JSUnshift()Method.html"><button class="js-buttons-prop">unshift()</button></a></p>
+    <p id=""><a href="../framesJS/JSValueOf()Method.html"><button class="js-buttons-prop">valueOf()</button></a></p>
+  </div>
+
+
+  <div id="JSConstructor()Frame" class="JSFrame" style="display: none;">
+    <div class="noteJS descriptionJSFrame" style="margin-left: 5%;">
+      Description:<br />
+      <div class="note-value">
+        The Array object is used to store multiple values in a single variable.
+      </div>
+      <div class="note-value">
+        Array indexes are zero-based: the first element in the array is 0, the second is 1, and so on.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+  </div>
+
+
+  <div id="JSLength()Frame" class="JSFrame" style="display: none;">
+    <div class="noteJS descriptionJSFrame" style="margin-left: 5%;">
+      Description:<br />
+      <div class="note-value">
+        The Array object is used to store multiple values in a single variable.
+      </div>
+      <div class="note-value">
+        Array indexes are zero-based: the first element in the array is 0, the second is 1, and so on.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+  </div>
+
+
+  <div id="JSPrototype()Frame" class="JSFrame" style="display: none;">
+    Example.
+  </div>
+
+
+  <div id="JSConcat()Frame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The concat() method is used to join two or more arrays.
+      </div>
+      <div class="note-value">
+        This method does not change the existing arrays, but returns a new array,
+        containing the values of the joined arrays.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>array2, array3, ..., arrayX</td>
+            <td>Required. The arrays to be joined.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div id="documentDocURIExamplesBar" class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>First array:<br>
+          <input type="text" value="Any data"><br>
+          <input type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createArray('0', '1', '0')">Create array</button>
+        </span>
+        <span>Second array:<br>
+          <input type="text" value="Any data"><br>
+          <input type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createArray('2', '3', '1')">Create array</button>
+        </span>
+        <span>Third array:<br>
+          <input type="text" value="Any data"><br>
+          <input type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createArray('4', '5', '2')">Create array</button>
+        </span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn" type="text" onclick="concatArrays()">Concat arrays</button>
+      </div>
+      <div id="concatReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <!-- <div class="blue float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>
+        <span class="maroon">onclick=</span><span class="olive">"eventOffsetXFunc(event)"</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div> -->
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">eventOnmousePerformFunc</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>firstArray =
+              [<span class="olive replace"></span>];<br>
+              <span class="purple">var </span>secondArray =
+              [<span class="olive replace"></span>];<br>
+              <span class="purple">var </span>thirdArray =
+              [<span class="olive replace"></span>];<br>
+              <span class="purple">var </span>result =
+              firstArray.<span class="darkblue">concat</span>(secondArray, thirdArray);<br>
+              <span class="purple">var </span>x =
+              <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>];
+              <span class="maroon">x.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+  <div id="JSCopyWithin()Frame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The copyWithin() method copies array elements within the array, to and from specified positions.
+      </div>
+      <div class="note-value">
+        This method does not change the existing arrays, but returns a new array,
+        containing the values of the joined arrays.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>target</td>
+            <td>Required. The index position to copy the elements to.</td>
+          </tr>
+          <tr>
+            <td>target</td>
+            <td>Optional. The index position to start copying elements from  (default is 0).</td>
+          </tr>
+          <tr>
+            <td>target</td>
+            <td>Optional. The index position to stop copying elements from (default is array.length).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div id="documentDocURIExamplesBar" class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>First array:<br>
+          <input type="text" value="Any data"><br>
+          <input type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createArray('0', '1', '0')">Create array</button>
+        </span>
+        <span>Second array:<br>
+          <input type="text" value="Any data"><br>
+          <input type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createArray('2', '3', '1')">Create array</button>
+        </span>
+        <span>Third array:<br>
+          <input type="text" value="Any data"><br>
+          <input type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createArray('4', '5', '2')">Create array</button>
+        </span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn" type="text" onclick="concatArrays()">Concat arrays</button>
+      </div>
+      <div id="concatReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <!-- <div class="blue float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>
+        <span class="maroon">onclick=</span><span class="olive">"eventOffsetXFunc(event)"</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div> -->
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">eventOnmousePerformFunc</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>firstArray =
+              [<span class="olive replace"></span>];<br>
+              <span class="purple">var </span>secondArray =
+              [<span class="olive replace"></span>];<br>
+              <span class="purple">var </span>thirdArray =
+              [<span class="olive replace"></span>];<br>
+              <span class="purple">var </span>result =
+              firstArray.<span class="darkblue">concat</span>(secondArray, thirdArray);<br>
+              <span class="purple">var </span>x =
+              <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>];
+              <span class="maroon">x.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+  <div id="JSIndexOf()Frame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The concat() method is used to join two or more arrays.
+      </div>
+      <div class="note-value">
+        This method does not change the existing arrays, but returns a new array,
+        containing the values of the joined arrays.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>array2, array3, ..., arrayX</td>
+            <td>Required. The arrays to be joined.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag JSTitle">Examples</h2></div>
+    <div id="documentDocURIExamplesBar" class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <p id="doсDomainP"></p>
+    </div>
+
+    <div class="codeJS">
+      <div class="blue float-borders-none">
+        &lt;<span class="brown">div</span>&gt;<br>
+        <p class="left-padding" style="margin: 0;">
+          &lt;<span class="brown">p</span>
+          <span class="purple">id=</span><span class="olive">"example"</span>&gt;
+          <span class="black replace"></span>
+          &lt;<span class="brown">/p</span>&gt;<br>
+        </p>
+        &lt;<span class="brown">/div</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        function <span class="blue">exampleFunction</span>() {<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">let </span>x = <span class="maroon">document.domain</span>;<br>
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
+            = x;<br>
+          </p>
+        <span class="black">}</span>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+</body>
+</html>

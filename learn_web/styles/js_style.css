@@ -1,0 +1,158 @@
+body {
+  background: #fff9b3;
+  scroll-behavior: smooth;
+  background-image: url("../images/rabbit_on_the_grass.jpeg");
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
+.codeJS {
+  font-family: 'Andale Mono', monospace;
+  font-size: 85%;
+}
+
+.exampleJSDiv {
+  font-size: 20px;
+  min-width: 90%;
+  border: 2px solid rgb(175, 145, 15);
+  padding: 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: auto;
+}
+
+.js-buttons-prop {
+  border-top-right-radius: 70% 50%;
+  border-top-left-radius: 70% 10%;
+  padding: 0.5em 0.3em;
+  background: white;
+  color: #cca300;
+  transition: background 2s ease;
+}
+
+.js-buttons-prop:hover {
+  background: #cca300;
+  color: white;
+}
+
+.js-buttons-prop-node p {
+  margin-top: -0.5em;
+}
+
+.just-cont-flex-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.JSFrame {
+  padding: 1px;
+  width: 76%;
+  border: 2px solid #cca300;
+  left: 155px;
+  position: absolute;
+  border-radius: 10px;
+  transition: background 3s ease;
+}
+
+.JSFrame:hover {
+  background: #bfdab9;
+}
+
+.js-hr-length-90perc {
+  color: rgb(175, 145, 15);
+  margin-left: 1.4em;
+  width: 90%;
+}
+
+.js-hr-length-100perc {
+  color: rgb(175, 145, 15);
+  margin-left: 0.2em;
+  width: 100%;
+}
+
+.descriptionJS, .descriptionJSFrame {
+  background-color: rgba(222, 209, 42, 0.59);
+}
+
+.descriptionJS, .noteJS {
+  width: 85%;
+  font-size: 23px;
+  font-family: Trebushet, sans-serif;
+}
+
+.descriptionJSFrame, .noteJSFrame {
+  height: auto;
+  border-radius: 5px;
+  padding: 3px;
+  position: relative;
+  width: auto;
+  font-size: 23px;
+  font-family: Trebushet, sans-serif;
+  background-color: rgba(222, 209, 42, 0.92);
+}
+
+.jsTitle {
+  color: rgb(110, 128, 6);
+}
+
+.submitBtn {
+  margin-top: 3px;
+  padding: 1px;
+  font-size: 12px;
+  color: grey;
+  background: white;
+  border-radius: 5px;
+}
+
+.submitBtn:hover {
+  color: black;
+}
+
+.tablejs {
+  background-color: white;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.tablejs thead th {
+  font-size: 20px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 18px 0;
+}
+
+.tablejs tbody tr:nth-child(odd) {
+  background-color: rgba(222, 209, 42, 0.59);
+}
+
+.tablejs tbody th {
+  padding: 18px 5px;
+  text-align: left;
+}
+
+.tablejs tbody td {
+  padding: 8px 5px;
+  border: none;
+  text-align: left;
+}
+
+.tablejs td {
+  vertical-align: top;
+  line-height: 1.1em;
+}
+
+.tablejsAttr thead th {
+  font-size: 20px;
+  text-align: left;
+  background-color: black;
+  color: white;
+  padding: 10px 5px;
+}
+
+.tablejsAttr tbody tr:nth-child(odd) {
+  background-color: rgba(222, 209, 42, 0.59);
+}
