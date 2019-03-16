@@ -56,7 +56,9 @@
     <p id="JSCopyWithin()Btn">
       <button class="js-buttons-prop" onclick="JSShowFrame('JSCopyWithin()Btn', 'JSCopyWithin()Frame')">copyWithin()</button>
     </p>
-    <p id=""><a href="../framesJS/JSEntries()Method.html"><button class="js-buttons-prop">entries()</button></a></p>
+    <p id="JSEntries()Btn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSEntries()Btn', 'JSEntries()Frame')">entries()</button>
+    </p>
     <p id=""><a href="../framesJS/JSEvery()Method.html"><button class="js-buttons-prop">every()</button></a></p>
     <p id=""><a href="../framesJS/JSFill()Method.html"><button class="js-buttons-prop">fill()</button></a></p>
     <p id=""><a href="../framesJS/JSFilter()Method.html"><button class="js-buttons-prop">filter()</button></a></p>
@@ -185,22 +187,21 @@
     </div>
 
     <div class="codeJS">
-      <!-- <div class="blue float-borders-none">
+      <div class="blue float-borders-none">
         &lt;<span class="brown">body</span>&gt;<br>
-        <span class="left-padding">&lt;<span class="brown">div</span>
-        <span class="maroon">onclick=</span><span class="olive">"eventOffsetXFunc(event)"</span>&gt;</span><br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
           <p class="more-padding" style="margin: 0;">
             &lt;<span class="brown">p</span>
-            <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
             &lt;<span class="brown">/p</span>&gt;
           </p>
           <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
         &lt;<span class="brown">/body</span>&gt;
-      </div> -->
+      </div>
 
       <div class="black float-borders-none">
         &lt;<span class="brown">script</span>&gt;<br>
-          <span class="purple left-padding">function </span><span class="blue">eventOnmousePerformFunc</span>() {<br>
+          <span class="purple left-padding">function </span><span class="blue">concatFunc</span>() {<br>
             <p class="more-padding" style="margin: 0;">
               <span class="purple">var </span>firstArray =
               [<span class="olive replace"></span>];<br>
@@ -211,7 +212,7 @@
               <span class="purple">var </span>result =
               firstArray.<span class="darkblue">concat</span>(secondArray, thirdArray);<br>
               <span class="purple">var </span>x =
-              <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>];
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>);
               <span class="maroon">x.innerHTML</span> = result;
             </p>
           <span class="black left-padding">}</span><br>
@@ -250,11 +251,11 @@
             <td>Required. The index position to copy the elements to.</td>
           </tr>
           <tr>
-            <td>target</td>
+            <td>start</td>
             <td>Optional. The index position to start copying elements from  (default is 0).</td>
           </tr>
           <tr>
-            <td>target</td>
+            <td>end</td>
             <td>Optional. The index position to stop copying elements from (default is array.length).</td>
           </tr>
         </tbody>
@@ -271,57 +272,51 @@
 
     <div class="exampleJSDiv">
       <div class="exampleJSDiv" style="border: none;">
-        <span>First array:<br>
-          <input type="text" value="Any data"><br>
-          <input type="text" value="Any data"><br>
-          <button class="submitBtn" type="text" onclick="createArray('0', '1', '0')">Create array</button>
+        <span>Target:<br>
+          <input class="copy-within" type="number" oninput="getValue(event, '0')"><br>
+          <!-- <button class="submitBtn" type="text" onclick="createArray('0', '1', '0')">Create array</button> -->
         </span>
-        <span>Second array:<br>
-          <input type="text" value="Any data"><br>
-          <input type="text" value="Any data"><br>
-          <button class="submitBtn" type="text" onclick="createArray('2', '3', '1')">Create array</button>
+        <span>Start:<br>
+          <input class="copy-within" type="number" oninput="getValue(event, '1')"><br>
+          <!-- <button class="submitBtn" type="text" onclick="createArray('2', '3', '1')">Create array</button> -->
         </span>
-        <span>Third array:<br>
-          <input type="text" value="Any data"><br>
-          <input type="text" value="Any data"><br>
-          <button class="submitBtn" type="text" onclick="createArray('4', '5', '2')">Create array</button>
+        <span>End:<br>
+          <input class="copy-within" type="number" oninput="getValue(event, '2')"><br>
+          <!-- <button class="submitBtn" type="text" onclick="createArray('4', '5', '2')">Create array</button> -->
         </span>
       </div>
       <div class="exampleJSDiv" style="border: none;">
-        <button class="submitBtn" type="text" onclick="concatArrays()">Concat arrays</button>
+        <button class="submitBtn submitBtnBig" onclick="JSCopyWithin()">Change array</button>
+        <button class="submitBtn submitBtnBig" onclick="resetCopyWithin()">Reset</button>
       </div>
-      <div id="concatReplace" class="exampleJSDiv" style="border: none;"></div>
+      <div id="copyWithinReplace" class="exampleJSDiv" style="border: none;"></div>
     </div>
 
     <div class="codeJS">
-      <!-- <div class="blue float-borders-none">
+      <div class="blue float-borders-none">
         &lt;<span class="brown">body</span>&gt;<br>
-        <span class="left-padding">&lt;<span class="brown">div</span>
-        <span class="maroon">onclick=</span><span class="olive">"eventOffsetXFunc(event)"</span>&gt;</span><br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
           <p class="more-padding" style="margin: 0;">
             &lt;<span class="brown">p</span>
-            <span class="maroon">class=</span><span class="olive">"replace"</span>&gt;
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
             &lt;<span class="brown">/p</span>&gt;
           </p>
           <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
         &lt;<span class="brown">/body</span>&gt;
-      </div> -->
+      </div>
 
       <div class="black float-borders-none">
         &lt;<span class="brown">script</span>&gt;<br>
-          <span class="purple left-padding">function </span><span class="blue">eventOnmousePerformFunc</span>() {<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];<br>
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span>
+            = colors;<br><br>
+          </p>
+          <span class="purple left-padding">function </span><span class="blue">copyWithinFunc</span>() {<br>
             <p class="more-padding" style="margin: 0;">
-              <span class="purple">var </span>firstArray =
-              [<span class="olive replace"></span>];<br>
-              <span class="purple">var </span>secondArray =
-              [<span class="olive replace"></span>];<br>
-              <span class="purple">var </span>thirdArray =
-              [<span class="olive replace"></span>];<br>
-              <span class="purple">var </span>result =
-              firstArray.<span class="darkblue">concat</span>(secondArray, thirdArray);<br>
-              <span class="purple">var </span>x =
-              <span class="maroon">document.</span><span class="blue">getElementsByClassName</span>(<span class="olive">"replace"</span>)[<span class="orange">0</span>];
-              <span class="maroon">x.innerHTML</span> = result;
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span>
+              = colors.<span class="darkblue">copyWithin</span>(<span class="orange copyWithinClass"></span>, <span class="orange copyWithinClass"></span>, <span class="orange copyWithinClass"></span>);<br>
             </p>
           <span class="black left-padding">}</span><br>
         &lt;<span class="brown">/script</span>&gt;<br>
@@ -329,6 +324,195 @@
     </div>
     <p style="clear: left;"></p>
     <div><hr class="js-hr-length-100perc" /></div>
+    <script>
+      var colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
+      document.getElementById("copyWithinReplace").innerHTML = colors;
+
+      function JSCopyWithin() {
+        var data = document.getElementsByClassName("copy-within");
+        var target = data[0].value;
+        var start = data[1].value;
+        var end = data[2].value;
+        document.getElementById("copyWithinReplace").innerHTML = colors.copyWithin(target, start, end);
+      }
+
+      function resetCopyWithin() {
+        var colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
+        document.getElementById("copyWithinReplace").innerHTML = colors;
+      }
+
+      function getValue(event, num) {
+        var x = document.getElementsByClassName('copy-within')[num].value;
+        console.log(x)
+        document.getElementsByClassName('copyWithinClass')[num].innerText = x;
+      }
+    </script>
+  </div>
+
+
+  <div id="JSEntries()Frame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The entries() method returns an Array Iterator object with key/value pairs.
+      </div>
+      <div class="note-value">
+        For each item in the original array, the new iteration object will contain an array
+        with the index as the key, and the item value as the value.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <p class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" onclick="JSEntriesFunc()">Get entries</button>
+      </p>
+      <p id="entriesReplace" class="exampleJSDiv" style="border: none;"></p>
+    </div>
+
+    <div class="codeJS">
+      <div class="blue float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+        <p class="more-padding" style="margin: 0;">
+          &lt;<span class="brown">p</span>
+          <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+          &lt;<span class="brown">/p</span>&gt;
+        </p>
+        <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+        <span class="purple left-padding">function </span><span class="blue">JSEntriesFunc</span>() {<br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="purple">var </span>i;<br>
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];<br>
+            <span class="purple">var </span>data =
+            <span class="maroon">colors.</span><span class="darkblue">entries</span>();<br>
+            <span class="purple">var </span>length = <span class="maroon">data.length</span>;<br>
+            <span class="purple">var </span>target =
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>);<br><br>
+
+            <span class="purple">for </span>(i = <span class="orange">0</span>; i<<span class="maroon">length</span>; i++) {<br>
+              <span class="maroon left-padding">target.innerHTML</span> +=
+              (<span class="maroon">data.next</span>().<span class="maroon">value</span> + <span class="olive">"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span>);<br>
+            </p>
+        <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+  <div id="JSEvery()Frame" class="JSFrame" style="display: block;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The every() method checks if all elements in an array pass a test (provided as a function).
+      </div>
+      <div class="note-value">
+        The every() method executes the function once for each element present in the array:
+        <ul>
+          <li>If it finds an array element where the function returns a false value, every() returns false (and does not check the remaining values).</li>
+          <li>If no false occur, every() returns true.</li>
+        </ul>
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        every() does not execute the function for array elements without values.
+      </div>
+      <div class="note-value">
+        every() does not change the original array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>Required. A function to be run for each element in the array.</td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" onclick="JSEveryFunc()">Get numbers</button>
+      </div>
+      <div id="everyReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="blue float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];<br>
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span>
+            = colors;<br><br>
+          </p>
+          <span class="purple left-padding">function </span><span class="blue">copyWithinFunc</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span>
+              = colors.<span class="darkblue">copyWithin</span>(<span class="orange copyWithinClass"></span>, <span class="orange copyWithinClass"></span>, <span class="orange copyWithinClass"></span>);<br>
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+    <script>
+      var primes = [2, 3, 5, 7, 9, 11, 13];
+
+      function getNumbers(prime) {
+        return prime >= 18;
+      }
+
+      function JSEveryFunc() {
+        document.getElementById("everyReplace").innerHTML = primes.every(getNumbers);
+      }
+    </script>
   </div>
 
 

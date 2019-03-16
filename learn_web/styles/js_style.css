@@ -50,7 +50,7 @@ body {
   padding: 1px;
   width: 76%;
   border: 2px solid #cca300;
-  left: 155px;
+  left: 215px;
   position: absolute;
   border-radius: 10px;
   transition: background 3s ease;
@@ -90,6 +90,9 @@ body {
   width: auto;
   font-size: 23px;
   font-family: Trebushet, sans-serif;
+}
+
+.noteJSFrame {
   background-color: rgba(222, 209, 42, 0.92);
 }
 
@@ -106,8 +109,16 @@ body {
   border-radius: 5px;
 }
 
+.submitBtnBig {
+  padding: 8px;
+}
+
 .submitBtn:hover {
   color: black;
+}
+
+.submitBtn:active {
+  background-color: rgb(189, 235, 6);
 }
 
 .tablejs {
@@ -151,8 +162,4 @@ body {
   background-color: black;
   color: white;
   padding: 10px 5px;
-}
-
-.tablejsAttr tbody tr:nth-child(odd) {
-  background-color: rgba(222, 209, 42, 0.59);
 }

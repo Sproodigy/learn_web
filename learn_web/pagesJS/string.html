@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html>
+
+  <title>String</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/dom.png" type="image/png" />
+  <link rel="stylesheet" href="../styles/button.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/common.css" type="text/css"/>
+  <link rel="stylesheet" href="../styles/js_style.css" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+  <script src="../scripts/string.js"></script>
+
+<body>
+  <div class="just-cont-flex-center" style="width: 70%; margin-left: auto; margin-right: auto;">
+    <a href="../pages/main_window_dom.html">
+      <button class="dom-buttons link-buttons" type="button" style="padding: 10px 20px; margin: 0;">DOM</button>
+    </a>
+    <a href="../pages/main_window_html.html">
+      <button class="home html-buttons link-buttons" type="button" style="margin: 0;">HTML</button>
+    </a>
+    <a href="../pages/main_window_css.html">
+      <button class="css-buttons link-buttons" type="button" style="padding: 10px 24px; margin: 0;">CSS</button>
+    </a>
+    <a href="../pages/main_window_js.html">
+      <button class="js-buttons link-buttons" type="button" style="padding: 10px 31px; margin: 0;">JS</button>
+    </a>
+  </div>
+
+  <div class="note descriptionJS" style="margin-left: 5%;">
+    Description:<br />
+    <div class="note-value">
+      A JavaScript string stores a series of characters like "String".
+    </div>
+    <div class="note-value">
+      A string can be any text inside double or single quotes.
+    </div>
+    <div class="note-value">
+      String indexes are zero-based: The first character is in position 0, the second in 1, and so on.
+    </div>
+    <div class="note-value">
+      Primitive values, like "String", cannot have properties or methods (because they are not objects).
+      But with JavaScript, methods and properties are also available to primitive values,
+      because JavaScript treats primitive values as objects when executing methods and properties.
+    </div>
+  </div>
+  <div><hr class="js-hr-length-90perc" style="margin-left: 2.5%; margin-bottom: -2em;"/></div>
+
+  <div class="js-buttons-prop-node" style="margin-top: 3em;">
+    <p id="JSConstructorBtn">
+        <button class="js-buttons-prop" onclick="JSShowFrame('JSConstructorBtn', 'JSConstructorFrame')">constructor</button>
+    </p>
+    <p id="JSLengthBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSLengthBtn', 'JSLengthFrame')">length</button>
+    </p>
+    <p id="JSPrototypeBtn" style="margin-bottom: 3em;">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSPrototypeBtn', 'JSPrototypeFrame')">prototype</button>
+    </p>
+
+    <p id="JSCharAtBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSCharAtBtn', 'JSStrCharAtFrame')">charAt()</button>
+    </p>
+    <p id="JSCharCodeAtBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSCharCodeAtBtn', 'JSCharCodeAtFrame')">charCodeAt()</button>
+    </p>
+    <p id="JSConcatBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSConcatBtn', 'JSConcatFrame')">concat()</button>
+    </p>
+    <p id="JSEndsWithBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSEndsWithBtn', 'JSEndsWithFrame')">endsWith()</button>
+    </p>
+    <p id="JSFromCharCodeBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSFromCharCodeBtn', 'JSFromCharCodeFrame')">fromCharCode()</button>
+    </p>
+    <p id="JSIncludesBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSIncludesBtn', 'JSIncludesFrame')">includes()</button>
+    </p>
+    <p id="JSIndexOfBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSIndexOfBtn', 'JSIndexOfFrame')">indexOf()</button>
+    </p>
+    <p id="JSlastIndexOfBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSlastIndexOfBtn', 'JSlastIndexOfFrame')">lastIndexOf()</button>
+    </p>
+    <p id="JSLocaleCompareBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSLocaleCompareBtn', 'JSLocaleCompareFrame')">localeCompare()</button>
+    </p>
+    <p id="JSMatchBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSMatchBtn', 'JSMatchFrame')">match()</button>
+    </p>
+    <p id="JSRepeatBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSRepeatBtn', 'JSRepeatFrame')">repeat()</button>
+    </p>
+    <p id="JSReplaceBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSReplaceBtn', 'JSReplaceFrame')">replace()</button>
+    </p>
+    <p id="JSSearchBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSSearchBtn', 'JSSearchFrame')">search()</button>
+    </p>
+    <p id="JSSliceBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSSliceBtn', 'JSSliceFrame')">slice()</button>
+    </p>
+    <p id="JSSplitBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSSplitBtn', 'JSSplitFrame')">split()</button>
+    </p>
+    <p id="JSStartsWithBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSStartsWithBtn', 'JSStartsWithFrame')">startsWith()</button>
+    </p>
+    <p id="JSSubstrBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSSubstrBtn', 'JSSubstrFrame')">substr()</button>
+    </p>
+    <p id="JSSubstringBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSSubstringBtn', 'JSSubstringFrame')">substring()</button>
+    </p>
+    <p id="JSToLocaleLowerCaseBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSToLocaleLowerCaseBtn', 'JSToLocaleLowerCaseFrame')">toLocaleLowerCase()</button>
+    </p>
+    <p id="JSToLocaleUpperCaseBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSToLocaleUpperCaseBtn', 'JSToLocaleUpperCaseFrame')">toLocaleUpperCase()</button>
+    </p>
+    <p id="JSToLocaleLowerBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSToLocaleLowerBtn', 'JSToLocaleLowerFrame')">toLocaleLower()</button>
+    </p>
+    <p id="JSToStringBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSToStringBtn', 'JSToStringFrame')">toString()</button>
+    </p>
+    <p id="JSToLocaleUpperCaseBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSToLocaleUpperCaseBtn', 'JSToLocaleUpperCaseFrame')">toLocaleUpperCase()</button>
+    </p>
+    <p id="JSTrimBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSTrimBtn', 'JSTrimFrame')">trim()</button>
+    </p>
+    <p id="JSValueOfBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSValueOfBtn', 'JSValueOfFrame')">valueOf()</button>
+    </p>
+  </div>
+
+
+
+  <div id="JSConstructorFrame" class="JSFrame" style="display: none;">
+    <div class="noteJS descriptionJSFrame" style="margin-left: 5%;">
+      Description:<br />
+      <div class="note-value">
+        The Array object is used to store multiple values in a single variable.
+      </div>
+      <div class="note-value">
+        Array indexes are zero-based: the first element in the array is 0, the second is 1, and so on.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+  </div>
+
+
+
+  <div id="JSLengthFrame" class="JSFrame" style="display: none;">
+    <div class="noteJS descriptionJSFrame" style="margin-left: 5%;">
+      Description:<br />
+      <div class="note-value">
+        The Array object is used to store multiple values in a single variable.
+      </div>
+      <div class="note-value">
+        Array indexes are zero-based: the first element in the array is 0, the second is 1, and so on.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+  </div>
+
+
+
+  <div id="JSPrototypeFrame" class="JSFrame" style="display: none;">
+    Example.
+  </div>
+
+
+
+  <div id="JSStrCharAtFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(2, 0, 0)" onmouseleave="JSStrFrameLeaveFunc(2, 0, 0)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The charAt() method returns the character at the specified index in a string.
+      </div>
+      <div class="note-value">
+        The index of the first character is 0, the second character is 1, and so on.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        The index of the last character in a string is string.length-1,
+        the second last character is string.length-2, and so on.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>index</td>
+            <td>Required. An integer representing the index of the character you want to return.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <span>Index:<br>
+        <input id="charAtValue" type="number" oninput="getCharAt()"><br>
+      </span>
+      <div class="exampleJSDiv" style="border: none;">
+        <p id="charAtText">We animals are the most complicated things in the known universe.</p>
+      </div>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="charAtReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            Index:
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"value"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">oninput=</span><span class="olive">"getCharAt()"</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">getCharAt</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Character: "</span> +
+              <span class="maroon">string.</span><span class="blue">charAt</span>(value);
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSCharCodeAtFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(3, 1, 1)" onmouseleave="JSStrFrameLeaveFunc(3, 1, 1)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The charCodeAt() method returns the Unicode of the character at the specified index in a string.
+      </div>
+      <div class="note-value">
+        The index of the first character is 0, the second character is 1, and so on.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        You can use the charCodeAt() method together with the length property
+        to return the Unicode of the last character in a string.
+        The index of the last character is -1, the second last character is -2, and so on.
+      </div>
+      <div class="note-value">
+        This method returns "NaN" if there is no character at the specified index,
+        or if the index is less than "0".
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>index</td>
+            <td>Required. An integer representing the index of the character you want to return.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <span>Index:<br>
+        <input id="charCodeAtValue" type="number" oninput="getCharCodeAt()"><br>
+      </span>
+      <div class="exampleJSDiv" style="border: none;">
+        <p id="charCodeAtText">We animals are the most complicated things in the known universe.</p>
+      </div>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="charCodeAtReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            Index:
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"value"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">oninput=</span><span class="olive">"getCharCodeAt()"</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">getCharCodeAt</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Character: "</span> +
+              <span class="maroon">string.</span><span class="blue">charAt</span>(value) +
+              <span class="olive">"&lt;br&gt;Character code: "</span> +
+              <span class="maroon">string.</span><span class="blue">charCodeAt</span>(value);
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSConcatFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(4, 2, 2)" onmouseleave="JSStrFrameLeaveFunc(4, 2, 2)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The concat() method is used to join two or more strings.
+      </div>
+      <div class="note-value">
+        This method does not change the existing strings, but returns a new string,
+        containing the values of the joined strings.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>string2, string3, ..., stringX</td>
+            <td>Required. The string to be joined.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>First string:<br>
+          <input id="value0" type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createString('value0', 0)">Create string</button>
+        </span>
+        <span>Second string:<br>
+          <input id="value1" type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createString('value1', 1)">Create string</button>
+        </span>
+        <span>Third string:<br>
+          <input id="value2" type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createString('value2', 2)">Create string</button>
+        </span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn" type="text" onclick="concatStrings()">Concat strings</button>
+      </div>
+      <div id="concatReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="blue float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">concatFunc</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>firstString =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>secondString =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>thirdString
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>result =
+              firstString.<span class="darkblue">concat</span>(secondString, thirdString);<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);
+              <span class="maroon">target.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSEndsWithFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(5, 3, 2)" onmouseleave="JSStrFrameLeaveFunc(5, 3, 2)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The endsWith() method determines whether a string ends with the characters of a specified string.
+      </div>
+      <div class="note-value">
+        This method returns true if the string ends with the characters, and false if not.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        The endsWith() method is case sensitive.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>searchvalue</td>
+            <td>Required. The string to search for.</td>
+          </tr>
+          <tr>
+            <td>length</td>
+            <td>
+              Optional. Specify the length of the string to search.
+              If omitted, the default value is the length of the string.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <p id="endsWithText">We animals are the most complicated things in the known universe.</p>
+      </div>
+      <span>Search value:<br>
+        <input id="endsWithSearchOneParam" type="text" oninput="isEndsWithOneParam()">
+      </span>
+      <span>
+        Search value:<br>
+        <input id="endsWithSearch" type="text" oninput="isEndsWith()"><br>
+        Length:<br>
+        <input id="endsWithLength" type="number" oninput="isEndsWith()">
+      </span>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="endsWithReplaceOneParam"></p>
+        <p id="endsWithReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Search value:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"oneParam"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isEndsWithOneParam()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Search value:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"value"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isEndsWith()"</span>&gt;<br>
+              </span>
+              <span class="left-padding">Length:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"length"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isEndsWith()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">isEndsWithOneParam</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"oneParam"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">string.</span><span class="blue">endsWith</span>(value);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">isEndsWith</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>length =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"length"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">string.</span><span class="blue">endsWith</span>(value, length);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSStrFromCharCodeFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(6, 4, 3)" onmouseleave="JSStrFrameLeaveFunc(6, 4, 3)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The fromCharCode() method converts Unicode values into characters.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        This is a static method of the String object, and the syntax is always String.fromCharCode().
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>n1, n2, ..., nX</td>
+            <td>Required. One or more Unicode values to be converted.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <p id="fromCharCodeText">We animals are the most complicated things in the known universe.</p>
+      </div>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+      <p>First index:<br>
+        <input id="fromCharCodeValue1" type="number" oninput="getFromCharCode()"><br>
+        Second index:<br>
+        <input id="fromCharCodeValue2" type="number" oninput="getFromCharCode()"><br>
+      </p>
+        <p id="fromCharCodeReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            First index:
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"value1"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">oninput=</span><span class="olive">"getFromCharCode()"</span>&gt;<br>
+            Second index:
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"value2"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">oninput=</span><span class="olive">"getFromCharCode()"</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">getFromCharCode</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value1 =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value1"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>value2 =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value2"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>charCode1 =
+              <span class="maroon">string.</span><span class="blue">charCodeAt</span>(value1);<br>
+              <span class="purple">var </span>charCode2 =
+              <span class="maroon">string.</span><span class="blue">charCodeAt</span>(value2);<br>
+              <span class="purple">var </span>char =
+              <span class="orange">String.</span><span class="blue">fromCharCodeAt</span>(charCode1, charCode2);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"&lt;br&gt;Characters code: "</span> +
+              charCode1 + <span class="olive">&quot;, &quot;</span> + charCode2 +
+              <span class="olive">"Characters: "</span> + char;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSIncludesFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(7, 5, 4)" onmouseleave="JSStrFrameLeaveFunc(7, 5, 4)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The includes() method determines whether a string contains the characters of a specified string.
+      </div>
+      <div class="note-value">
+        This method returns true if the string contains the characters, and false if not.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        The includes() method is case sensitive.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>searchvalue</td>
+            <td>Required. The string to search for.</td>
+          </tr>
+          <tr>
+            <td>start</td>
+            <td>Optional. Default 0. At which position to start the search.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <p id="includesText">We animals are the most complicated things in the known universe.</p>
+      </div>
+      <span>Search value:<br>
+        <input id="includesSearchOneParam" type="text" oninput="isIncludesOneParam()">
+      </span>
+      <span>
+        Search value:<br>
+        <input id="includesSearch" type="text" oninput="isIncludes()"><br>
+        Start:<br>
+        <input id="includesStart" type="number" oninput="isIncludes()">
+      </span>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="includesReplaceOneParam"></p>
+        <p id="includesReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Search value:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"oneParam"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isIncludesOneParam()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Search value:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"value"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isIncludes()"</span>&gt;<br>
+              </span>
+              <span class="left-padding">Start:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"length"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isIncludes()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">isIncludesOneParam</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"oneParam"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">string.</span><span class="blue">includes</span>(value);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">isIncludes</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>length =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"length"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">string.</span><span class="blue">includes</span>(value, start);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSIndexOfFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(8, 6, 5)" onmouseleave="JSStrFrameLeaveFunc(8, 6, 5)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The indexOf() method returns the position of the first occurrence of a specified value in a string.
+      </div>
+      <div class="note-value">
+        This method returns -1 if the value to search for never occurs.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        The indexOf() method is case sensitive.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>searchvalue</td>
+            <td>Required. The string to search for.</td>
+          </tr>
+          <tr>
+            <td>start</td>
+            <td>Optional. Default 0. At which position to start the search.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <p id="indexOfText">We animals are the most complicated things in the known universe.</p>
+      </div>
+      <span>Search value:<br>
+        <input id="indexOfSearchOneParam" type="text" oninput="isIndexOfOneParam()">
+      </span>
+      <span>
+        Search value:<br>
+        <input id="indexOfSearch" type="text" oninput="isIndexOf()"><br>
+        Start:<br>
+        <input id="indexOfStart" type="number" oninput="isIndexOf()">
+      </span>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="indexOfReplaceOneParam"></p>
+        <p id="indexOfReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Search value:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"oneParam"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isIndexOfOneParam()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Search value:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"value"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isIndexOf()"</span>&gt;<br>
+              </span>
+              <span class="left-padding">Start:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"length"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isIndexOf()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">isIndexOfOneParam</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"oneParam"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">string.</span><span class="blue">indexOf</span>(value);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">isIndexOf</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>length =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"length"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">string.</span><span class="blue">indexOf</span>(value, start);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSLastIndexOfFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(9, 7, 6)" onmouseleave="JSStrFrameLeaveFunc(9, 7, 6)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The lastIndexOf() method returns the position of the last occurrence of a specified value in a string.
+      </div>
+      <div class="note-value">
+        This method returns -1 if the value to search for never occurs.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        The string is searched from the end to the beginning,
+        but returns the index starting at the beginning, at position 0.
+      </div>
+      <div class="note-value">
+        The lastIndexOf() method is case sensitive.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>searchvalue</td>
+            <td>Required. The string to search for.</td>
+          </tr>
+          <tr>
+            <td>start</td>
+            <td>
+              Optional. The position where to start the search (searching backwards).
+              If omitted, the default value is the length of the string.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <p id="lastIndexOfText">We animals are the most complicated things in the known universe.</p>
+      </div>
+      <span>Search value:<br>
+        <input id="lastIndexOfSearchOneParam" type="text" oninput="isLastIndexOfOneParam()">
+      </span>
+      <span>
+        Search value:<br>
+        <input id="lastIndexOfSearch" type="text" oninput="isLastIndexOf()"><br>
+        Start:<br>
+        <input id="lastIndexOfStart" type="number" oninput="isLastIndexOf()">
+      </span>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="lastIndexOfReplaceOneParam"></p>
+        <p id="lastIndexOfReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Search value:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"oneParam"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isLastIndexOfOneParam()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Search value:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"value"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isLastIndexOf()"</span>&gt;<br>
+              </span>
+              <span class="left-padding">Start:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"length"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"isLastIndexOf()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">isLastIndexOfOneParam</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"oneParam"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">string.</span><span class="blue">lastIndexOf</span>(value);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">isLastIndexOf</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>length =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"length"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">string.</span><span class="blue">lastIndexOf</span>(value, start);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSLocaleFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(10, 8, 6)" onmouseleave="JSStrFrameLeaveFunc(10, 8, 6)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The localeCompare() method compares two strings in the current locale.
+      </div>
+      <div class="note-value">
+        The locale is based on the language settings of the browser.
+      </div>
+      <div class="note-value">
+        The localeCompare() method returns a number indicating whether the string comes before,
+        after or is equal as the compareString in sort order.
+      </div>
+      <div class="note-value">
+        Return value:
+        <ul>
+          <li>-1 if the reference string is sorted before the compareString.</li>
+          <li>0 if the two strings are equal.</li>
+          <li>1 if the reference string is sorted after the compareString.</li>
+        </ul>
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>compareString</td>
+            <td>Required. The string to compare with.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>First string:<br>
+          <input id="value3" type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createString('value3', 3)">Create string</button>
+        </span>
+        <span>Second string:<br>
+          <input id="value4" type="text" value="Any data"><br>
+          <button class="submitBtn" type="text" onclick="createString('value4', 4)">Create string</button>
+        </span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn" type="text" onclick="compareStrings()">Compare strings</button>
+      </div>
+      <div id="compareReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="blue float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">compareStrings</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>firstString =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>secondString =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>result =
+              firstString.<span class="darkblue">localeCompare</span>(secondString);<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);
+              <span class="maroon">target.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSMatchFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(11, 9, 7)" onmouseleave="JSStrFrameLeaveFunc(11, 9, 7)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The match() method searches a string for a match against a regular expression, and returns the matches, as an Array object.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        If the regular expression does not include the g modifier (to perform a global search),
+        the match() method will return only the first match in the string.
+      </div>
+      <div class="note-value">
+        This method returns null if no match is found.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>regexp</td>
+            <td>Required. The value to search for, as a regular expression.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <span>Index:<br>
+        <input id="matchValue" type="number" oninput="getMatch()"><br>
+      </span>
+      <div class="exampleJSDiv" style="border: none;">
+        <p id="matchText">We animals are the most complicated things in the known universe.</p>
+      </div>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="matchReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            Index:
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"value"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">oninput=</span><span class="olive">"getMatch()"</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">getMatch</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Character: "</span> +
+              <span class="maroon">string.</span><span class="blue">charAt</span>(value) +
+              <span class="olive">"&lt;br&gt;Character code: "</span> +
+              <span class="maroon">string.</span><span class="blue">match</span>(value);
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSRepeatFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(12, 10, 7)" onmouseleave="JSStrFrameLeaveFunc(12, 10, 7)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The repeat() method returns a new string with a specified number of copies of the string it was called on.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>count</td>
+            <td>Required. The number of times the original string value should be repeated in the new string.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <p id="repeatText">We animals are the most complicated things in the known universe.</p>
+      </div>
+      <span>Count:<br>
+        <input id="repeatCount" type="number" oninput="getRepeat()"><br>
+      </span>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="repeatReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            Count:
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"count"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">oninput=</span><span class="olive">"getRepeat()"</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">getRepeat</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>count =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"value"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">string.</span><span class="blue">repeat</span>(<span class="olive">"count"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSReplaceFrame" class="JSFrame" style="display: none;" onmouseenter="JSStrFrameHoverFunc(13, 11, 8)" onmouseleave="JSStrFrameLeaveFunc(13, 11, 8)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The replace() method searches a string for a specified value, or a regular expression,
+        and returns a new string where the specified values are replaced.
+      </div>
+      <div class="note-value">
+        This method does not change the original string.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        If you are replacing a value (and not a regular expression),
+        only the first instance of the value will be replaced.
+        To replace all occurrences of a specified value, use the global (g) modifier.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>searchvalue</td>
+            <td>Required. The value, or regular expression, that will be replaced by the new value.</td>
+          </tr>
+          <tr>
+            <td>newvalue</td>
+            <td>Required. The value to replace the search value with.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <p id="replaceText">We animals are the most complicated things in the known universe.</p>
+        </div>
+        <span>Search value:<br>
+          <input id="value5" type="text" value="String"><br>
+          <button class="submitBtn" type="text" onclick="createString('value5', 5)">Create string</button><br><br>
+          New value:<br>
+          <input id="value6" type="text" value="String"><br>
+          <button class="submitBtn" type="text" onclick="createString('value6', 6)">Create string</button>
+          <div class="exampleJSDiv" style="border: none;">
+            <button class="submitBtn" type="text" onclick="replaceString()">Replace string</button>
+          </div>
+        </span>
+
+        <span>Search value (function):<br>
+          <input id="value7" type="text" value="String"><br>
+          <button class="submitBtn" type="text" onclick="createString('value7', 7)">Create string</button><br><br>
+          <div class="exampleJSDiv" style="border: none;">
+            <button class="submitBtn" type="text" onclick="replaceStringWithFunc()">Replace string</button>
+          </div>
+        </span>
+
+        <span>New value (regexp):<br>
+          <input id="value8" type="text" value="String"><br>
+          <button class="submitBtn" type="text" onclick="createString('value8', 8)">Create string</button><br><br>
+          <div class="exampleJSDiv" style="border: none;">
+            <button class="submitBtn" type="text" onclick="replaceStringWithRegexp()">Replace string</button>
+          </div>
+        </span>
+
+        <div id="replaceReplace" class="exampleJSDiv" style="border: none;"></div>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">replaceString</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>searchValue =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>newValue =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>result =
+              string.<span class="darkblue">replace</span>(searchValue, newValue);<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br><br>
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">replaceStringWithFunc</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>searchValue =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>result =
+              string.<span class="darkblue">replace</span>(searchValue, <span class="purple">function </span>(x) {<br>
+                <span class="purple left-padding">return </span><span class="maroon">x.</span><span class="blue">toUpperCase</span>();<br>
+              });<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">replaceStringWithRegexp</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>newValue =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>result =
+              string.<span class="darkblue">replace</span>(<span class="blue"><span class="orange">/</span>e|o<span class="orange">/</span>g</span>, newValue);<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSSearchFrame" class="JSFrame" style="display: block;" onmouseenter="JSStrFrameHoverFunc(14, 12, 8)" onmouseleave="JSStrFrameLeaveFunc(14, 12, 8)">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The search() method searches a string for a specified value, and returns the position of the match.
+      </div>
+      <div class="note-value">
+        The search value can be string or a regular expression.
+      </div>
+      <div class="note-value">
+        This method returns -1 if no match is found.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>searchvalue</td>
+            <td>Required. A regular expression. A string will automatically be converted to a regular expression.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="left-padding">
+      <!-- <a href="#documentDocURIExamplesBar">
+        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+      </a> -->
+    </div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <p id="searchText">We animals are the most complicated things in the known universe.</p>
+        </div>
+        <span>Search value:<br>
+          <input id="value9" type="text" value="String"><br>
+          <button class="submitBtn" type="text" onclick="createString('value9', 9)">Create string</button><br><br>
+          <div class="exampleJSDiv" style="border: none;">
+            <button class="submitBtn" type="text" onclick="searchString()">Search string</button>
+          </div>
+        </span>
+
+        <span>Regexp:<br>
+          <div class="exampleJSDiv" style="border: none;">
+            <button class="submitBtn" type="text" onclick="searchStringWithRegexp()">Search string</button>
+          </div>
+        </span>
+
+        <div id="searchReplace" class="exampleJSDiv" style="border: none;"></div>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            We animals are the most...
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">searchString</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>searchValue =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>result =
+              string.<span class="darkblue">search</span>(searchValue);<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br><br>
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">function </span><span class="blue">searchStringWithRegexp</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>string =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text"</span>)<span class="maroon">.innerHTML</span>;<br>
+              <span class="purple">var </span>newValue =
+              <span class="olive replace"></span>;<br>
+              <span class="purple">var </span>result =
+              string.<span class="darkblue">search</span>(<span class="blue"><span class="orange">/</span>e|o<span class="orange">/</span>g</span>);<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+</body>
+</html>

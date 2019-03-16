@@ -27,3 +27,13 @@ function concatArrays() {
   var changedText = text.replace(/"/g, "");
   y.innerHTML = "Result: " + changedText;
 }
+
+function JSEntriesFunc() {
+  var colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
+  var data = colors.entries();
+  var target = document.getElementById("entriesReplace");
+
+  for (var i=0; i<colors.length; i++) {
+    target.innerHTML += (data.next().value + "&nbsp;&nbsp;&nbsp;&nbsp;");
+  }
+}
