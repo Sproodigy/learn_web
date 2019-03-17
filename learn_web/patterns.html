@@ -53,29 +53,47 @@
 </span>
 
 <!-- button -->
-&lt;<span class="brown">button</span>&gt;<br>
-<span class="left-padding">Get</span><br>
+&lt;<span class="brown">button</span>
+<span class="crimson">type=</span><span class="olive">"button"</span>
+<span class="crimson">onclick=</span><span class="olive">"setToLocaleLowerCase()"</span>&gt;
+Perform
 &lt;<span class="brown">/button</span>&gt;<br>
 
+<!-- href -->
+<a href="#documentDocURIExamplesBar">
+  <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
+</a>
+
 <!-- input -->
-<div class="codeHTML blue float-borders-none">
+<div class="codeHTML black float-borders-none">
   &lt;<span class="brown">form </span>
   <span class="crimson">action=</span>"example.php"
   <span class="crimson">method=</span>"get"
   <span class="crimson">name=</span>"formName"&gt;<br />
-  <p class="left-padding" style="margin: 0;">
-    <span class="black">First name: </span>
+  <p class="more-padding" style="margin: 0;">
+    &lt;<span class="brown">ul</span>
+    <span class="purple">id=</span>"carList"&gt;<br>
+      <span class="left-padding">&lt;<span class="brown">li</span>&gt;&lt;<span class="brown">/li</span>&gt;</span><br>
+      <span class="left-padding">&lt;<span class="brown">li</span>&gt;&lt;<span class="brown">/li</span>&gt;</span><br>
+      <span class="left-padding">&lt;<span class="brown">li</span>&gt;&lt;<span class="brown">/li</span>&gt;</span><br>
+      <span class="left-padding">&lt;<span class="brown">li</span>&gt;&lt;<span class="brown">/li</span>&gt;</span><br>
+    &lt;<span class="brown">/ul</span>&gt;<br>
+    Model:&lt;<span class="brown">br</span>&gt;
     &lt;<span class="brown">input</span>
-    <span class="crimson">type=</span>"text"
-    <span class="crimson">name=</span>"fname"&gt;<br>
-    <span class="black">Last name: </span>
+    <span class="purple">id=</span>"carModel"
+    <span class="crimson">type=</span>"text"&gt;<br>
+    Name:&lt;<span class="brown">br</span>&gt;
     &lt;<span class="brown">input</span>
-    <span class="crimson">type=</span>"text"
-    <span class="crimson">name=</span>"lname"&gt;<br>
+    <span class="purple">id=</span>"carName"
+    <span class="crimson">type=</span>"text"&gt;<br>
+    Color:&lt;<span class="brown">br</span>&gt;
     &lt;<span class="brown">input</span>
-    <span class="crimson">type=</span>"button"
-    <span class="crimson">onclick=</span>"formSubmit()"
-    <span class="crimson">value=</span>"Send form data!"&gt;<br>
+    <span class="purple">id=</span>"carColor"
+    <span class="crimson">type=</span>"text"&gt;<br>
+    Price:&lt;<span class="brown">br</span>&gt;
+    &lt;<span class="brown">input</span>
+    <span class="purple">id=</span>"carPrice"
+    <span class="crimson">type=</span>"number"&gt;<br>
   </p>
   &lt;<span class="brown">/form</span>&gt;
 </div>
