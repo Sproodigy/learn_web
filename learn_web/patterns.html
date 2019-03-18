@@ -70,31 +70,34 @@ Perform
   <span class="crimson">action=</span>"example.php"
   <span class="crimson">method=</span>"get"
   <span class="crimson">name=</span>"formName"&gt;<br />
+
   <p class="more-padding" style="margin: 0;">
-    &lt;<span class="brown">ul</span>
-    <span class="purple">id=</span>"carList"&gt;<br>
-      <span class="left-padding">&lt;<span class="brown">li</span>&gt;&lt;<span class="brown">/li</span>&gt;</span><br>
-      <span class="left-padding">&lt;<span class="brown">li</span>&gt;&lt;<span class="brown">/li</span>&gt;</span><br>
-      <span class="left-padding">&lt;<span class="brown">li</span>&gt;&lt;<span class="brown">/li</span>&gt;</span><br>
-      <span class="left-padding">&lt;<span class="brown">li</span>&gt;&lt;<span class="brown">/li</span>&gt;</span><br>
-    &lt;<span class="brown">/ul</span>&gt;<br>
-    Model:&lt;<span class="brown">br</span>&gt;
+    Value:&lt;<span class="brown">br</span>&gt;
     &lt;<span class="brown">input</span>
-    <span class="purple">id=</span>"carModel"
-    <span class="crimson">type=</span>"text"&gt;<br>
-    Name:&lt;<span class="brown">br</span>&gt;
+    <span class="purple">id=</span><span class="olive">"fillValue"</span>
+    <span class="crimson">type=</span><span class="olive">"text"</span>
+    <span class="crimson">oninput=</span><span class="olive">"fillChangeArray()"</span>&gt;<br>
+    Start:&lt;<span class="brown">br</span>&gt;
     &lt;<span class="brown">input</span>
-    <span class="purple">id=</span>"carName"
-    <span class="crimson">type=</span>"text"&gt;<br>
-    Color:&lt;<span class="brown">br</span>&gt;
+    <span class="purple">id=</span><span class="olive">"fillStart"</span>
+    <span class="crimson">type=</span><span class="olive">"number"</span>
+    <span class="crimson">oninput=</span><span class="olive">"fillChangeArray()"</span>&gt;<br>
+    End:&lt;<span class="brown">br</span>&gt;
     &lt;<span class="brown">input</span>
-    <span class="purple">id=</span>"carColor"
-    <span class="crimson">type=</span>"text"&gt;<br>
-    Price:&lt;<span class="brown">br</span>&gt;
-    &lt;<span class="brown">input</span>
-    <span class="purple">id=</span>"carPrice"
-    <span class="crimson">type=</span>"number"&gt;<br>
+    <span class="purple">id=</span><span class="olive">"fillEnd"</span>
+    <span class="crimson">type=</span><span class="olive">"number"</span>
+    <span class="crimson">oninput=</span><span class="olive">"fillChangeArray()"</span>&gt;<br>
+    &lt;<span class="brown">button</span>
+    <span class="crimson">type=</span><span class="olive">"button"</span>
+    <span class="crimson">onclick=</span><span class="olive">"resetFill()"</span>&gt;
+    Reset
+    &lt;<span class="brown">/button</span>&gt;<br>
+    &lt;<span class="brown">p</span>
+    <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+    Red,Orange,Yellow,Green,Azure,Blue,Violet
+    &lt;<span class="brown">/p</span>&gt;
   </p>
+
   &lt;<span class="brown">/form</span>&gt;
 </div>
 

@@ -1,3 +1,6 @@
+var colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
+var primes = [2, 3, 5, 7, 9, 11, 13];
+
 function JSShowFrame(btnId, frameId) {
   var i;
   var framesList = document.getElementsByClassName('JSFrame');
@@ -36,4 +39,46 @@ function JSEntriesFunc() {
   for (var i=0; i<colors.length; i++) {
     target.innerHTML += (data.next().value + "&nbsp;&nbsp;&nbsp;&nbsp;");
   }
+}
+
+function setNumber() {
+  var num = document.getElementById('everyNum').value;
+  return num;
+}
+
+function checkNumbers(prime) {
+  return prime >= setNumber();
+}
+
+function checkPrimes() {
+  var res = primes.every(checkNumbers);
+  document.getElementById("everyReplace").innerHTML = res;
+}
+
+function fillChangeArray() {
+  var value = document.getElementById("fillTarget").value;
+  var start = document.getElementById("fillStart").value;
+  var end = document.getElementById("fillEnd").value;
+  var res = colors.fill(value, start, end);
+  document.getElementById("fillReplace").innerHTML = res;
+}
+
+function resetFill() {
+  colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
+  document.getElementById("fillReplace").innerHTML = colors;
+}
+
+
+function filterSetNumber() {
+  var num = document.getElementById('filterNum').value;
+  return num;
+}
+
+function filterCheckNumbers(prime) {
+  return prime >= filterSetNumber();
+}
+
+function filterCheckPrimes() {
+  var res = primes.filter(filterCheckNumbers);
+  document.getElementById("filterReplace").innerHTML = res;
 }

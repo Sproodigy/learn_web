@@ -59,9 +59,15 @@
     <p id="JSEntries()Btn">
       <button class="js-buttons-prop" onclick="JSShowFrame('JSEntries()Btn', 'JSEntries()Frame')">entries()</button>
     </p>
-    <p id=""><a href="../framesJS/JSEvery()Method.html"><button class="js-buttons-prop">every()</button></a></p>
-    <p id=""><a href="../framesJS/JSFill()Method.html"><button class="js-buttons-prop">fill()</button></a></p>
-    <p id=""><a href="../framesJS/JSFilter()Method.html"><button class="js-buttons-prop">filter()</button></a></p>
+    <p id="JSEveryBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSEveryBtn', 'JSEveryFrame')">every()</button>
+    </p>
+    <p id="JSFillBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSFillBtn', 'JSFillFrame')">fill()</button>
+    </p>
+    <p id="JSFilterBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSFilterBtn', 'JSFilterFrame')">filter()</button>
+    </p>
     <p id=""><a href="../framesJS/JSFind()Method.html"><button class="js-buttons-prop">find()</button></a></p>
     <p id=""><a href="../framesJS/JSFindIndex()Method.html"><button class="js-buttons-prop">findIndex()</button></a></p>
     <p id=""><a href="../framesJS/JSForEach()Method.html"><button class="js-buttons-prop">forEach()</button></a></p>
@@ -105,6 +111,7 @@
   </div>
 
 
+
   <div id="JSLength()Frame" class="JSFrame" style="display: none;">
     <div class="noteJS descriptionJSFrame" style="margin-left: 5%;">
       Description:<br />
@@ -119,9 +126,11 @@
   </div>
 
 
+
   <div id="JSPrototype()Frame" class="JSFrame" style="display: none;">
     Example.
   </div>
+
 
 
   <div id="JSConcat()Frame" class="JSFrame" style="display: none;">
@@ -224,6 +233,7 @@
   </div>
 
 
+
   <div id="JSCopyWithin()Frame" class="JSFrame" style="display: none;">
     <div class="descriptionJSFrame">
       Description:<br />
@@ -264,12 +274,6 @@
     <div><hr class="js-hr-length-100perc" /></div>
 
     <div><h2 class="tag jsTitle">Examples</h2></div>
-    <div id="documentDocURIExamplesBar" class="left-padding">
-      <!-- <a href="#documentDocURIExamplesBar">
-        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
-      </a> -->
-    </div>
-
     <div class="exampleJSDiv">
       <div class="exampleJSDiv" style="border: none;">
         <span>Target:<br>
@@ -337,7 +341,7 @@
       }
 
       function resetCopyWithin() {
-        var colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
+        colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
         document.getElementById("copyWithinReplace").innerHTML = colors;
       }
 
@@ -348,6 +352,7 @@
       }
     </script>
   </div>
+
 
 
   <div id="JSEntries()Frame" class="JSFrame" style="display: none;">
@@ -410,7 +415,8 @@
   </div>
 
 
-  <div id="JSEvery()Frame" class="JSFrame" style="display: block;">
+
+  <div id="JSEveryFrame" class="JSFrame" style="display: none;">
     <div class="descriptionJSFrame">
       Description:<br />
       <div class="note-value">
@@ -419,7 +425,8 @@
       <div class="note-value">
         The every() method executes the function once for each element present in the array:
         <ul>
-          <li>If it finds an array element where the function returns a false value, every() returns false (and does not check the remaining values).</li>
+          <li>If it finds an array element where the function returns a false value,
+            every() returns false (and does not check the remaining values).</li>
           <li>If no false occur, every() returns true.</li>
         </ul>
       </div>
@@ -448,7 +455,15 @@
         <tbody>
           <tr>
             <td>function(currentValue, index, arr)</td>
-            <td>Required. A function to be run for each element in the array.</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
           </tr>
           <tr>
             <td>thisValue</td>
@@ -465,20 +480,39 @@
     <div><h2 class="tag jsTitle">Examples</h2></div>
     <div class="exampleJSDiv">
       <div class="exampleJSDiv" style="border: none;">
-        <button class="submitBtn submitBtnBig" onclick="JSEveryFunc()">Get numbers</button>
+        <span>[2, 3, 5, 7, 9, 11, 13]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <span>Number:<br>
+          <input id="everyNum" type="number" oninput="setNumber()"><br>
+        </span>
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="number" onclick="checkPrimes()">Check primes</button>
+        </div>
       </div>
       <div id="everyReplace" class="exampleJSDiv" style="border: none;"></div>
     </div>
 
     <div class="codeJS">
-      <div class="blue float-borders-none">
+      <div class="black float-borders-none">
         &lt;<span class="brown">body</span>&gt;<br>
         <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
           <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"number"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">type=</span><span class="olive">"setNumber()"</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"checkPrimes()"</span>&gt;
+            Check primes
+            &lt;<span class="brown">/button</span>&gt;<br>
             &lt;<span class="brown">p</span>
             <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
             &lt;<span class="brown">/p</span>&gt;
           </p>
+
           <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
         &lt;<span class="brown">/body</span>&gt;
       </div>
@@ -486,15 +520,28 @@
       <div class="black float-borders-none">
         &lt;<span class="brown">script</span>&gt;<br>
           <p class="left-padding" style="margin: 0;">
-            <span class="purple">var </span>colors =
-            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];<br>
-            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span>
-            = colors;<br><br>
-          </p>
-          <span class="purple left-padding">function </span><span class="blue">copyWithinFunc</span>() {<br>
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 9, 11, 13</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">setNumber</span>() {<br>
             <p class="more-padding" style="margin: 0;">
-              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span>
-              = colors.<span class="darkblue">copyWithin</span>(<span class="orange copyWithinClass"></span>, <span class="orange copyWithinClass"></span>, <span class="orange copyWithinClass"></span>);<br>
+              <span class="purple">var </span>num =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"number"</span>);<br>
+              <span class="purple">return</span> num;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">checkNumbers</span>(prime) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">return</span> prime >= <span class="blue">setNumber</span>();
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">checkPrimes</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+                <span class="purple">var </span>res = <span class="maroon">primes.</span><span class="maroon">every</span>(checkNumbers);<br>
+                <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span> = res;
             </p>
           <span class="black left-padding">}</span><br>
         &lt;<span class="brown">/script</span>&gt;<br>
@@ -502,29 +549,19 @@
     </div>
     <p style="clear: left;"></p>
     <div><hr class="js-hr-length-100perc" /></div>
-    <script>
-      var primes = [2, 3, 5, 7, 9, 11, 13];
-
-      function getNumbers(prime) {
-        return prime >= 18;
-      }
-
-      function JSEveryFunc() {
-        document.getElementById("everyReplace").innerHTML = primes.every(getNumbers);
-      }
-    </script>
   </div>
 
 
-  <div id="JSIndexOf()Frame" class="JSFrame" style="display: none;">
+
+  <div id="JSFillFrame" class="JSFrame" style="display: none;">
     <div class="descriptionJSFrame">
       Description:<br />
       <div class="note-value">
-        The concat() method is used to join two or more arrays.
+        The fill() method fills all the elements in an array with a static value.
       </div>
       <div class="note-value">
-        This method does not change the existing arrays, but returns a new array,
-        containing the values of the joined arrays.
+        It is possible to specify the index for starting and ending fill().
+        By default it changes the whole array.
       </div>
     </div>
     <div><hr class="js-hr-length-100perc"></div>
@@ -539,8 +576,16 @@
         </thead>
         <tbody>
           <tr>
-            <td>array2, array3, ..., arrayX</td>
-            <td>Required. The arrays to be joined.</td>
+            <td>value</td>
+            <td>Required. The value to fill the array with.</td>
+          </tr>
+          <tr>
+            <td>start</td>
+            <td>Optional. The index to start filling the array (default is 0).</td>
+          </tr>
+          <tr>
+            <td>end</td>
+            <td>Optional. The index to stop filling the array (default is array.length).</td>
           </tr>
         </tbody>
       </table>
@@ -548,40 +593,217 @@
     <div><hr class="js-hr-length-100perc" /></div>
 
     <div><h2 class="tag JSTitle">Examples</h2></div>
-    <div id="documentDocURIExamplesBar" class="left-padding">
-      <!-- <a href="#documentDocURIExamplesBar">
-        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
-      </a> -->
-    </div>
-
     <div class="exampleJSDiv">
-      <p id="doсDomainP"></p>
+      <div class="exampleJSDiv" style="border: none;">
+        <span>Value:<br>
+          <input id="fillTarget" type="text " oninput="fillChangeArray()"><br>
+        </span>
+        <span>Start:<br>
+          <input id="fillStart" type="number" oninput="fillChangeArray()"><br>
+        </span>
+        <span>End:<br>
+          <input id="fillEnd" type="number" oninput="fillChangeArray()"><br>
+        </span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" onclick="resetFill()">Reset</button>
+      </div>
+      <div id="fillReplace" class="exampleJSDiv" style="border: none;">Red,Orange,Yellow,Green,Azure,Blue,Violet</div>
     </div>
 
     <div class="codeJS">
-      <div class="blue float-borders-none">
-        &lt;<span class="brown">div</span>&gt;<br>
-        <p class="left-padding" style="margin: 0;">
-          &lt;<span class="brown">p</span>
-          <span class="purple">id=</span><span class="olive">"example"</span>&gt;
-          <span class="black replace"></span>
-          &lt;<span class="brown">/p</span>&gt;<br>
-        </p>
-        &lt;<span class="brown">/div</span>&gt;
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            Value:&lt;<span class="brown">br</span>&gt;
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"fillValue"</span>
+            <span class="crimson">type=</span><span class="olive">"text"</span>
+            <span class="crimson">oninput=</span><span class="olive">"fillChangeArray()"</span>&gt;<br>
+            Start:&lt;<span class="brown">br</span>&gt;
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"fillStart"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">oninput=</span><span class="olive">"fillChangeArray()"</span>&gt;<br>
+            End:&lt;<span class="brown">br</span>&gt;
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"fillEnd"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">oninput=</span><span class="olive">"fillChangeArray()"</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"resetFill()"</span>&gt;
+            Reset
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            Red,Orange,Yellow,Green,Azure,Blue,Violet
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
       </div>
 
       <div class="black float-borders-none">
-        function <span class="blue">exampleFunction</span>() {<br>
+        &lt;<span class="brown">script</span>&gt;<br>
           <p class="left-padding" style="margin: 0;">
-            <span class="purple">let </span>x = <span class="maroon">document.domain</span>;<br>
-            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"example"</span>)<span class="maroon">.innerHTML</span>
-            = x;<br>
-          </p>
-        <span class="black">}</span>
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="purple left-padding">function </span><span class="blue">fillChangeArray</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>value =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"fillValue"</span>)<span class="maroon">.value</span><br>
+              <span class="purple">var </span>start =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"fillStart"</span>)<span class="maroon">.value</span><br>
+              <span class="purple">var </span>end =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"fillEnd"</span>)<span class="maroon">.value</span><br>
+              <span class="purple">var </span>res =
+              <span class="maroon">color.</span><span class="blue">value</span>(value, start, end);<br>
+
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span> = res;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
       </div>
     </div>
     <p style="clear: left;"></p>
     <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSFilterFrame" class="JSFrame" style="display: block;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The filter() method creates an array filled with all array elements that pass a test (provided as a function).
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        filter() does not execute the function for array elements without values.
+      </div>
+      <div class="note-value">
+        filter() does not change the original array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>[2, 3, 5, 7, 9, 11, 13]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <span>Number:<br>
+          <input id="filterNum" type="number" oninput="filterSetNumber()"><br>
+        </span>
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="number" onclick="filterCheckPrimes()">Check primes</button>
+        </div>
+      </div>
+      <div id="filterReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"number"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">type=</span><span class="olive">"filterSetNumber()"</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"filterCheckPrimes()"</span>&gt;
+            Check primes
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 9, 11, 13</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">filterSetNumber</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>num =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"number"</span>);<br>
+              <span class="purple">return</span> num;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">filterCheckNumbers</span>(prime) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">return</span> prime >= <span class="blue">filterSetNumber</span>();
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">filterCheckPrimes</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+                <span class="purple">var </span>res = <span class="maroon">primes.</span><span class="maroon">filter</span>(filterCheckNumbers);<br>
+                <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span> = res;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+    <script>
+    </script>
   </div>
 
 </body>
