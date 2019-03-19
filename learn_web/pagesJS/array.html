@@ -68,13 +68,23 @@
     <p id="JSFilterBtn">
       <button class="js-buttons-prop" onclick="JSShowFrame('JSFilterBtn', 'JSFilterFrame')">filter()</button>
     </p>
-    <p id=""><a href="../framesJS/JSFind()Method.html"><button class="js-buttons-prop">find()</button></a></p>
-    <p id=""><a href="../framesJS/JSFindIndex()Method.html"><button class="js-buttons-prop">findIndex()</button></a></p>
-    <p id=""><a href="../framesJS/JSForEach()Method.html"><button class="js-buttons-prop">forEach()</button></a></p>
-    <p id=""><a href="../framesJS/JSFrom()Method.html"><button class="js-buttons-prop">from()</button></a></p>
-    <p id=""><a href="../framesJS/JSIncludes()Method.html"><button class="js-buttons-prop">includes()</button></a></p>
-    <p id="JSIndexOf()Btn">
-      <button class="js-buttons-prop" onclick="JSShowFrame('JSIndexOf()Btn', 'JSIndexOf()Frame')">indexOf()</button>
+    <p id="JSFindBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSFindBtn', 'JSFindFrame')">find()</button>
+    </p>
+    <p id="JSFindIndexBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSFindIndexBtn', 'JSFindIndexFrame')">findIndex()</button>
+    </p>
+    <p id="JSForEachBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSForEachBtn', 'JSForEachFrame')">forEach()</button>
+    </p>
+    <p id="JSFromBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSFromBtn', 'JSFromFrame')">from()</button>
+    </p>
+    <p id="JSIncludesBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSIncludesBtn', 'JSIncludesFrame')">includes()</button>
+    </p>
+    <p id="JSIndexOfBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSIndexOfBtn', 'JSIndexOfFrame')">indexOf()</button>
     </p>
     <p id=""><a href="../framesJS/JSIsArray()Method.html"><button class="js-buttons-prop">isArray()</button></a></p>
     <p id=""><a href="../framesJS/JSJoin()Method.html"><button class="js-buttons-prop">join()</button></a></p>
@@ -677,7 +687,7 @@
 
 
 
-  <div id="JSFilterFrame" class="JSFrame" style="display: block;">
+  <div id="JSFilterFrame" class="JSFrame" style="display: none;">
     <div class="descriptionJSFrame">
       Description:<br />
       <div class="note-value">
@@ -740,7 +750,7 @@
           <input id="filterNum" type="number" oninput="filterSetNumber()"><br>
         </span>
         <div class="exampleJSDiv" style="border: none;">
-          <button class="submitBtn submitBtnBig" type="number" onclick="filterCheckPrimes()">Check primes</button>
+          <button class="submitBtn submitBtnBig" type="number" onclick="filterCheckPrimes()">Get numbers</button>
         </div>
       </div>
       <div id="filterReplace" class="exampleJSDiv" style="border: none;"></div>
@@ -806,5 +816,469 @@
     </script>
   </div>
 
+
+
+  <div id="JSFindFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The find() method returns the value of the first element in an array that pass a test (provided as a function).
+      </div>
+      <div class="note-value">
+        The find() method executes the function once for each element present in the array:
+        <ul>
+          <li>
+            If it finds an array element where the function returns a true value,
+            find() returns the value of that array element (and does not check the remaining values).
+          </li>
+          <li>Otherwise it returns undefined.</li>
+        </ul>
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        find() does not execute the function for empty arrays.
+      </div>
+      <div class="note-value">
+        find() does not change the original array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>[2, 3, 5, 7, 9, 11, 13]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <span>Number:<br>
+          <input id="findNum" type="number" oninput="findGetNumber()"><br>
+        </span>
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="number" onclick="findShowResult()">Show result</button>
+        </div>
+      </div>
+      <div id="findReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"number"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">type=</span><span class="olive">"findGetNumber()"</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"findShowResult()"</span>&gt;
+            Check primes
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 9, 11, 13</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">findGetNumber</span>(prime) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>num =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"number"</span>);<br>
+              <span class="purple">return</span> prime >= num;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">findShowResult</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+                <span class="purple">var </span>res = <span class="maroon">primes.</span><span class="maroon">find</span>(findGetNumber);<br>
+                <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span> = res;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSFindIndexFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The findIndex() method returns the index of the first element in an array that pass a test (provided as a function).
+      </div>
+      <div class="note-value">
+        The findIndex() method executes the function once for each element present in the array:
+        <ul>
+          <li>
+            If it finds an array element where the function returns a true value,
+            findIndex() returns the index of that array element (and does not check the remaining values).
+          </li>
+          <li>Otherwise it returns -1.</li>
+        </ul>
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        findIndex() does not execute the function for array elements without values.
+      </div>
+      <div class="note-value">
+        findIndex() does not change the original array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>[2, 3, 5, 7, 9, 11, 13]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <span>Number:<br>
+          <input id="findIndexNum" type="number" oninput="findIndexGetNumber()"><br>
+        </span>
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="number" onclick="findIndexShowResult()">Show result</button>
+        </div>
+      </div>
+      <div id="findIndexReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"number"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>
+            <span class="crimson">type=</span><span class="olive">"findIndexGetNumber()"</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"findIndexShowResult()"</span>&gt;
+            Check primes
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 9, 11, 13</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">findIndexGetNumber</span>(prime) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>num =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"number"</span>);<br>
+              <span class="purple">return</span> prime >= num;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">findIndexShowResult</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+                <span class="purple">var </span>res = <span class="maroon">primes.</span><span class="maroon">findIndex</span>(findGetNumber);<br>
+                <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span> = res;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSForEachFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The forEach() method calls a provided function once for each element in an array, in order.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        forEach() does not execute the function for array elements without values.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>[2, 3, 5, 7, 9, 11, 13]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="number" onclick="forEachShowResult()">Show result</button>
+        </div>
+      </div>
+      <div id="forEachReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"forEachShowResult()"</span>&gt;
+            Show result
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 9, 11, 13</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">forEachParceData</span>(item, index) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> +=
+              <span class="olive">"index["</span> + index + <span class="olive">"]: "</span> + item + <span class="olive">"&lt;br&gt;"</span>;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">forEachShowResult</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">primes.</span><span class="maroon">forEach</span>(forEachParseData);<br>
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSFromFrame" class="JSFrame" style="display: block;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The Array.from() method returns an Array object from any object with a length property or an iterable object.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>object</td>
+            <td>Required. The object to convert to an array.</td>
+          </tr>
+          <tr>
+            <td>mapFunction</td>
+            <td>Optional. A map function to call on each item of the array.</td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>Optional. A value to use as this when executing the mapFunction.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>"23579"</span>
+      </div>
+      <p class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" onclick="fromShowResult()">Show result</button>
+      </p>
+      <p id="fromReplace" class="exampleJSDiv" style="border: none;"></p>
+    </div>
+
+    <div class="codeJS">
+      <div class="blue float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+        <p class="more-padding" style="margin: 0;">
+          &lt;<span class="brown">p</span>
+          <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+          &lt;<span class="brown">/p</span>&gt;
+        </p>
+        <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+        <span class="purple left-padding">function </span><span class="blue">fromShowResult</span>() {<br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="purple">var </span>i;<br>
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];<br>
+            <span class="purple">var </span>data =
+            <span class="maroon">colors.</span><span class="darkblue">from</span>();<br>
+            <span class="purple">var </span>length = <span class="maroon">data.length</span>;<br>
+            <span class="purple">var </span>target =
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>);<br><br>
+
+            <span class="purple">for </span>(i = <span class="orange">0</span>; i<<span class="maroon">length</span>; i++) {<br>
+              <span class="maroon left-padding">target.innerHTML</span> +=
+              (<span class="maroon">data.next</span>().<span class="maroon">value</span> + <span class="olive">"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span>);<br>
+            </p>
+        <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 var colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
 var primes = [2, 3, 5, 7, 9, 11, 13];
+var primesString = "23579";
 
 function JSShowFrame(btnId, frameId) {
   var i;
@@ -68,7 +69,6 @@ function resetFill() {
   document.getElementById("fillReplace").innerHTML = colors;
 }
 
-
 function filterSetNumber() {
   var num = document.getElementById('filterNum').value;
   return num;
@@ -81,4 +81,43 @@ function filterCheckNumbers(prime) {
 function filterCheckPrimes() {
   var res = primes.filter(filterCheckNumbers);
   document.getElementById("filterReplace").innerHTML = res;
+}
+
+function findGetNumber(prime) {
+  var num = document.getElementById('findNum').value;
+  return prime >= num;
+}
+
+function findShowResult() {
+  var res = primes.find(findGetNumber);
+  document.getElementById("findReplace").innerHTML = res;
+}
+
+function findIndexGetNumber(prime) {
+  var num = document.getElementById('findIndexNum').value;
+  return prime >= num;
+}
+
+function findIndexShowResult() {
+  var res = primes.findIndex(findIndexGetNumber);
+  document.getElementById("findIndexReplace").innerHTML = res;
+}
+
+function forEachParseData(item, index) {
+  var target = document.getElementById("forEachReplace");
+  target.innerHTML += "index[" + index + "]: " + item + "<br>";
+}
+
+function forEachShowResult() {
+  primes.forEach(forEachParseData);
+}
+
+function fromParseData(item, ind) {
+  var res = (ind += (this + item));
+  return res;
+}
+
+function fromShowResult() {
+  var target = document.getElementById("fromReplace");
+  target.innerHTML = Array.from(primesString, fromParseData, " index of ");
 }
