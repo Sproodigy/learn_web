@@ -1,6 +1,7 @@
 var colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
-var primes = [2, 3, 5, 7, 9, 11, 13];
-var primesString = "23579";
+var dblColors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet", "Violet", "Blue", "Azure", "Green", "Yellow", "Orange", "Red"];
+var primes = [2, 3, 5, 7, 11, 13, 17];
+var primesString = "2357";
 
 function JSShowFrame(btnId, frameId) {
   var i;
@@ -119,5 +120,80 @@ function fromParseData(item, ind) {
 
 function fromShowResult() {
   var target = document.getElementById("fromReplace");
-  target.innerHTML = Array.from(primesString, fromParseData, " index of ");
+  target.innerHTML =
+  "Array: " + Array.from(primesString) +
+  "<br>Result: " + Array.from(primesString, fromParseData, " index of ");
+}
+
+function isIncludesOneParam() {
+  var searchValue = document.getElementById('includesSearchOneParam').value;
+  var target = document.getElementById('includesReplaceOneParam');
+  var result = colors.includes(searchValue);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function isIncludes() {
+  var searchValue = document.getElementById('includesSearch').value;
+  var startValue = document.getElementById('includesStart').value;
+  var target = document.getElementById('includesReplace');
+  var result = colors.includes(searchValue, startValue);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function isIndexOfOneParam() {
+  var searchValue = document.getElementById('indexOfSearchOneParam').value;
+  var target = document.getElementById('indexOfReplaceOneParam');
+  var result = colors.indexOf(searchValue);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function isIndexOf() {
+  var searchValue = document.getElementById('indexOfSearch').value;
+  var startValue = document.getElementById('indexOfStart').value;
+  var target = document.getElementById('indexOfReplace');
+  var result = colors.indexOf(searchValue, startValue);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function isLastIndexOfOneParam() {
+  var searchValue = document.getElementById('lastIndexOfSearchOneParam').value;
+  var target = document.getElementById('lastIndexOfReplaceOneParam');
+  var result = dblColors.lastIndexOf(searchValue);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function isLastIndexOf() {
+  var searchValue = document.getElementById('lastIndexOfSearch').value;
+  var startValue = document.getElementById('lastIndexOfStart').value;
+  var target = document.getElementById('lastIndexOfReplace');
+  var result = dblColors.lastIndexOf(searchValue, startValue);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function arrIsArray() {
+  var target = document.getElementById('isArrayReplace');
+  var result = Array.isArray(colors);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function arrJoin() {
+  var separator = document.getElementById('separator').value;
+  var target = document.getElementById('joinReplace');
+  var result = colors.join(separator);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function arrKeys() {
+  var target = document.getElementById('keysReplace');
+  var result = colors.keys().next().value;
+
+  target.innerHTML = "Result: " + result;
 }
