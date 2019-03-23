@@ -40,24 +40,24 @@
   <div><hr class="js-hr-length-90perc" style="margin-left: 2.5%; margin-bottom: -2em;"/></div>
 
   <div class="js-buttons-prop-node" style="margin-top: 3em;">
-    <p id="JSConstructor()Btn">
-        <button class="js-buttons-prop" onclick="JSShowFrame('JSConstructor()Btn', 'JSConstructor()Frame')">constructor</button>
+    <p id="JSConstructorBtn">
+        <button class="js-buttons-prop" onclick="JSShowFrame('JSConstructorBtn', 'JSConstructorFrame')">constructor</button>
     </p>
-    <p id="JSLength()Btn">
-      <button class="js-buttons-prop" onclick="JSShowFrame('JSLength()Btn', 'JSLength()Frame')">length</button>
+    <p id="JSArrLengthBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSArrLengthBtn', 'JSArrLengthFrame')">length</button>
     </p>
-    <p id="JSPrototype()Btn" style="margin-bottom: 3em;">
-      <button class="js-buttons-prop" onclick="JSShowFrame('JSPrototype()Btn', 'JSPrototype()Frame')">prototype</button>
+    <p id="JSPrototypeBtn" style="margin-bottom: 3em;">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSPrototypeBtn', 'JSPrototypeFrame')">prototype</button>
     </p>
 
-    <p id="JSConcat()Btn">
-      <button class="js-buttons-prop" onclick="JSShowFrame('JSConcat()Btn', 'JSConcat()Frame')">concat()</button>
+    <p id="JSConcatBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSConcatBtn', 'JSConcatFrame')">concat()</button>
     </p>
-    <p id="JSCopyWithin()Btn">
-      <button class="js-buttons-prop" onclick="JSShowFrame('JSCopyWithin()Btn', 'JSCopyWithin()Frame')">copyWithin()</button>
+    <p id="JSCopyWithinBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSCopyWithinBtn', 'JSCopyWithinFrame')">copyWithin()</button>
     </p>
-    <p id="JSEntries()Btn">
-      <button class="js-buttons-prop" onclick="JSShowFrame('JSEntries()Btn', 'JSEntries()Frame')">entries()</button>
+    <p id="JSEntriesBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSEntriesBtn', 'JSEntriesFrame')">entries()</button>
     </p>
     <p id="JSEveryBtn">
       <button class="js-buttons-prop" onclick="JSShowFrame('JSEveryBtn', 'JSEveryFrame')">every()</button>
@@ -95,8 +95,8 @@
     <p id="JSKeysBtn">
       <button class="js-buttons-prop" onclick="JSShowFrame('JSKeysBtn', 'JSKeysFrame')">keys()</button>
     </p>
-    <p id="JSlastIndexOfBtn">
-      <button class="js-buttons-prop" onclick="JSShowFrame('JSlastIndexOfBtn', 'JSlastIndexOfFrame')">lastIndexOf()</button>
+    <p id="JSLastIndexOfBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSLastIndexOfBtn', 'JSLastIndexOfFrame')">lastIndexOf()</button>
     </p>
     <p id="JSMapBtn">
       <button class="js-buttons-prop" onclick="JSShowFrame('JSMapBtn', 'JSMapFrame')">map()</button>
@@ -105,7 +105,7 @@
       <button class="js-buttons-prop" onclick="JSShowFrame('JSPopBtn', 'JSPopFrame')">pop()</button>
     </p>
     <p id="JSPushBtn">
-      <button class="js-buttons-prop" onclick="JSShowFrame('JSPushBtn', 'JSPushFrame')">reduce()</button>
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSPushBtn', 'JSPushFrame')">push()</button>
     </p>
     <p id="JSReduceBtn">
       <button class="js-buttons-prop" onclick="JSShowFrame('JSReduceBtn', 'JSReduceFrame')">reduce()</button>
@@ -119,53 +119,297 @@
     <p id="JSShiftBtn">
       <button class="js-buttons-prop" onclick="JSShowFrame('JSShiftBtn', 'JSShiftFrame')">shift()</button>
     </p>
-    <p id=""><a href="../framesJS/JSSlice()Method.html"><button class="js-buttons-prop">slice()</button></a></p>
-    <p id=""><a href="../framesJS/JSSome()Method.html"><button class="js-buttons-prop">some()</button></a></p>
-    <p id=""><a href="../framesJS/JSSort()Method.html"><button class="js-buttons-prop">sort()</button></a></p>
-    <p id=""><a href="../framesJS/JSSplice()Method.html"><button class="js-buttons-prop">splice()</button></a></p>
-    <p id=""><a href="../framesJS/JSToString()Method.html"><button class="js-buttons-prop">toString()</button></a></p>
-    <p id=""><a href="../framesJS/JSUnshift()Method.html"><button class="js-buttons-prop">unshift()</button></a></p>
-    <p id=""><a href="../framesJS/JSValueOf()Method.html"><button class="js-buttons-prop">valueOf()</button></a></p>
+    <p id="JSSliceBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSSliceBtn', 'JSSliceFrame')">slice()</button>
+    </p>
+    <p id="JSSomeBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSSomeBtn', 'JSSomeFrame')">some()</button>
+    </p>
+    <p id="JSSortBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSSortBtn', 'JSSortFrame')">sort()</button>
+    </p>
+    <p id="JSSpliceBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSSpliceBtn', 'JSSpliceFrame')">splice()</button>
+    </p>
+    <p id="JSToStringBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSToStringBtn', 'JSToStringFrame')">toString()</button>
+    </p>
+    <p id="JSUnshiftBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSUnshiftBtn', 'JSUnshiftFrame')">unshift()</button>
+    </p>
+    <p id="JSArrValueOfBtn">
+      <button class="js-buttons-prop" onclick="JSShowFrame('JSArrValueOfBtn', 'JSArrValueOfFrame')">valueOf()</button>
+    </p>
   </div>
 
 
-  <div id="JSConstructor()Frame" class="JSFrame" style="display: none;">
-    <div class="noteJS descriptionJSFrame" style="margin-left: 5%;">
+  <div id="JSConstructorFrame" class="JSFrame" style="display: none;">
+    <div class="noteJS descriptionJSFrame">
       Description:<br />
       <div class="note-value">
-        The Array object is used to store multiple values in a single variable.
+        In JavaScript, the constructor property returns the constructor function for an object.
       </div>
       <div class="note-value">
-        Array indexes are zero-based: the first element in the array is 0, the second is 1, and so on.
+        The return value is a reference to the function, not the name of the function:<br>
+        For JavaScript arrays the constructor property returns function Array() { [native code] }.
       </div>
     </div>
     <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" type="button" onclick="arrayGetConstructor()">Perform</button>
+      </div>
+      <div id="arrayConstructorReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"arrayGetConstructor()"</span>&gt;
+            Perform
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="purple left-padding">function </span><span class="blue">arrayGetConstructor</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> =
+              <span class="maroon">colors.constructor</span>;<br>
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
   </div>
 
 
 
-  <div id="JSLength()Frame" class="JSFrame" style="display: none;">
+  <div id="JSArrLengthFrame" class="JSFrame" style="display: none;">
     <div class="noteJS descriptionJSFrame" style="margin-left: 5%;">
       Description:<br />
       <div class="note-value">
-        The Array object is used to store multiple values in a single variable.
-      </div>
-      <div class="note-value">
-        Array indexes are zero-based: the first element in the array is 0, the second is 1, and so on.
+        The length property sets or returns the number of elements in an array.
       </div>
     </div>
     <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <p>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</p>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <span>
+          <button class="submitBtn submitBtnBig" type="button" onclick="arrayGetLength()">Get length</button><br>
+        </span>
+        <span>
+          Length:<br><input id="arraySetLength" type="number">
+          <button class="submitBtn submitBtnBig" type="button" onclick="arraySetLength()">Set length</button>
+        </span>
+        <span>
+          <button class="submitBtn submitBtnBig" type="button" onclick="resetSplice()">Reset</button>
+        </span>
+      </div>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="arrayLengthReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+          <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+            <p class="more-padding" style="margin: 0;">
+
+              &lt;<span class="brown">p</span>&gt;
+              [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>]
+              &lt;<span class="brown">/p</span>&gt;<br>
+
+              &lt;<span class="brown">button</span>
+              <span class="crimson">type=</span><span class="olive">"button"</span>
+              <span class="crimson">onclick=</span><span class="olive">"arrayGetLength()"</span>&gt;
+              Get length
+              &lt;<span class="brown">/button</span>&gt;<br>
+
+              Length:&lt;<span class="brown">br</span>&gt;
+              &lt;<span class="brown">input</span>
+              <span class="purple">id=</span><span class="olive">"arraySetLength"</span>
+              <span class="crimson">type=</span><span class="olive">"number"</span>&gt;<br>
+              &lt;<span class="brown">button</span>
+              <span class="crimson">type=</span><span class="olive">"button"</span>
+              <span class="crimson">onclick=</span><span class="olive">"arraySetLength()"</span>&gt;
+              SetLength
+              &lt;<span class="brown">/button</span>&gt;<br>
+
+              &lt;<span class="brown">button</span>
+              <span class="crimson">type=</span><span class="olive">"button"</span>
+              <span class="crimson">onclick=</span><span class="olive">"reset()"</span>&gt;
+              Reset
+              &lt;<span class="brown">/button</span>&gt;<br>
+
+              &lt;<span class="brown">p</span>
+              <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+              &lt;<span class="brown">/p</span>&gt;
+            </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+        <p class="left-padding" style="margin: 0;">
+          <span class="purple">var </span>colors =
+          [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+        </p><br>
+
+        <span class="purple left-padding">function </span><span class="blue">arrayGetLength</span>() {<br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> =
+            <span class="maroon">colors.length</span>;<br>
+          </p>
+        <span class="black left-padding">}</span><br><br>
+
+        <span class="purple left-padding">function </span><span class="blue">arraySetLength</span>() {<br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="purple">var </span>length =
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">.value</span>;<br>
+            <span class="maroon">colors.</span><span class="blue">length</span> = length;<br>
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> =
+            <span class="maroon">colors.length</span>;<br>
+          </p>
+        <span class="black left-padding">}</span><br><br>
+
+        <span class="purple left-padding">function </span><span class="blue">reset</span>() {<br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="maroon">colors</span> = [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];<br>
+          </p>
+        <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
   </div>
 
 
 
-  <div id="JSPrototype()Frame" class="JSFrame" style="display: none;">
-    Example.
+  <div id="JSPrototypeFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The prototype constructor allows you to add new properties and methods to the Array() object.
+      </div>
+      <div class="note-value">
+        When constructing a property, ALL arrays will be given the property, and its value, as default.
+      </div>
+      <div class="note-value">
+        When constructing a method, ALL arrays will have this method available.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        Array.prototype does not refer to a single array, but to the Array() object itself.
+      </div>
+      <div class="note-value">
+        Prototype is a global object constructor which is available for all JavaScript objects.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" type="button" onclick="upperCaseArray()">Change to upper case</button>
+      </div>
+      <div id="prototypeReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"upperCaseArray()"</span>&gt;
+            Change to upper case
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="orange left-padding">Array.</span><span class="maroon">prototype.</span><span class="darkblue">upperCase</span> = <span class="purple">function </span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>i;<br>
+              <span class="purple">var </span> len = <span class="maroon">this.length</span>;<br><br>
+              <span class="purple">for </span>(i = <span class="orange">0</span>; i < <span class="maroon">len</span>; i++) {<br>
+                <span class="maroon left-padding">this</span>[i] = <span class="maroon">this</span>[i].<span class="blue">toUpperCase</span>();<br>
+              }
+            </p>
+          <span class="left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">upperCaseArray</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">colors.</span><span class="blue">upperCase</span>();<br>
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">innerHTML</span> = colors;
+            </p>
+          <span class="left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
   </div>
 
 
 
-  <div id="JSConcat()Frame" class="JSFrame" style="display: none;">
+  <div id="JSConcatFrame" class="JSFrame" style="display: none;">
     <div class="descriptionJSFrame">
       Description:<br />
       <div class="note-value">
@@ -197,11 +441,6 @@
     <div><hr class="js-hr-length-100perc" /></div>
 
     <div><h2 class="tag jsTitle">Examples</h2></div>
-    <div id="documentDocURIExamplesBar" class="left-padding">
-      <!-- <a href="#documentDocURIExamplesBar">
-        <button onclick="getDomain()" class="dom-buttons-prop">Get domain</button>
-      </a> -->
-    </div>
 
     <div class="exampleJSDiv">
       <div class="exampleJSDiv" style="border: none;">
@@ -266,7 +505,7 @@
 
 
 
-  <div id="JSCopyWithin()Frame" class="JSFrame" style="display: none;">
+  <div id="JSCopyWithinFrame" class="JSFrame" style="display: none;">
     <div class="descriptionJSFrame">
       Description:<br />
       <div class="note-value">
@@ -387,7 +626,7 @@
 
 
 
-  <div id="JSEntries()Frame" class="JSFrame" style="display: none;">
+  <div id="JSEntriesFrame" class="JSFrame" style="display: none;">
     <div class="descriptionJSFrame">
       Description:<br />
       <div class="note-value">
@@ -638,7 +877,7 @@
         </span>
       </div>
       <div class="exampleJSDiv" style="border: none;">
-        <button class="submitBtn submitBtnBig" onclick="resetFill()">Reset</button>
+        <button class="submitBtn submitBtnBig" onclick="resetSplice()">Reset</button>
       </div>
       <div id="fillReplace" class="exampleJSDiv" style="border: none;">Red,Orange,Yellow,Green,Azure,Blue,Violet</div>
     </div>
@@ -1979,6 +2218,1795 @@
               <span class="purple">var </span>result =
               <span class="maroon">colors.</span><span class="blue">lastIndexOf</span>(value, start);<br>
               <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSMapFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The map() method creates a new array with the results of calling a function for every array element.
+      </div>
+      <div class="note-value">
+        The map() method calls the provided function once for each element in an array, in order.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        map() does not execute the function for array elements without values.
+      </div>
+      <div class="note-value">
+        map() does not change the original array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>[2, 3, 5, 7, 11, 13, 17]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <span>Number:<br>
+          <input id="mapNum" type="number"><br>
+        </span>
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="number" onclick="mapShowResult()">Show result</button>
+        </div>
+      </div>
+      <div id="mapReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"number"</span>
+            <span class="crimson">type=</span><span class="olive">"number"</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"mapShowResult()"</span>&gt;
+            Show result
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 11, 13, 17</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">mapMultipleNumbers</span>(prime) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>num =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"number"</span>);<br>
+              <span class="purple">var </span>text = <span class="olive">" "</span> + prime * num * <span class="maroon">this</span>;<br>
+              <span class="purple">return</span> text;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">mapShowResult</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+                <span class="purple">var </span>res = <span class="maroon">primes.</span><span class="maroon">map</span>(mapMultipleNumbers, <span class="orange">3</span>);<br>
+                <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">innerHTML</span> = res;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSPopFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The pop() method removes the last element of an array, and returns that element.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        This method changes the length of an array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" type="button" onclick="popRemoveLastElem()">Remove last element</button>
+      </div>
+      <div id="popReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"popRemoveLastElem()"</span>&gt;
+            Remove last element
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="purple left-padding">function </span><span class="blue">popRemoveLastElem</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">colors.</span><span class="blue">pop</span>();<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>);<br>
+              <span class="maroon">target.innerHTML</span> = colors;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSPushFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The push() method adds new items to the end of an array, and returns the new length.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        The new item(s) will be added at the end of the array.
+      </div>
+      <div class="note-value">
+        This method changes the length of the array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>item1, item2, ..., itemX</td>
+            <td>Required. The item(s) to add to the end of the array.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <span>Item1:<br><input id="pushText1" type="text"></span>
+        <span>Item2:<br><input id="pushText2" type="text"></span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" type="button" onclick="pushAddLastElem()">Add last elements</button>
+      </div>
+      <div id="pushReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"text1"</span>
+            <span class="crimson">type=</span><span class="olive">"text"</span>&gt;<br>
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"text2"</span>
+            <span class="crimson">type=</span><span class="olive">"text"</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"pushAddLastElem()"</span>&gt;
+            Add last elements
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="purple left-padding">function </span><span class="blue">pushAddLastElem</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>item1 =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text1"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>item2 =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text2"</span>)<span class="maroon">.value</span>;<br>
+              <span class="maroon">colors.</span><span class="blue">push</span>(item1, item2);<br>
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"replace"</span>)<span class="maroon">.innerHTML</span> = colors;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSReduceFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The reduce() method reduces the array to a single value.
+      </div>
+      <div class="note-value">
+        The reduce() method executes a provided function for each value of the array (from left-to-right).
+      </div>
+      <div class="note-value">
+        The return value of the function is stored in an accumulator (result/total).
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        reduce() does not execute the function for array elements without values.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(total, currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>total — Required. The initialValue, or the previously returned value of the function.</li>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>currentIndex — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>initialValue</td>
+            <td>Optional. A value to be passed to the function as the initial value.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>[2, 3, 5, 7, 11, 13, 17]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="button" onclick="reduceShowResult()">Show result</button>
+        </div>
+      </div>
+      <div id="reduceReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"reduceShowResult()"</span>&gt;
+            Show result
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 11, 13, 17</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">reduceGetSum</span>(total, num) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">return </span>total + num;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">reduceShowResult</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>).<span class="maroon">innerHTML</span> =
+              <span class="olive">"Sum : "</span> + <span class="darkblue">reduce</span>(reduceGetSum, <span class="orange">0</span>);<br>
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSReduceRightFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The reduceRight() method reduces the array to a single value.
+      </div>
+      <div class="note-value">
+        The reduceRight() method executes a provided function for each value of the array (from right-to-left).
+      </div>
+      <div class="note-value">
+        The return value of the function is stored in an accumulator (result/total).
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        reduceRight() does not execute the function for array elements without values.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(total, currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>total — Required. The initialValue, or the previously returned value of the function.</li>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>currentIndex — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>initialValue</td>
+            <td>Optional. A value to be passed to the function as the initial value.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>[2, 3, 5, 7, 11, 13, 17]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="button" onclick="reduceRightShowResult()">Show result</button>
+        </div>
+      </div>
+      <div id="reduceRightReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"reduceRightShowResult()"</span>&gt;
+            Show result
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 11, 13, 17</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">reduceRightGetSum</span>(total, num) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">return </span>total - num;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">reduceRightShowResult</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>).<span class="maroon">innerHTML</span> =
+              <span class="olive">"Sum : "</span> + <span class="darkblue">reduceRight</span>(reduceRightGetSum);<br>
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSReverseFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The reverse() method reverses the order of the elements in an array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" type="button" onclick="reverseArray()">Reverse array</button>
+      </div>
+      <div id="reverseReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"reverseArray()"</span>&gt;
+            Reverse array
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="purple left-padding">function </span><span class="blue">reverseArray</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">colors.</span><span class="blue">reverse</span>();<br>
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> = colors;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSShiftFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The shift() method removes the first item of an array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        This method changes the length of the array.
+      </div>
+      <div class="note-value">
+        The return value of the shift method is the removed item.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" type="button" onclick="shiftRemoveFirstElem()">Remove first elements</button>
+      </div>
+      <div id="shiftReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"shiftRemoveFirstElem()"</span>&gt;
+            Remove first elements
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="purple left-padding">function </span><span class="blue">shiftRemoveFirstElem</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">colors.</span><span class="blue">shift</span>();<br>
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> = colors;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSSliceFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The slice() method returns the selected elements in an array, as a new array object.
+      </div>
+      <div class="note-value">
+        The slice() method selects the elements starting at the given start argument,
+        and ends at, but does not include, the given end argument.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        The original array will not be changed.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>start</td>
+            <td>
+              Optional. An integer that specifies where to start the selection
+              (The first element has an index of 0).
+              Use negative numbers to select from the end of an array. If omitted, it acts like "0".
+            </td>
+          </tr>
+          <tr>
+            <td>end</td>
+            <td>
+              Optional. An integer that specifies where to end the selection.
+              If omitted, all elements from the start position and to the end of the array will be selected.
+              Use negative numbers to select from the end of an array.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <p>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</p>
+        </div>
+
+        <span>Start:<br>
+          <input id="sliceArrOneParam" type="number" oninput="sliceArrOneParam()"><br><br>
+        </span>
+
+        <span>
+          Start:<br>
+          <input id="sliceArrStart" type="number" oninput="sliceArr()"><br><br>
+          End:<br>
+          <input id="sliceArrEnd" type="number" oninput="sliceArr()">
+          <div class="exampleJSDiv" style="border: none;">
+          </div>
+        </span>
+
+        <div id="sliceReplace" class="exampleJSDiv" style="border: none;"></div>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Start:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"oneParam"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"sliceArrOneParam()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Start:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"start"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"sliceArr()"</span>&gt;<br>
+              </span>
+              <span class="left-padding">End:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"end"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"sliceArr()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple">var </span>colors =
+          [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];<br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">sliceArrOneParam</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>start =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"oneParam"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">colors.</span><span class="blue">slice</span>(start);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">sliceStr</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>start =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"start"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>end =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"end"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="purple">var </span>result =
+              <span class="maroon">colors.</span><span class="blue">slice</span>(start, end);<br>
+              <span class="maroon">target.innerHTML</span> = <span class="olive">"Result: "</span> + result;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSForEachFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The forEach() method calls a provided function once for each element in an array, in order.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        forEach() does not execute the function for array elements without values.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>[2, 3, 5, 7, 11, 13, 17]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="button" onclick="forEachShowResult()">Show result</button>
+        </div>
+      </div>
+      <div id="forEachReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"forEachShowResult()"</span>&gt;
+            Show result
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"replace"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 11, 13, 17</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">forEachParceData</span>(item, index) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>target =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+              <span class="maroon">target.innerHTML</span> +=
+              <span class="olive">"index["</span> + index + <span class="olive">"]: "</span> + item + <span class="olive">"&lt;br&gt;"</span>;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">forEachShowResult</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">primes.</span><span class="maroon">forEach</span>(forEachParseData);<br>
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSFromFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The Array.from() method returns an Array object from any object with a length property or an iterable object.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>object</td>
+            <td>Required. The object to convert to an array.</td>
+          </tr>
+          <tr>
+            <td>mapFunction</td>
+            <td>Optional. A map function to call on each item of the array.</td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>Optional. A value to use as this when executing the mapFunction.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>"23579"</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="button" onclick="fromShowResult()">Show result</button>
+        </div>
+      </div>
+      <div id="fromReplace" class="exampleJSDiv" style="border: none; text-align: center;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>&gt;"23579"&lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"fromShowResult()"</span>&gt;
+            Show result
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+        <span class="purple left-padding">var </span>string = <span class="olive">"23579"</span>;<br><br>
+
+        <span class="purple left-padding">function </span><span class="blue">fromParseData</span>(item, index) {<br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="purple">var </span>res = (index += (<span class="maroon">this</span> + item));<br>
+            <span class="purple">return </span>res;
+          </p>
+        <span class="black left-padding">}</span><br>
+
+        <span class="purple left-padding">function </span><span class="blue">fromShowResult</span>() {<br>
+          <p class="more-padding" style="margin: 0;">
+            <span class="purple">var </span>target =
+            <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>);<br>
+            <span class="maroon">target.innerHTML</span> = <span class="olive">"Array: "</span> +
+            <span class="orange">Array</span><span class="darkblue">.from</span>(string) +
+            <span class="olive">"&lt;br&gt;Result: "</span> +
+            <span class="orange">Array</span><span class="darkblue">.from</span>(string, fromParseData, <span class="olive">" index of "</span>);
+          </p>
+        <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSSomeFrame" class="JSFrame" style="display: block;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The some() method checks if any of the elements in an array pass a test (provided as a function).
+      </div>
+      <div class="note-value">
+        The some() method executes the function once for each element present in the array:<br>
+        <ul>
+          <li>If it finds an array element where the function returns a true value, some() returns true (and does not check the remaining values).</li>
+          <li>Otherwise it returns false.</li>
+        </ul>
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        some() does not execute the function for array elements without values.
+      </div>
+      <div class="note-value">
+        some() does not change the original array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>function(currentValue, index, arr)</td>
+            <td>
+              Required. A function to be run for each element in the array.<br>
+              Function arguments:
+              <ul>
+                <li>currentValue — Required. The value of the current element.</li>
+                <li>index — Optional. The array index of the current element.</li>
+                <li>arr — Optional. The array object the current element belongs to.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>thisValue</td>
+            <td>
+              Optional. A value to be passed to the function to be used as its "this" value.
+              If this parameter is empty, the value "undefined" will be passed as its "this" value.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>[2, 3, 5, 7, 11, 13, 17]</span>
+      </div>
+        <div class="exampleJSDiv" style="border: none;">
+          <span>Any value: <input id="someValue" type="text" oninput="someShowResult()"></span>
+        </div>
+      <div id="someReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            Any value:&lt;<span class="brown">br</span>&gt;
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"someValue"</span>
+            <span class="crimson">type=</span><span class="olive">"text"</span>
+            <span class="crimson">oninput=</span><span class="olive">"someShowResult()"</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>primes =
+            [<span class="olive">2, 3, 5, 7, 11, 13, 17</span>];<br>
+          </p><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">compareData</span>(item) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">return </span> item ==
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"someValue"</span>)<span class="maroon">.value</span>
+            </p>
+          <span class="black left-padding">}</span><br>
+
+          <span class="purple left-padding">function </span><span class="blue">compareData</span>(item) {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> =
+              <span class="maroon">primes.</span><span class="blue">some</span>(compareData);
+            </p>
+          <span class="black left-padding">}</span><br><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSSortFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The sort() method sorts the items of an array.
+      </div>
+      <div class="note-value">
+        The sort order can be either alphabetic or numeric, and either ascending (up) or descending (down).
+        By default, the sort() method sorts the values as strings in alphabetical and ascending order.
+        This works well for strings ("Apple" comes before "Banana").
+        However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+        Because of this, the sort() method will produce an incorrect result when sorting numbers.
+        You can fix this by providing a "compare function".
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        This method changes the original array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>start</td>
+            <td>
+              Optional. An integer that specifies where to start the selection
+              (The first element has an index of 0).
+              Use negative numbers to select from the end of an array. If omitted, it acts like "0".
+            </td>
+          </tr>
+          <tr>
+            <td>end</td>
+            <td>
+              Optional. An integer that specifies where to end the selection.
+              If omitted, all elements from the start position and to the end of the array will be selected.
+              Use negative numbers to select from the end of an array.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <p>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</p>
+          <p>[17, 3, 5, 13, 11, 2, 7]</p>
+        </div>
+
+        <span>
+          <button class="submitBtn submitBtnBig" type="button" onclick="sortColors()">Sort colors</button><br><br>
+        </span>
+
+        <span>
+          <button class="submitBtn submitBtnBig" type="button" onclick="sortPrimesAscending()">Sort primes ascending</button><br><br>
+        </span>
+
+        <span>
+          <button class="submitBtn submitBtnBig" type="button" onclick="sortPrimesDescending()">Sort primes descending</button><br><br>
+        </span>
+
+        <div id="sortReplace" class="exampleJSDiv" style="border: none;"></div>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>&gt;
+            ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;
+            [17, 3, 5, 13, 11, 2, 7]
+            &lt;<span class="brown">/p</span>&gt;<br>
+
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"sortColors()"</span>&gt;
+            Sort colors
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"sortPrimesAscending()"</span>&gt;
+            Sort primes ascending
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"sortPrimesDescending()"</span>&gt;
+            Sort primes descending
+            &lt;<span class="brown">/button</span>&gt;<br>
+
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">var </span>colors =
+          [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];<br>
+          <span class="purple left-padding">var </span>unsortedPrimes =
+          [<span class="orange">17, 3, 5, 13, 11, 2, 7</span>];<br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">sortColors</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">innerHTML</span> =
+              <span class="maroon">colors.</span><span class="blue">sort</span>();<br>
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">sortPrimesAscending</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">innerHTML</span> =
+              <span class="maroon">unsortedPrimes.</span><span class="blue">sort</span>(<span class="purple">function </span> (a, b) {<span class="purple">return </span> a-b});<br>
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">sortPrimesDescending</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">innerHTML</span> =
+              <span class="maroon">unsortedPrimes.</span><span class="blue">sort</span>(<span class="purple">function </span> (a, b) {<span class="purple">return </span> b-a});<br>
+            </p>
+          <span class="black left-padding">}</span><br><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+
+  <div id="JSSpliceFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The splice() method adds/removes items to/from an array, and returns the removed item(s).
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        The original array will not be changed.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>index</td>
+            <td>
+              Required. An integer that specifies at what position to add/remove items.
+              Use negative values to specify the position from the end of the array.
+            </td>
+          </tr>
+          <tr>
+            <td>howmany</td>
+            <td>Optional. The number of items to be removed. If set to 0, no items will be removed.</td>
+          </tr>
+          <tr>
+            <td>item1, ..., itemX</td>
+            <td>Optional. The new item(s) to be added to the array.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <div class="exampleJSDiv" style="border: none;">
+          <p>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</p>
+        </div>
+
+        <span>Index:<br>
+          <input id="spliceArrOneParam" type="number" oninput="spliceArrOneParam()"><br><br>
+        </span>
+
+        <span>
+          Index:<br>
+          <input id="spliceArrIndex" type="number" oninput="spliceArr()"><br><br>
+          How many:<br>
+          <input id="spliceArrHowmany" type="number" oninput="spliceArr()"><br><br>
+          Item1:<br>
+          <input id="spliceArrItem1" type="text" oninput="spliceArr()"><br><br>
+          Item2:<br>
+          <input id="spliceArrItem2" type="text" oninput="spliceArr()">
+          <div class="exampleJSDiv" style="border: none;">
+          </div>
+        </span>
+
+        <div class="exampleJSDiv" style="border: none;">
+          <button class="submitBtn submitBtnBig" type="button" onclick="resetFill()">Reset</button>
+        </div>
+        <div id="spliceReplace" class="exampleJSDiv" style="border: none;"></div>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"text"</span>&gt;
+            ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Index:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"oneParam"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"spliceArrOneParam()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>&gt;<br>
+              <span class="left-padding">Index:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"index"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"spliceArr()"</span>&gt;<br>
+              </span>
+              <span class="left-padding">How many:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"howmany"</span>
+                <span class="crimson">type=</span><span class="olive">"number"</span>
+                <span class="crimson">oninput=</span><span class="olive">"spliceArr()"</span>&gt;
+              </span><br>
+              <span class="left-padding">Item1:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"item1"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"spliceArr()"</span>&gt;
+              </span><br>
+              <span class="left-padding">Item2:
+                &lt;<span class="brown">input</span>
+                <span class="purple">id=</span><span class="olive">"item2"</span>
+                <span class="crimson">type=</span><span class="olive">"text"</span>
+                <span class="crimson">oninput=</span><span class="olive">"spliceArr()"</span>&gt;
+              </span><br>
+            &lt;<span class="brown">/p</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <span class="purple left-padding">var </span>colors =
+          [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];<br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">spliceArrOneParam</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>index =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"oneParam"</span>)<span class="maroon">.value</span>;<br>
+              <span class="maroon">colors.</span><span class="blue">splice</span>(index);<br>
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> = colors;
+            </p>
+          <span class="black left-padding">}</span><br><br>
+
+          <span class="purple left-padding">function </span><span class="blue">spliceArr</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>index =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"index"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>howmany =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"howmany"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>item1 =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"item1"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>item2 =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"item2"</span>)<span class="maroon">.value</span>;<br>
+              <span class="maroon">colors.</span><span class="blue">splice</span>(index, howmany, item1, item2);<br>
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> = colors;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSToStringFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The toString() method converts an array into a String and returns the result.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        The returned string will separate the elements in the array with commas.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" type="button" onclick="arrayToString()">Array to string</button>
+      </div>
+      <div id="toStringReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"arrayToString()"</span>&gt;
+            Array to string
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="purple left-padding">function </span><span class="blue">arrayToString</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> =
+              <span class="maroon">colors.</span><span class="blue">toString</span>();<br>
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSUnshiftFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The unshift() method adds new items to the beginning of an array, and returns the new length.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        This method changes the length of the array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Parameter Values</h2></div>
+    <div>
+      <table class="tablejsAttr tablejs">
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>item1, item2, ..., itemX</td>
+            <td>Required. The item(s) to add to the beginning of the array</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div><hr class="js-hr-length-100perc" /></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <span>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <span>Item1:<br><input id="unshiftText1" type="text"></span>
+        <span>Item2:<br><input id="unshiftText2" type="text"></span>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <button class="submitBtn submitBtnBig" type="button" onclick="unshiftAddFirstElem()">Add first elements</button>
+      </div>
+      <div id="unshiftReplace" class="exampleJSDiv" style="border: none;"></div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"text1"</span>
+            <span class="crimson">type=</span><span class="olive">"text"</span>&gt;<br>
+            &lt;<span class="brown">input</span>
+            <span class="purple">id=</span><span class="olive">"text2"</span>
+            <span class="crimson">type=</span><span class="olive">"text"</span>&gt;<br>
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"unshiftAddFirstElem()"</span>&gt;
+            Add first elements
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="purple left-padding">function </span><span class="blue">unshiftAddFirstElem</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="purple">var </span>item1 =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text1"</span>)<span class="maroon">.value</span>;<br>
+              <span class="purple">var </span>item2 =
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"text2"</span>)<span class="maroon">.value</span>;<br>
+              <span class="maroon">colors.</span><span class="blue">unshift</span>(item1, item2);<br>
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> = colors;
+            </p>
+          <span class="black left-padding">}</span><br>
+        &lt;<span class="brown">/script</span>&gt;<br>
+      </div>
+    </div>
+    <p style="clear: left;"></p>
+    <div><hr class="js-hr-length-100perc" /></div>
+  </div>
+
+
+
+  <div id="JSArrValueOfFrame" class="JSFrame" style="display: none;">
+    <div class="descriptionJSFrame">
+      Description:<br />
+      <div class="note-value">
+        The valueOf() method returns the array.
+      </div>
+      <div class="note-value">
+        This method is the default method of the array object.
+        Array.valueOf() will return the same as Array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div class="noteJSFrame">
+      Notes:<br />
+      <div class="note-value">
+        This method will not change the original array.
+      </div>
+    </div>
+    <div><hr class="js-hr-length-100perc"></div>
+
+    <div><h2 class="tag jsTitle">Examples</h2></div>
+    <div class="exampleJSDiv">
+      <div class="exampleJSDiv" style="border: none;">
+        <p>["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"]</p>
+      </div>
+      <div class="exampleJSDiv" style="border: none;">
+        <p>
+          <button class="submitBtn submitBtnBig" type="button" onclick="getArrValueOf()">Get value</button><br>
+        </p>
+      </div>
+      <div class="exampleJSDiv" style="border: none; padding: 0;">
+        <p id="arrValueOfReplace"></p>
+      </div>
+    </div>
+
+    <div class="codeJS">
+      <div class="black float-borders-none">
+        &lt;<span class="brown">body</span>&gt;<br>
+        <span class="left-padding">&lt;<span class="brown">div</span>&gt;</span><br>
+
+          <p class="more-padding" style="margin: 0;">
+            &lt;<span class="brown">button</span>
+            <span class="crimson">type=</span><span class="olive">"button"</span>
+            <span class="crimson">onclick=</span><span class="olive">"arrayValueOf()"</span>&gt;
+            Get value
+            &lt;<span class="brown">/button</span>&gt;<br>
+            &lt;<span class="brown">p</span>
+            <span class="purple">id=</span><span class="olive">"target"</span>&gt;
+            &lt;<span class="brown">/p</span>&gt;
+          </p>
+
+          <span class="left-padding">&lt;<span class="brown">/div</span>&gt;</span><br>
+        &lt;<span class="brown">/body</span>&gt;
+      </div>
+
+      <div class="black float-borders-none">
+        &lt;<span class="brown">script</span>&gt;<br>
+          <p class="left-padding" style="margin: 0;">
+            <span class="purple">var </span>colors =
+            [<span class="olive">"Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"</span>];
+          </p><br>
+
+          <span class="purple left-padding">function </span><span class="blue">arrayValueOf</span>() {<br>
+            <p class="more-padding" style="margin: 0;">
+              <span class="maroon">document.</span><span class="blue">getElementById</span>(<span class="olive">"target"</span>)<span class="maroon">.innerHTML</span> =
+              <span class="maroon">colors.</span><span class="blue">valueOf</span>();<br>
             </p>
           <span class="black left-padding">}</span><br>
         &lt;<span class="brown">/script</span>&gt;<br>

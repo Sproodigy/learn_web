@@ -1,6 +1,7 @@
 var colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
 var dblColors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet", "Violet", "Blue", "Azure", "Green", "Yellow", "Orange", "Red"];
 var primes = [2, 3, 5, 7, 11, 13, 17];
+var unsortedPrimes = [17, 3, 5, 13, 11, 2, 7];
 var primesString = "2357";
 
 function JSShowFrame(btnId, frameId) {
@@ -17,6 +18,30 @@ function JSShowFrame(btnId, frameId) {
     frame.style.top = (offset - 17) + "px";
     frame.scrollIntoView();
   }
+}
+
+function arrayGetConstructor() {
+  document.getElementById('arrayConstructorReplace').innerHTML = colors.constructor;
+}
+
+function arraySetLength() {
+  var length = document.getElementById('arraySetLength').value;
+  colors.length = length;
+  document.getElementById('arrayLengthReplace').innerHTML =
+  "Array length: " + colors.length + "<br><br>" + "Array: " + colors;
+}
+
+Array.prototype.upperCase = function() {
+  var i;
+  var len = this.length;
+  for (i = 0; i < len; i++) {
+    this[i] = this[i].toUpperCase();
+  }
+};
+
+function upperCaseArray() {
+  colors.upperCase();
+  document.getElementById("prototypeReplace").innerHTML = colors;
 }
 
 function createArray(data1, data2, targetNum) {
@@ -196,4 +221,134 @@ function arrKeys() {
   var result = colors.keys().next().value;
 
   target.innerHTML = "Result: " + result;
+}
+
+function mapMultipleNumbers(prime) {
+  var num = document.getElementById('mapNum').value;
+  var text = " " + prime * num * this;
+  return text;
+}
+
+function mapShowResult() {
+  var res = primes.map(mapMultipleNumbers, 3);
+  document.getElementById("mapReplace").innerHTML = res;
+}
+
+function popRemoveLastElem() {
+  colors.pop();
+  var target = document.getElementById('popReplace');
+  target.innerHTML = colors;
+}
+
+function shiftRemoveFirstElem() {
+  colors.shift();
+  var target = document.getElementById('shiftReplace');
+  target.innerHTML = colors;
+}
+
+function pushAddLastElem() {
+  var item1 = document.getElementById('pushText1').value;
+  var item2 = document.getElementById('pushText2').value;
+  colors.push(item1, item2);
+  document.getElementById('pushReplace').innerHTML = colors;
+}
+
+function unshiftAddFirstElem() {
+  var item1 = document.getElementById('unshiftText1').value;
+  var item2 = document.getElementById('unshiftText2').value;
+  colors.unshift(item1, item2);
+  document.getElementById('unshiftReplace').innerHTML = colors;
+}
+
+function reduceGetSum(total, num) {
+  return total + num;
+}
+
+function reduceShowResult() {
+  document.getElementById("reduceReplace").innerHTML = "Sum: " + primes.reduce(reduceGetSum, 0);
+}
+
+function reduceRightGetSum(total, num) {
+  return total - num;
+}
+
+function reduceRightShowResult() {
+  document.getElementById("reduceRightReplace").innerHTML = "Sum: " + primes.reduceRight(reduceRightGetSum);
+}
+
+function reverseArray() {
+  colors.reverse();
+  var target = document.getElementById('reverseReplace');
+  target.innerHTML = colors;
+}
+
+function sliceArrOneParam() {
+  var index = document.getElementById('sliceArrOneParam').value;
+  var target = document.getElementById('sliceReplace');
+  var result = colors.slice(index);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function sliceArr() {
+  var index1 = document.getElementById('sliceArrStart').value;
+  var index2 = document.getElementById('sliceArrEnd').value;
+  var target = document.getElementById('sliceReplace');
+  var result = colors.slice(index1, index2);
+
+  target.innerHTML = "Result: " + result;
+}
+
+function sortColors() {
+  document.getElementById('sortReplace').innerHTML = colors.sort();
+}
+
+function sortPrimesAscending() {
+  document.getElementById('sortReplace').innerHTML = unsortedPrimes.sort(function (a, b) {return a-b});
+}
+
+function sortPrimesDescending() {
+  document.getElementById('sortReplace').innerHTML = unsortedPrimes.sort(function (a, b) {return b-a});
+}
+
+function spliceArrOneParam() {
+  var index = document.getElementById('spliceArrOneParam').value;
+  var target = document.getElementById('spliceReplace');
+  var res = colors.splice(index);
+
+  document.getElementById('spliceReplace').innerHTML = "Return value: " + res + "<br><br>" + "Array: " + colors;
+}
+
+function spliceArr() {
+  var index = document.getElementById('spliceArrIndex').value;
+  var howmany = document.getElementById('spliceArrHowmany').value;
+  var item1 = document.getElementById('spliceArrItem1').value;
+  var item2 = document.getElementById('spliceArrItem2').value;
+  var res = colors.splice(index, howmany, item1, item2);
+  document.getElementById('spliceReplace').innerHTML = "Return value: " + res + "<br><br>" + "Array: " + colors;
+}
+
+function resetSplice() {
+  colors = ["Red", "Orange", "Yellow", "Green", "Azure", "Blue", "Violet"];
+}
+
+function arrayToString() {
+  document.getElementById('toStringReplace').innerHTML = colors.toString();
+}
+
+function getArrValueOf() {
+  document.getElementById('arrValueOfReplace').innerHTML = colors.valueOf();
+}
+
+function arrayGetLength() {
+  document.getElementById('arrayLengthReplace').innerHTML =
+  "Array length: " + colors.length + "<br><br>" + "Array: " + colors;
+}
+
+function compareData(item) {
+  return item == document.getElementById('someValue').value;
+}
+
+function someShowResult() {
+  document.getElementById("someReplace").innerHTML = "Has item: " + primes.some(compareData);
 }
