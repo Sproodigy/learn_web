@@ -60,6 +60,17 @@ body {
   background: #bfdab9;
 }
 
+.JSFrameGlobal {
+  padding: 1px;
+  width: 76%;
+  border: 2px solid #cca300;
+  left: 245px;
+  position: absolute;
+  border-radius: 10px;
+  /* transition-property: all; */
+  /* transition: background 3s ease; */
+}
+
 .js-hr-length-90perc {
   color: rgb(175, 145, 15);
   margin-left: 1.4em;
