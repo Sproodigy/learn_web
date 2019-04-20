@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<title>Background size</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../images/css3_logo_black.jpeg" type="image/jpg" />
+<link rel="stylesheet" href="../styles/button.css" />
+<link rel="stylesheet" href="../styles/reset.css" />
+<link rel="stylesheet" href="../styles/common.css" />
+<link rel="stylesheet" href="../styles/css_style.css" />
+<link rel="stylesheet" type="text/css" href="http://allfont.ru/allfont.css?fonts=ubuntu-mono" />
+
+<script src="../scripts/cssSelectors.js"></script>
+
+<body>
+
+  <div class="frameWindow">
+  <p><a href="../pages/cssSelectors.html"><button class="css-buttons-prop close-but-pos">X</button></a></p>
+  <div class="note noteCSS descriptionCSS note-round-bord">
+    Description:<br />
+    <div class="note-value">
+      The :active selector is used to select and style the active link.
+    </div>
+    <div class="note-value">
+       A link becomes active when you click on it.
+    </div>
+  </div>
+  <div><hr class="hr-length-90perc" /></div>
+
+  <div class="note noteCSS note-round-bord">
+    <div class="note-value">
+      The :active selector can be used on all elements, not only links.
+    </div>
+    <div class="note-value">
+      :active MUST come after :hover (if present) in the CSS definition in order to be effective!
+    </div>
+  </div>
+  <div><hr class="hr-length-90perc" /></div>
+
+  <div class="tag">
+    <div><h2 class="tag">Examples</h2></div>
+    <div id="selActiveBar" class="left-padding;">
+      <a href="#selActiveBar">
+        <button onclick="" class="example-button example-rounded-buttons">stretch</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="exampleDiv"><a onclick="changeLinkActive(this)" id="selActive" href="#">Link</a></div>
+
+  <div id='animationDivCode'>
+    <div class="code black float-borders-none">
+      &lt;<span class="brown">div</span>&gt;<br />
+        <span class="left-padding">&lt;<span class="brown">a</span>
+          <span class="crimson">href</span>=&gt;
+        &lt;<span class="brown">/a</span>&gt;<br />
+      <span>&lt;<span class="brown">/div</span>&gt;</span>
+    </div>
+
+    <div class="code float-borders-none">
+      <p class="black left-padding" style="margin: 0">
+        <span class="brown">div </span><span class="black">{</span><br />
+          <p class="black more-padding" style="margin: 0;">
+            <span class="crimson">background-color: </span>blue;<br />
+            <span class="crimson">background-image: </span>url('../images/html_digit.jpg');<br />
+            <span class="crimson">background-repeat: </span><span class="text">?;</span><br />
+          </p>
+        <span class="black left-padding">}</span>
+      </p>
+    </div>
+
+  </div>
+  <p style="clear: left;"></p>
+
+  <div><hr class="hr-length-90perc" /></div>
+</div>
+
+</body>
+</html>

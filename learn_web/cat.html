@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cat</title>
+    <link href="cat.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="cat.js"></script>
+
+    <div id="cat">
+      <div id="parametersCat">
+        Breed: <input id="inputBreed" type="text" required><br><br>
+        Gender: <input id="inputGender" type="text" required><br><br>
+        Color: <input id="inputColor" type="text" required><br><br>
+        Eyes color: <input id="inputEyesColor" type="text" required><br><br>
+        Weight: <input id="inputWeight" type="number" required><br><br>
+      </div>
+
+      <div id="liveCat" style="display: none;">
+        Hungry: <input oninput="cat.liveCat()" id="inputHungry" type="number" min="0" max="10" required><br><br>
+        Toilet: <input oninput="cat.liveCat()" id="inputToilet" type="number" min="0" max="10" required><br><br>
+        Grooming: <input oninput="cat.liveCat()" id="inputGrooming" type="number" min="0" max="10" required><br><br>
+        Sleep: <input oninput="cat.liveCat()" id="inputSleep" type="number" min="0" max="10" required><br><br>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <button id="createCat" style="padding: 10px 20px;" type="button" onclick="cat.createCat()">Create cat</button>
+    </div>
+    <div id="data" style="text-align: center; display: none;">
+      <p id="pasteColor"></p>
+      <p id="pasteKoshest" style="font-size: 30px">Кошесть отключена.</p>
+      <p id="pasteBorshest" style="font-size: 30px">Боршесть отключена.</p>
+      <p><img id="image" src="" alt="" style="width: 300px; height: 200px;"></p>
+    </div>
+
+    <div id="div" onclick="changeBackgr()" style="width: 100%; height: 100px">Div</div>
+    <script>
+      function changeBackgr() {
+        var color = prompt("Input color:");
+        div.style.background = color;
+      }
+    </script>
+  </body>
+</html>
