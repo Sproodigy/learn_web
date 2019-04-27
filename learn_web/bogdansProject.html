@@ -106,57 +106,66 @@
         break;
       }
 
-      if (limit > 1000000) {
-        alert("Limit exceeded!");
-        limit = 1000000;
-        equationParts[2].value = 1000000;
-      }
+      // if (limit > 1000000) {
+      //   alert("Limit exceeded!");
+      //   limit = 1000000;
+      //   equationParts[2].value = 1000000;
+      // }
 
-      if (increment > 0.01 || increment < 0.00001) {
-        alert("Increment exceeded!");
-        increment = 0.00001;
-        equationParts[3].value = 0.00001;
-      }
+      // if (increment > 0.01 || increment < 0.00001) {
+      //   alert("Increment exceeded!");
+      //   increment = 0.00001;
+      //   equationParts[3].value = 0.00001;
+      // }
 
-      for (var x = -limit; x <= limit;) {
-        // console.log(Number((x += increment).toFixed(5)));
+      for (var x = -limit; x <= limit; x++) {
         var result = +((eval(leftSide) - eval(rightSide)).toFixed(5));
-
-        if ((result <= 10000000 && result >= 1000000) || (result >= -10000000 && result <= -1000000)) {
-          x = +(x + 100000).toFixed(5);
-          // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
-        } else if ((result <= 1000000 && result >= 100000) || (result >= -1000000 && result <= -100000)) {
-          x = +(x + 10000).toFixed(5);
-          // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
-        } else if ((result <= 100000 && result >= 10000) || (result >= -100000 && result <= -10000)) {
-          x = +(x + 1000).toFixed(5);
-          // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
-        } else if ((result <= 10000 && result >= 1000) || (result >= -10000 && result <= -1000)) {
-          x = +(x + 100).toFixed(5);
-          // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
-        } else if ((result <= 1000 && result >= 100) || (result >= -1000 && result <= -100)) {
-          x = +(x + 10).toFixed(5);
-          // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
-        } else if ((result <= 100 && result >= 10) || (result >= -100 && result <= -10)) {
-          x = +(x + 1).toFixed(5);
-          // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
-        } else if ((result <= 10 && result >= 1) || (result >= -10 && result <= -1)) {
-          x = +(x + 0.1).toFixed(5);
-          // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
-        }
-        else if ((result <= 1 && result >= 0.1) || (result >= -1 && result <= -0.1)) {
-          x = +(x + 0.01).toFixed(5);
-        }
-        else {
-          x = +(x + increment).toFixed(5);
-          // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
-        }
 
         if (+eval(leftSide).toFixed(5) == +eval(rightSide).toFixed(5)) {
           document.getElementById('answer').innerHTML = "X = " + x;
           break;
         }
       }
+
+      // for (var x = -limit; x <= limit;) {
+      //   // console.log(Number((x += increment).toFixed(5)));
+      //   var result = +((eval(leftSide) - eval(rightSide)).toFixed(5));
+      //
+      //   if ((result <= 10000000 && result >= 1000000) || (result >= -10000000 && result <= -1000000)) {
+      //     x = +(x + 100000).toFixed(5);
+      //     // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
+      //   } else if ((result <= 1000000 && result >= 100000) || (result >= -1000000 && result <= -100000)) {
+      //     x = +(x + 10000).toFixed(5);
+      //     // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
+      //   } else if ((result <= 100000 && result >= 10000) || (result >= -100000 && result <= -10000)) {
+      //     x = +(x + 1000).toFixed(5);
+      //     // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
+      //   } else if ((result <= 10000 && result >= 1000) || (result >= -10000 && result <= -1000)) {
+      //     x = +(x + 100).toFixed(5);
+      //     // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
+      //   } else if ((result <= 1000 && result >= 100) || (result >= -1000 && result <= -100)) {
+      //     x = +(x + 10).toFixed(5);
+      //     // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
+      //   } else if ((result <= 100 && result >= 10) || (result >= -100 && result <= -10)) {
+      //     x = +(x + 1).toFixed(5);
+      //     // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
+      //   } else if ((result <= 10 && result >= 1) || (result >= -10 && result <= -1)) {
+      //     x = +(x + 0.1).toFixed(5);
+      //     // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
+      //   }
+      //   else if ((result <= 1 && result >= 0.1) || (result >= -1 && result <= -0.1)) {
+      //     x = +(x + 0.01).toFixed(5);
+      //   }
+      //   else {
+      //     x = +(x + increment).toFixed(5);
+      //     // console.log("X: ", x, "Left side: ", eval(leftSide).toFixed(5), "Right side: ", eval(rightSide).toFixed(5), "Res: ", result);
+      //   }
+      //
+      //   if (+eval(leftSide).toFixed(5) == +eval(rightSide).toFixed(5)) {
+      //     document.getElementById('answer').innerHTML = "X = " + x;
+      //     break;
+      //   }
+      // }
     }
   </script>
 </body>
